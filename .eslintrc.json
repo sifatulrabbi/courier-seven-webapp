@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": ["eslint-config-airbnb", "eslint-config-prettier"],
+  "parserOptions": { "ecmaFeatures": { "jsx": true }, "ecmaVersion": 2018 },
+  "plugins": ["eslint-plugin-prettier"],
+  "ignorePatterns": ["src/**/*.test.js", "build/*", "src/assets/*"],
+  "rules": {
+    "camelcase": "warn",
+    "arrow-parens": "warn",
+    "arrow-spacing": "warn",
+    "default-case": "warn",
+    "no-console": "off"
+  }
+}
