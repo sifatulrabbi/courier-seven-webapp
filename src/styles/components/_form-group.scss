@@ -1,0 +1,40 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem 0;
+  position: relative;
+  height: max-content;
+  width: 100%;
+
+  input {
+    outline: none;
+    background-color: $light-primary;
+    padding: 1.4rem 1.2rem 0.6rem 1.2rem;
+    width: 100%;
+    border: 2px solid $primary-light;
+    border-radius: $border-radius;
+    font-size: $font-size-body2;
+    color: $dark-secondary;
+
+    &::placeholder {
+      color: $dark-secondary;
+      opacity: 0.8;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $primary-main;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 1.2rem;
+    background-color: $light-primary;
+    padding: 0 0.2rem;
+  }
+}

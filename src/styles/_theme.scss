@@ -1,0 +1,57 @@
+// colors
+$primary-main: #790b98;
+$primary-dark: #4a106d;
+$primary-light: #f7ebff;
+$light-primary: #ffffff;
+$light-secondary: #f7ebff;
+$dark-primary: #41324a;
+$dark-secondary: #584c60;
+$linear: linear-gradient(125.09deg, #3e0064 23.01%, #790b98 87.5%);
+
+// default values
+$breakpoint: 1000px;
+$border-radius: 20px;
+$line-height-body: 1.5;
+$line-height-title: 1.15;
+$speed: 300ms;
+
+// font sizes
+$font-size: 10px;
+$font-size-h1: 4.6rem;
+$font-size-h4: 1.8rem;
+$font-size-h3: 2.4rem;
+$font-size-h2: 3.2rem;
+$font-size-body: 1.6rem;
+$font-size-body2: 1.5rem;
+$font-size-caption: 1.4rem;
+// font weights
+$font-bold: 900;
+$font-medium: 700;
+$font-normal: 400;
+// font families
+$font-family-primary: "Gothic", sans-serif;
+$font-family-secondary: "Lato", sans-serif;
+// font colors
+$font-dark-secondary: #444;
+$font-light-primary: #fff;
+$font-light-secondary: #ccc;
+
+// shadows
+$shadow-bottom: rgba(0, 0, 0, 0.2) 3px 15px 20px -8px;
+$shadow-normal: rgba(0, 0, 0, 0.2) 3px 5px 15px -1px;
+
+@mixin padding-container() {
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media screen and (min-width: $breakpoint) {
+    padding-right: 8vw;
+    padding-left: 8vw;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

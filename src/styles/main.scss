@@ -1,0 +1,29 @@
+@import "./theme";
+@import "./mixins";
+
+html {
+  font-size: $font-size;
+}
+
+*,
+*::after,
+*::before {
+  font-size: inherit;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: inherit;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+body {
+  font-size: $font-size-body;
+  font-family: $font-family-secondary;
+  background-color: $light-primary;
+  line-height: $line-height-body;
+  font-weight: 400;
+}
+
+@import "./components/index.scss";
