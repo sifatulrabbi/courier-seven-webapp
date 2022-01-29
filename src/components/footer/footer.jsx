@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { siteLinks } from "../../assets";
 import { FaFacebook, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
+import { v4 as uuid } from "uuid";
 
 export default function Footer() {
   return (
@@ -20,7 +21,7 @@ export default function Footer() {
           <h3 className="site-links-title">Site links</h3>
           <ul className="site-links-list">
             {siteLinks.map((data) => (
-              <li className="site-links-list-item">
+              <li key={uuid()} className="site-links-list-item">
                 <Link to={data.link}>{data.name}</Link>
               </li>
             ))}

@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaEquals, FaTimes } from "react-icons/fa";
 import { siteLinks } from "../../assets";
+import { v4 as uuid } from "uuid";
 
 function NavMenu({ toggleMenu }) {
   return (
     <ul className="navbar-links-list">
       {siteLinks.map((data) => (
-        <li key={data.link} className="navbar-links-list-item">
+        <li key={uuid()} className="navbar-links-list-item">
           <Link to={data.link} className="link" onClick={toggleMenu}>
             {data.name}
           </Link>

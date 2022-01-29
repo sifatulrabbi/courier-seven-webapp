@@ -15,19 +15,33 @@
 
   .services-list {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
     grid-gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
 
-    // @media screen and (min-width: $breakpoint) {
-    //   flex-direction: row;
-    //   justify-content: space-between;
-    // }
+    @media screen and (min-width: $breakpoint) {
+    }
+  }
+
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: $black-primary;
+      font-weight: $font-bold;
+      font-family: $font-family-primary;
+    }
   }
 }
 
 .service-card {
+  height: 100%;
   max-width: 35ch;
   display: flex;
   align-items: center;
@@ -37,26 +51,12 @@
   grid-gap: 2rem;
   padding: 2rem;
   border-radius: $border-radius;
+  border: 2px solid $primary-light;
+  max-width: 30ch;
 
-  @media screen and (min-width: $breakpoint) {
-    grid-gap: 4rem;
-    max-width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: start;
-
-    .card-desc {
-      padding-left: 3rem;
-    }
-  }
-
-  img {
-    height: 200px;
-    width: 200px;
-  }
-
-  .wrapper {
-    max-width: 35ch;
+  .icon {
+    font-size: 7rem;
+    color: $primary-main;
   }
 
   .card-title {

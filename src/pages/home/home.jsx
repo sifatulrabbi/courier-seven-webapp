@@ -1,5 +1,10 @@
 import React from "react";
-import { Hero, TrackingSection, ServicesSection } from "../../components";
+import {
+  Hero,
+  TrackingSection,
+  ServicesSection,
+  CoverageSection,
+} from "../../components";
 
 export default function Home() {
   return (
@@ -7,6 +12,7 @@ export default function Home() {
       <Hero />
       <TrackingSection />
       <ServicesSection />
+      <CoverageSection />
     </div>
   );
 }

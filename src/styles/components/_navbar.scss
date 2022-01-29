@@ -6,11 +6,12 @@
   left: 0;
   height: 70px;
   background-color: $white-primary;
-  box-shadow: $shadow-bottom;
+  border-bottom: 2px solid $primary-light;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @include padding();
+  font-family: $font-family-primary;
 
   &-links-list {
     display: flex;
@@ -82,6 +83,7 @@
   justify-content: center;
   transition: transform $speed ease;
   transform: translate(-100%, 0);
+  padding-top: 2rem;
 
   &.show {
     transform: translate(0, 0);
