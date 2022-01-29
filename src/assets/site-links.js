@@ -1,4 +1,4 @@
-export const navbarData = [
+export const siteLinks = [
   {
     name: "Home",
     link: "/",
@@ -17,6 +17,14 @@ export const navbarData = [
   },
   {
     name: "Track",
+    link: "/",
+  },
+  {
+    name: "FAQs",
+    link: "/",
+  },
+  {
+    name: "Coverage",
     link: "/",
   },
   {

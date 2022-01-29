@@ -33,7 +33,8 @@
   color: $black-secondary;
   padding: 1.6rem;
   border-radius: $border-radius;
-  min-width: 300px;
+  width: 100%;
+  max-width: 400px;
 
   input {
     padding: 1rem;

@@ -22,6 +22,7 @@ export default function TrackingForm() {
         placeholder="Enter your parcel ID"
         value={parcelId}
         onChange={handleChange}
+        autoComplete="off"
       />
       <Button label="Track now" type="submit" />
     </form>
