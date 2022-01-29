@@ -9,7 +9,7 @@
   padding-top: 3rem;
   padding-bottom: 3rem;
   @include padding();
-  box-shadow: rgba(0, 0, 0, 0.2) 3px -15px 20px -8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -5px 20px -2px;
 
   @media screen and (min-width: $breakpoint) {
     grid-template-columns: repeat(3, 1fr);
@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     grid-gap: 1rem;
 
     @media screen and (min-width: $breakpoint) {

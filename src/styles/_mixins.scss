@@ -13,6 +13,7 @@
   line-height: $line-height-title;
   font-weight: $font-bold;
   color: $black-primary;
+  font-family: $font-family-primary;
 
   .colored {
     color: $primary-main;
@@ -20,13 +21,34 @@
 }
 
 @mixin title-h2() {
+  font-family: $font-family-primary;
   font-size: $font-size-h2;
   font-weight: $font-bold;
   color: $white-primary;
   line-height: $line-height-title;
   margin-bottom: 1.6rem;
 
+  &.dark {
+    color: $black-primary;
+  }
+
   .colored {
     color: $primary-main;
   }
+}
+
+@mixin title-h3() {
+  font-family: $font-family-primary;
+  line-height: $line-height-title;
+  font-size: $font-size-h3;
+  color: $black-primary;
+  font-weight: $font-bold;
+}
+
+@mixin title-h4() {
+  font-family: $font-family-primary;
+  line-height: $line-height-title;
+  font-size: $font-size-h4;
+  color: $black-primary;
+  font-weight: $font-bold;
 }

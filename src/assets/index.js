@@ -1,3 +1,3 @@
-export { default as brandLogo } from "./logo.svg";
-export { default as heroImg } from "./hero-img.png";
+export * from "./images";
 export * from "./site-links";
+export * from "./service-data";

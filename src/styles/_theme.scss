@@ -37,8 +37,8 @@ $font-light-primary: #fff;
 $font-light-secondary: #ccc;
 
 // shadows
-$shadow-bottom: rgba(0, 0, 0, 0.2) 3px 15px 20px -8px;
-$shadow-normal: rgba(0, 0, 0, 0.2) 3px 5px 15px -1px;
+$shadow-bottom: rgba(0, 0, 0, 0.1) 0px 5px 20px -2px;
+$shadow-normal: rgba(0, 0, 0, 0.1) 0px 5px 15px -1px;
 
 @mixin padding-container() {
   padding-right: 1rem;

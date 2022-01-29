@@ -9,7 +9,7 @@
   flex-direction: column;
   text-align: center;
   grid-gap: 10vw;
-  padding: 3rem;
+  padding: 7rem;
   @include padding();
 
   @media screen and (min-width: $breakpoint) {
@@ -22,7 +22,7 @@
   }
 
   .section-info {
-    max-width: 45ch;
+    max-width: 40ch;
   }
 }
 
