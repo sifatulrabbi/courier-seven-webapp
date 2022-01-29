@@ -1,13 +1,17 @@
 import React from "react";
 import "./styles/main.scss";
-import FormGroup from "./components/form-group/FormGroup";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+import HomePage from "./pages/home/Home";
 
 function App() {
   return (
-    <div>
-      <h1>Hello from Courier 007</h1>
-      <FormGroup label="Group one" value="" placeholder="placeholder" />
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route element={<HomePage />} />
+      </Routes>
+    </Router>
   );
 }
 

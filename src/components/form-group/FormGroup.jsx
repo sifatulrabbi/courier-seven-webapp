@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 export default function FormGroup({
   label,
@@ -22,19 +21,3 @@ export default function FormGroup({
     </div>
   );
 }
-
-FormGroup.propTypes = {
-  label: PropTypes.string,
-  value: PropTypes.string ? PropTypes.string : PropTypes.number,
-  required: PropTypes.bool,
-  placeholder: PropTypes.string,
-  onChangeFnc: PropTypes.func,
-};
-
-FormGroup.defaultProps = {
-  label: "",
-  placeholder: "",
-  required: false,
-  value: "",
-  onChangeFnc: (e) => e,
-};

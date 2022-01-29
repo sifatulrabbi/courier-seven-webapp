@@ -1,0 +1,94 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 70px;
+  box-shadow: $shadow-bottom;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include padding();
+
+  @media screen and (min-width: $breakpoint) {
+    height: 80px;
+  }
+
+  &-links-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    width: max-content;
+
+    @media screen and (min-width: $breakpoint) {
+      flex-direction: row;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .link {
+        padding: 1rem;
+        color: $black-primary;
+        text-decoration: none;
+        transition: color $speed ease, border-color $speed ease;
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          color: $primary-main;
+          border-color: $primary-main;
+        }
+      }
+    }
+  }
+}
+
+.desktop-menu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: $breakpoint) {
+    display: flex;
+  }
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  font-size: 3rem;
+  color: $primary-main;
+
+  @media screen and (min-width: $breakpoint) {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: $white-primary;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  transition: transform $speed ease;
+  transform: translate(-100%, 0);
+
+  &.show {
+    transform: translate(0, 0);
+  }
+
+  @media screen and (min-width: $breakpoint) {
+    display: none;
+  }
+}

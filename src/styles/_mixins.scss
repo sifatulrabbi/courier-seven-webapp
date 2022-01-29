@@ -1,0 +1,9 @@
+@mixin padding() {
+  padding-right: 1rem;
+  padding-left: 1rem;
+
+  @media screen and (min-width: $breakpoint) {
+    padding-right: 7vw;
+    padding-left: 7vw;
+  }
+}

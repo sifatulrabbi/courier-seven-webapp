@@ -11,16 +11,16 @@
 
   input {
     outline: none;
-    background-color: $light-primary;
+    background-color: $white-primary;
     padding: 1.4rem 1.2rem 0.6rem 1.2rem;
     width: 100%;
     border: 2px solid $primary-light;
     border-radius: $border-radius;
     font-size: $font-size-body2;
-    color: $dark-secondary;
+    color: $black-secondary;
 
     &::placeholder {
-      color: $dark-secondary;
+      color: $black-secondary;
       opacity: 0.8;
     }
 
@@ -34,7 +34,7 @@
     position: absolute;
     top: 0;
     left: 1.2rem;
-    background-color: $light-primary;
+    background-color: $white-primary;
     padding: 0 0.2rem;
   }
 }
