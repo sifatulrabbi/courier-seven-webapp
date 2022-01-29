@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Button({ label, secondary, onClickFnc, big }) {
+export default function Button({ label, secondary, onClickFnc, big, type }) {
   return (
     <button
-      type="button"
+      type={type ? type : "button"}
       className={`btn ${secondary ? "secondary" : "primary"} ${
         big ? "big" : "normal"
       }`}

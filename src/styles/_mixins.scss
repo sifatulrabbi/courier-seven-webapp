@@ -7,3 +7,26 @@
     padding-left: 7vw;
   }
 }
+
+@mixin title-h1() {
+  font-size: $font-size-h1;
+  line-height: $line-height-title;
+  font-weight: $font-bold;
+  color: $black-primary;
+
+  .colored {
+    color: $primary-main;
+  }
+}
+
+@mixin title-h2() {
+  font-size: $font-size-h2;
+  font-weight: $font-bold;
+  color: $white-primary;
+  line-height: $line-height-title;
+  margin-bottom: 1.6rem;
+
+  .colored {
+    color: $primary-main;
+  }
+}

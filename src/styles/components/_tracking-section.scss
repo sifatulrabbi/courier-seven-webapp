@@ -1,0 +1,46 @@
+.tracking-section {
+  padding: 1rem;
+  width: 100%;
+  background: $linear;
+  color: $white-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  grid-gap: 10vw;
+  padding: 3rem;
+  @include padding();
+
+  @media screen and (min-width: $breakpoint) {
+    flex-direction: row;
+    text-align: start;
+  }
+
+  .section-title {
+    @include title-h2();
+  }
+
+  .section-info {
+    max-width: 45ch;
+  }
+}
+
+.tracking-form {
+  display: flex;
+  flex-direction: column;
+  background-color: $white-secondary;
+  color: $black-secondary;
+  padding: 1.6rem;
+  border-radius: $border-radius;
+  min-width: 300px;
+
+  input {
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $black-secondary;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}

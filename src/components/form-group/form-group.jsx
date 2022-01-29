@@ -2,6 +2,7 @@ import React from "react";
 
 export default function FormGroup({
   label,
+  name,
   placeholder,
   required,
   value,
@@ -12,7 +13,7 @@ export default function FormGroup({
       <input
         id={label}
         value={value}
-        name={label}
+        name={name}
         onChange={onChangeFnc}
         placeholder={placeholder}
         required={required}

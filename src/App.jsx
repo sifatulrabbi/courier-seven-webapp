@@ -1,15 +1,15 @@
 import React from "react";
 import "./styles/main.scss";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import Navbar from "./components/navbar/Navbar";
-import HomePage from "./pages/home/Home";
+import { Navbar } from "./components";
+import { Home } from "./pages";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route element={<HomePage />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </Router>
   );
