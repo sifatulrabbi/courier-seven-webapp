@@ -25,13 +25,14 @@
       border-color: $primary-main;
     }
   }
+}
 
-  label {
-    position: absolute;
-    top: -1.2rem;
-    left: 1.2rem;
-    background-color: $white-primary;
-    padding: 0 0.5rem;
-    color: $black-primary;
-  }
+.form-label {
+  position: absolute;
+  top: -1.2rem;
+  left: 1.2rem;
+  background-color: $white-primary;
+  padding: 0 0.5rem;
+  color: $black-primary;
+  font-size: $font-size-caption;
 }

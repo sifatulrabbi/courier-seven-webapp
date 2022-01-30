@@ -1,9 +1,17 @@
 import React from "react";
 import Button from "../button/button";
+import Dropdown from "../dropdown/dropdown";
+
+const list = [
+  { id: "dhaka", name: "Dhaka" },
+  { id: "khulna", name: "Khulna" },
+  { id: "rajshahi", name: "Rajshahi" },
+];
 
 export default function PriceCalculator() {
   const [productWeight, setProductWeight] = React.useState("");
   const [productPrice, setProductPrice] = React.useState("");
+  const [division, setDivision] = React.useState("");
 
   function handleProductWeight(e) {
     setProductWeight(e.currentTarget.value);
@@ -28,7 +36,9 @@ export default function PriceCalculator() {
           <div className="form-group">
             <h3 className="form-title">Product details</h3>
             <div className="form-control">
-              <label htmlFor="product-price">Product price</label>
+              <label className="form-label" htmlFor="product-price">
+                Product price
+              </label>
               <input
                 type="number"
                 id="product-price"
@@ -38,7 +48,9 @@ export default function PriceCalculator() {
               />
             </div>
             <div className="form-control">
-              <label htmlFor="product-price">Product price</label>
+              <label className="form-label" htmlFor="product-price">
+                Product price
+              </label>
               <input
                 type="number"
                 id="product-price"
@@ -50,33 +62,15 @@ export default function PriceCalculator() {
           </div>
           <div className="form-group">
             <h3 className="form-title">Pick up location</h3>
-            <div className="form-control">
-              <label htmlFor="">label</label>
-              <input type="text" />
-            </div>
-            <div className="form-control">
-              <label htmlFor="">label</label>
-              <input type="text" />
-            </div>
-            <div className="form-control">
-              <label htmlFor="">label</label>
-              <input type="text" />
-            </div>
+            <Dropdown title="Division" list={list} updateValue={setDivision} />
+            <Dropdown title="Division" list={list} updateValue={setDivision} />
+            <Dropdown title="Division" list={list} updateValue={setDivision} />
           </div>
           <div className="form-group">
             <h3 className="form-title">Delivery location</h3>
-            <div className="form-control">
-              <label htmlFor="">label</label>
-              <input type="text" />
-            </div>
-            <div className="form-control">
-              <label htmlFor="">label</label>
-              <input type="text" />
-            </div>
-            <div className="form-control">
-              <label htmlFor="">label</label>
-              <input type="text" />
-            </div>
+            <Dropdown title="Division" list={list} updateValue={setDivision} />
+            <Dropdown title="Division" list={list} updateValue={setDivision} />
+            <Dropdown title="Division" list={list} updateValue={setDivision} />
           </div>
         </div>
         <Button type="submit" label="Calculate" />
