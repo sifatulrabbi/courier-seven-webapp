@@ -24,6 +24,10 @@
     a {
       color: $primary-main;
       font-weight: $font-bold;
+
+      &:hover {
+        color: $primary-dark;
+      }
     }
   }
 }

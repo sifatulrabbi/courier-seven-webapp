@@ -1,0 +1,32 @@
+.faq-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10rem 0;
+  grid-gap: 2rem;
+  @include padding();
+
+  .section-title {
+    @include title-h2();
+    color: $black-primary;
+  }
+
+  .bottom {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 2rem;
+
+    h3 {
+      @include title-h3();
+      color: $black-primary;
+
+      .colored {
+        color: $primary-main;
+      }
+    }
+  }
+}

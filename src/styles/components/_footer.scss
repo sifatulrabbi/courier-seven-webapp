@@ -43,11 +43,25 @@
   &-list {
     display: flex;
     flex-direction: column;
-    grid-gap: 0.8rem;
+    grid-gap: 1rem;
+
+    a {
+      padding: 1rem;
+
+      &:hover {
+        color: $primary-main;
+      }
+    }
   }
 }
 
 .contact-links {
+  grid-gap: 0;
+
+  a {
+    padding: 0;
+  }
+
   &-list-item {
     display: flex;
     align-items: center;

@@ -5,6 +5,7 @@ import {
   ServicesSection,
   CoverageSection,
   PricingSection,
+  FaqSection,
 } from "../../components";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <ServicesSection />
       <CoverageSection />
       <PricingSection />
+      <FaqSection />
     </div>
   );
 }
