@@ -1,0 +1,37 @@
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  margin: 1rem 0;
+
+  input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    border-radius: $border-radius;
+    border: 2px solid $primary-light;
+    transition: border-color $speed ease;
+    font-size: $font-size-body2;
+
+    &::placeholder {
+      opacity: 0.8;
+    }
+
+    &:focus,
+    &:hover {
+      border-color: $primary-main;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: -1.2rem;
+    left: 1.2rem;
+    background-color: $white-primary;
+    padding: 0 0.5rem;
+    color: $black-primary;
+  }
+}

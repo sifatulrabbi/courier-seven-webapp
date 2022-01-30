@@ -4,6 +4,7 @@ import {
   TrackingSection,
   ServicesSection,
   CoverageSection,
+  PricingSection,
 } from "../../components";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <TrackingSection />
       <ServicesSection />
       <CoverageSection />
+      <PricingSection />
     </div>
   );
 }

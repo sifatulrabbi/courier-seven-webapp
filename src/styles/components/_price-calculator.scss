@@ -1,0 +1,45 @@
+.calculator-wrapper {
+  width: 100%;
+  max-width: 900px;
+  border-radius: $border-radius;
+  border: 2px solid $primary-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem;
+  margin-top: 5rem;
+}
+
+.price-calculator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  grid-gap: 3rem;
+  width: 100%;
+  max-width: 900px;
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 2rem;
+    width: 100%;
+
+    @media screen and (min-width: $breakpoint) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+  }
+
+  .form-title {
+    font-weight: $font-bold;
+  }
+}

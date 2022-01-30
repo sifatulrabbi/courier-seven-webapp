@@ -1,0 +1,29 @@
+.pricing-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 7rem 0;
+  @include padding();
+
+  .section-title {
+    @include title-h2();
+    color: $black-primary;
+    margin-bottom: 1.6rem;
+  }
+
+  p {
+    max-width: 35ch;
+  }
+
+  .bottom {
+    margin-top: 2rem;
+    color: $black-primary;
+
+    a {
+      color: $primary-main;
+      font-weight: $font-bold;
+    }
+  }
+}
