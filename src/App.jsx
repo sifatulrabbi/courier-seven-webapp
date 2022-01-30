@@ -2,7 +2,7 @@ import React from "react";
 import "./styles/main.scss";
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import { Navbar, Footer } from "./components";
-import { Home } from "./pages";
+import { Home, Registration, Login } from "./pages";
 
 function App() {
   return (
@@ -10,6 +10,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/Login" element={<Login />} />
       </Routes>
       <Footer />
     </Router>
