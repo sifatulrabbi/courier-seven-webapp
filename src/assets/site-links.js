@@ -4,35 +4,39 @@ export const siteLinks = [
     link: "/",
   },
   {
-    name: "About",
-    link: "/",
-  },
-  {
-    name: "Features",
-    link: "/",
-  },
-  {
-    name: "Pricing",
-    link: "/",
-  },
-  {
-    name: "Track",
-    link: "/",
-  },
-  {
-    name: "FAQs",
-    link: "/",
-  },
-  {
-    name: "Coverage",
-    link: "/",
-  },
-  {
     name: "Register",
-    link: "/",
+    link: "/register",
   },
   {
     name: "Login",
-    link: "/",
+    link: "/login",
+  },
+  {
+    name: "Coverage",
+    link: "/coverage",
+  },
+  {
+    name: "About",
+    link: "/about",
+  },
+  {
+    name: "Services",
+    id: "services",
+    link: false,
+  },
+  {
+    name: "Pricing",
+    id: "pricing",
+    link: false,
+  },
+  {
+    name: "Track",
+    id: "tracking",
+    link: false,
+  },
+  {
+    name: "FAQs",
+    id: "faq",
+    link: false,
   },
 ];

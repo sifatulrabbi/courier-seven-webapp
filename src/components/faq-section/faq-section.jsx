@@ -6,7 +6,7 @@ import Button from "../button/button";
 
 export default function FaqSection() {
   return (
-    <section className="faq-section">
+    <section className="faq-section" id="faq">
       <h2 className="section-title">
         Have some
         <br />

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function PricingSection() {
   return (
-    <section className="pricing-section">
+    <section className="pricing-section" id="pricing">
       <h2 className="section-title">
         Calculate your
         <br />

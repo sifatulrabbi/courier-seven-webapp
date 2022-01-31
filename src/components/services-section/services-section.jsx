@@ -11,7 +11,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <section className="services-section">
+    <section className="services-section" id="services">
       <h2 className="section-title dark">
         Why
         <span className="colored"> Working</span>

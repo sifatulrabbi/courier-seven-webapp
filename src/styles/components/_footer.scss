@@ -43,10 +43,15 @@
   &-list {
     display: flex;
     flex-direction: column;
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
 
-    a {
-      padding: 1rem;
+    a,
+    .link {
+      display: flex;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 0.2rem;
 
       &:hover {
         color: $primary-main;
@@ -58,7 +63,8 @@
 .contact-links {
   grid-gap: 0;
 
-  a {
+  a,
+  .links {
     padding: 0;
   }
 

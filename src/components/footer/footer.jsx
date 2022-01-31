@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 import { siteLinks } from "../../assets";
 import { FaFacebook, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
 import { v4 as uuid } from "uuid";
+import BrandLogo from "../brand-logo/brand-logo";
+import { scrollableLinks } from "../../utils";
 
 export default function Footer() {
   return (
     <>
       <footer className="footer">
         <div className="footer-about">
-          <div className="brand">Courier 007</div>
+          <BrandLogo />
           <p className="about">
             He standard chunk of Lorem Ipsum used since the 1500s is reproduced
             below for those interested. Sections 1.10.32 and 1.10.33 from "de
@@ -22,7 +24,18 @@ export default function Footer() {
           <ul className="site-links-list">
             {siteLinks.map((data) => (
               <li key={uuid()} className="site-links-list-item">
-                <Link to={data.link}>{data.name}</Link>
+                {data.link ? (
+                  <Link to={data.link} className="link">
+                    {data.name}
+                  </Link>
+                ) : (
+                  <button
+                    className="link"
+                    onClick={() => scrollableLinks(data.id)}
+                  >
+                    {data.name}
+                  </button>
+                )}
               </li>
             ))}
           </ul>

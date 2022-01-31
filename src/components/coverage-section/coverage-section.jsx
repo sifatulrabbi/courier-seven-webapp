@@ -3,7 +3,7 @@ import { bdMap } from "../../assets";
 
 export default function CoverageSection() {
   return (
-    <div className="coverage-section">
+    <div className="coverage-section" id="coverage">
       <img src={bdMap} alt="Map of Bangladesh" />
       <div className="wrapper">
         <h2 className="section-title">Our Coverage area</h2>

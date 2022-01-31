@@ -3,15 +3,28 @@ import { Link } from "react-router-dom";
 import { FaEquals, FaTimes } from "react-icons/fa";
 import { siteLinks } from "../../assets";
 import { v4 as uuid } from "uuid";
+import { scrollableLinks } from "../../utils";
+import BrandLogo from "../brand-logo/brand-logo";
 
 function NavMenu({ toggleMenu }) {
   return (
     <ul className="navbar-links-list">
       {siteLinks.map((data) => (
         <li key={uuid()} className="navbar-links-list-item">
-          <Link to={data.link} className="link" onClick={toggleMenu}>
-            {data.name}
-          </Link>
+          {data.link ? (
+            <Link to={data.link} className="link" onClick={toggleMenu}>
+              {data.name}
+            </Link>
+          ) : (
+            <button
+              className="link"
+              onClick={function () {
+                scrollableLinks(data.id);
+              }}
+            >
+              {data.name}
+            </button>
+          )}
         </li>
       ))}
     </ul>
@@ -31,9 +44,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="brand">
-        <span>Courier 007</span>
-      </div>
+      <BrandLogo />
       <div className="desktop-menu">
         <NavMenu toggleMenu={toggleMenu} />
       </div>

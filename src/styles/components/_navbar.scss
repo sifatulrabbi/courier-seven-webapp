@@ -13,6 +13,17 @@
   @include padding();
   font-family: $font-family-primary;
 
+  .brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: max-content;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
   &-links-list {
     display: flex;
     flex-direction: column;
@@ -34,8 +45,11 @@
         padding: 1rem;
         color: $black-primary;
         text-decoration: none;
-        transition: color $speed ease, border-color $speed ease;
+        border: none;
+        transition: color $speed ease, border $speed ease;
         border-bottom: 2px solid transparent;
+        outline: none;
+        cursor: pointer;
 
         &:hover {
           color: $primary-main;
