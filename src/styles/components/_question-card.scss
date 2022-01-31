@@ -9,6 +9,7 @@
   border: 2px solid $primary-light;
   padding: 0.8rem 1.6rem;
   overflow: hidden;
+  transition: height $speed ease;
 
   &.show {
     border-color: $primary-main;
@@ -43,11 +44,7 @@
   }
 
   .article-text {
+    display: block;
     margin-top: 1rem;
-    display: none;
-
-    &.show {
-      display: block;
-    }
   }
 }

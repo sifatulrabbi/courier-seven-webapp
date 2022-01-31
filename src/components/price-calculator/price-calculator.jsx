@@ -3,6 +3,7 @@ import Button from "../button/button";
 import Dropdown from "../dropdown/dropdown";
 import { locations } from "../../assets/locations";
 import { usePriceCalculator } from "../../hooks";
+import { v4 as uuid } from "uuid";
 
 const districtsList = [];
 locations.forEach((location) => {
@@ -19,6 +20,10 @@ export default function PriceCalculator() {
     deliveryDistrict,
     pickupArea,
     deliveryArea,
+    result,
+    errors,
+    showResult,
+    setShowResult,
     handleSubmit,
     handleProductPriceChange,
     handleProductWeightChange,
@@ -27,6 +32,11 @@ export default function PriceCalculator() {
     handlePickupAreaChange,
     handleDeliveryAreaChange,
   } = usePriceCalculator();
+
+  React.useEffect(() => {
+    setDeliverAreas([]);
+    setPickupAreas([]);
+  }, []);
 
   function updatePickupAreas(district) {
     handlePickupDistrictChange(district);
@@ -42,15 +52,17 @@ export default function PriceCalculator() {
     setDeliverAreas(obj[0].areas);
   }
 
-  React.useEffect(() => {
-    setDeliverAreas([]);
-    setPickupAreas([]);
-  }, []);
-
   return (
     <div className="calculator-wrapper">
+      {errors && (
+        <div className="errors">
+          {errors.map((err) => (
+            <span key={uuid()}>{err}</span>
+          ))}
+        </div>
+      )}
       <form
-        className="price-calculator"
+        className={`price-calculator ${showResult ? "hide" : "show"}`}
         action="submit"
         onSubmit={handleSubmit}
       >
@@ -62,6 +74,7 @@ export default function PriceCalculator() {
                 Weight
               </label>
               <input
+                required
                 type="number"
                 id="product-price"
                 placeholder="Enter product weight (KG)"
@@ -74,6 +87,7 @@ export default function PriceCalculator() {
                 Price
               </label>
               <input
+                required
                 type="number"
                 id="product-price"
                 placeholder="Enter product price (BDT)"
@@ -115,6 +129,42 @@ export default function PriceCalculator() {
         </div>
         <Button type="submit" label="Calculate" />
       </form>
+      {showResult && (
+        <div className="result-container">
+          <div className="top">
+            <span className="title">Total:</span>
+            <span className="total">
+              <span className="colored">{result.total}</span> BDT
+            </span>
+          </div>
+          <div className="info">
+            <div>
+              <strong>Product price: </strong>
+              {result.product.price} BDT
+            </div>
+            <div>
+              <strong>Product weight: </strong>
+              {result.product.weight} KG
+            </div>
+            <div>
+              <strong>Pickup Location: </strong>
+              {result.pickup}
+            </div>
+            <div>
+              <strong>Delivery Location: </strong>
+              {result.delivery}
+            </div>
+          </div>
+          <div className="bottom">
+            <Button
+              label="Recalculate"
+              onClickFnc={function () {
+                setShowResult(false);
+              }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

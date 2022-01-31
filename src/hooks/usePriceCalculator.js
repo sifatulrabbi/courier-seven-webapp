@@ -7,6 +7,18 @@ export function usePriceCalculator() {
   const [deliveryDistrict, setDeliveryDistrict] = React.useState("");
   const [deliveryArea, setDeliveryArea] = React.useState("");
   const [pickupArea, setPickupArea] = React.useState("");
+  const [result, setResult] = React.useState({});
+  const [errors, setErrors] = React.useState([]);
+  const [showResult, setShowResult] = React.useState(false);
+
+  React.useEffect(() => {
+    setResult({
+      product: { price: 0, weight: 0 },
+      pickup: "",
+      delivery: "",
+      total: 0,
+    });
+  }, []);
 
   function handleProductWeightChange(e) {
     setProductWeight(e.currentTarget.value);
@@ -35,19 +47,27 @@ export function usePriceCalculator() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log({
-      productPrice,
-      productWeight,
-      pickup: {
-        district: pickupDistrict,
-        area: pickupArea,
+    setErrors([]);
+    if (!pickupArea || !pickupDistrict || !deliveryArea || !deliveryDistrict) {
+      const errors = [];
+      errors.push("Enter pickup location");
+      errors.push("Enter delivery location");
+
+      setErrors(errors);
+      return;
+    }
+
+    setResult({
+      product: {
+        price: productPrice,
+        weight: productWeight,
       },
-      delivery: {
-        district: deliveryDistrict,
-        area: pickupArea,
-      },
+      pickup: `${pickupDistrict} > ${pickupArea}`,
+      delivery: `${deliveryDistrict} > ${deliveryArea}`,
+      total: productPrice,
     });
 
+    setShowResult(true);
     setProductPrice("");
     setProductWeight("");
     setPickupDistrict("");
@@ -63,6 +83,10 @@ export function usePriceCalculator() {
     deliveryDistrict,
     pickupArea,
     deliveryArea,
+    result,
+    errors,
+    showResult,
+    setShowResult,
     handleProductWeightChange,
     handleProductPriceChange,
     handlePickupDistrictChange,
