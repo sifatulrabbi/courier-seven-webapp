@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function useLoginForm() {
+export function useLoginForm() {
   const [mobile, setMobile] = React.useState("");
   const [password, setPassword] = React.useState("");
 

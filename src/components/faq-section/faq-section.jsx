@@ -21,9 +21,9 @@ export default function FaqSection() {
       ))}
       <div className="bottom">
         <h3>
-          Become our <span className="colored">Partner</span> now
+          Become our <span className="colored">Partner</span>
         </h3>
-        <Button label="Sign up now" big />
+        <Button label="Register now" big />
       </div>
     </section>
   );

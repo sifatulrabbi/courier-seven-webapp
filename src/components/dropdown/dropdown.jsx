@@ -1,10 +1,8 @@
 import React from "react";
 import { v4 as uuid } from "uuid";
 
-export default function Dropdown({ title, list, updateValue }) {
-  const [name, setName] = React.useState(title);
+export default function Dropdown({ label, value, items, updateValue }) {
   const [show, setShow] = React.useState(false);
-  const [value, setValue] = React.useState("");
 
   function toggleShow(e, value) {
     if (value) {
@@ -16,25 +14,23 @@ export default function Dropdown({ title, list, updateValue }) {
 
   function handleValueChange(e, data) {
     toggleShow(e, false);
-    setName(data.name);
-    setValue(data.id);
-    updateValue(value);
+    updateValue(data);
   }
 
   return (
     <div className="dropdown">
-      <span className="form-label">{title}</span>
-      <button className="dropdown-title" onClick={toggleShow}>
-        {name}
+      <span className="form-label">{label}</span>
+      <button type="button" className="dropdown-title" onClick={toggleShow}>
+        {value ? value : "Select one"}
       </button>
       <ul className={`dropdown-list ${show ? "show" : "hide"}`}>
-        {list.map((data) => (
+        {items.map((item) => (
           <li
             key={uuid()}
             className="dropdown-list-item"
-            onClick={(e) => handleValueChange(e, data)}
+            onClick={(e) => handleValueChange(e, item)}
           >
-            {data.name}
+            {item}
           </li>
         ))}
       </ul>

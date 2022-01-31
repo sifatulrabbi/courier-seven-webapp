@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function useRegistrationForm() {
+export function useRegistrationForm() {
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
   const [email, setEmail] = React.useState("");

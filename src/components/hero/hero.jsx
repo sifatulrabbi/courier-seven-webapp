@@ -12,7 +12,7 @@ export default function Hero() {
           <span className="colored">sparkle</span> of thunder
         </h1>
         <div className="hero-left-bottom">
-          <Button label="Sign Up" />
+          <Button label="Register" />
           <Button label="Login" secondary />
         </div>
       </div>

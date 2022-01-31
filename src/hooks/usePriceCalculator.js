@@ -1,10 +1,12 @@
 import React from "react";
 
-export default function usePriceCalculator() {
+export function usePriceCalculator() {
   const [productWeight, setProductWeight] = React.useState("");
   const [productPrice, setProductPrice] = React.useState("");
-  const [pickupLocation, setPickupLocation] = React.useState("");
-  const [deliveryLocation, setDeliveryLocation] = React.useState("");
+  const [pickupDistrict, setPickupDistrict] = React.useState("");
+  const [deliveryDistrict, setDeliveryDistrict] = React.useState("");
+  const [deliveryArea, setDeliveryArea] = React.useState("");
+  const [pickupArea, setPickupArea] = React.useState("");
 
   function handleProductWeightChange(e) {
     setProductWeight(e.currentTarget.value);
@@ -14,12 +16,20 @@ export default function usePriceCalculator() {
     setProductPrice(e.currentTarget.value);
   }
 
-  function handlePickupLocationChange(e) {
-    setPickupLocation(e.currentTarget.value);
+  function handlePickupDistrictChange(value) {
+    setPickupDistrict(value);
   }
 
-  function handleDeliveryLocationChange(e) {
-    setDeliveryLocation(e.currentTarget.value);
+  function handleDeliveryDistrictChange(value) {
+    setDeliveryDistrict(value);
+  }
+
+  function handlePickupAreaChange(value) {
+    setPickupArea(value);
+  }
+
+  function handleDeliveryAreaChange(value) {
+    setDeliveryArea(value);
   }
 
   function handleSubmit(e) {
@@ -28,25 +38,37 @@ export default function usePriceCalculator() {
     console.log({
       productPrice,
       productWeight,
-      pickupLocation,
-      deliveryLocation,
+      pickup: {
+        district: pickupDistrict,
+        area: pickupArea,
+      },
+      delivery: {
+        district: deliveryDistrict,
+        area: pickupArea,
+      },
     });
 
     setProductPrice("");
     setProductWeight("");
-    setDeliveryLocation("");
-    setPickupLocation("");
+    setPickupDistrict("");
+    setPickupArea("");
+    setDeliveryDistrict("");
+    setDeliveryArea("");
   }
 
   return {
     productPrice,
     productWeight,
-    pickupLocation,
-    deliveryLocation,
+    pickupDistrict,
+    deliveryDistrict,
+    pickupArea,
+    deliveryArea,
     handleProductWeightChange,
     handleProductPriceChange,
-    handlePickupLocationChange,
-    handleDeliveryLocationChange,
+    handlePickupDistrictChange,
+    handleDeliveryDistrictChange,
+    handlePickupAreaChange,
+    handleDeliveryAreaChange,
     handleSubmit,
   };
 }
