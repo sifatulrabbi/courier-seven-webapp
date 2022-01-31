@@ -43,7 +43,7 @@
     box-shadow: $shadow-bottom;
     border-radius: $border-radius;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 500px;
     opacity: 0;
     transform: translate(0, -4rem);

@@ -5,7 +5,7 @@ export const siteLinks = [
   },
   {
     name: "Register",
-    link: "/register",
+    link: "/registration",
   },
   {
     name: "Login",

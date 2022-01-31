@@ -6,8 +6,13 @@ export function useRegistrationForm() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
-  const [permanentAddress, setPermanentAddress] = React.useState("");
-  const [presentAddress, setPresentAddress] = React.useState("");
+  const [permanentDistrict, setPermanentDistrict] = React.useState("");
+  const [permanentArea, setPermanentArea] = React.useState("");
+  const [permanentStreet, setPermanentStreet] = React.useState("");
+  const [presentDistrict, setPresentDistrict] = React.useState("");
+  const [presentArea, setPresentArea] = React.useState("");
+  const [presentStreet, setPresentStreet] = React.useState("");
+  const [accountType, setAccountType] = React.useState("");
 
   function handleFirstNameChange(e) {
     setFirstName(e.currentTarget.value);
@@ -29,12 +34,32 @@ export function useRegistrationForm() {
     setConfirmPassword(e.currentTarget.value);
   }
 
-  function handlePermanentAddressChange(e) {
-    setPermanentAddress(e.currentTarget.value);
+  function updatePresentDistrict(value) {
+    setPresentDistrict(value);
   }
 
-  function handlePresentAddressChange(e) {
-    setPresentAddress(e.currentTarget.value);
+  function updatePresentArea(value) {
+    setPresentArea(value);
+  }
+
+  function updatePresentStreet(value) {
+    setPresentStreet(value);
+  }
+
+  function updatePermanentDistrict(value) {
+    setPermanentDistrict(value);
+  }
+
+  function updatePermanentArea(value) {
+    setPermanentArea(value);
+  }
+
+  function updatePermanentStreet(value) {
+    setPermanentStreet(value);
+  }
+
+  function updateAccountType(value) {
+    setAccountType(value);
   }
 
   function handleSubmit(e) {
@@ -44,21 +69,17 @@ export function useRegistrationForm() {
       console.log("Registration failed password mismatch");
     }
 
-    console.log({
-      name: { firstName, lastName },
-      email,
-      password,
-      presentAddress,
-      permanentAddress,
-    });
-
     setFirstName("");
     setLastName("");
     setEmail("");
     setPassword("");
     setConfirmPassword("");
-    setPermanentAddress("");
-    setPresentAddress("");
+    setPermanentDistrict("");
+    setPermanentArea("");
+    setPermanentStreet("");
+    setPresentDistrict("");
+    setPresentArea("");
+    setPresentStreet("");
   }
 
   return {
@@ -67,15 +88,25 @@ export function useRegistrationForm() {
     email,
     password,
     confirmPassword,
-    permanentAddress,
-    presentAddress,
+    presentDistrict,
+    presentArea,
+    presentStreet,
+    permanentArea,
+    permanentDistrict,
+    permanentStreet,
+    accountType,
+    updateAccountType,
     handleFirstNameChange,
     handleLastNameChange,
     handlePasswordChange,
     handleEmailChange,
     handleConfirmPasswordChange,
-    handlePermanentAddressChange,
-    handlePresentAddressChange,
     handleSubmit,
+    updatePermanentArea,
+    updatePermanentDistrict,
+    updatePermanentStreet,
+    updatePresentArea,
+    updatePresentDistrict,
+    updatePresentStreet,
   };
 }

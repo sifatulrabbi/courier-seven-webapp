@@ -8,3 +8,4 @@ export { default as CoverageSection } from "./coverage-section/coverage-section"
 export { default as PricingSection } from "./pricing-section/pricing-section";
 export { default as FaqSection } from "./faq-section/faq-section";
 export { default as ScrollToTop } from "./scroll-to-top/scroll-to-top";
+export { default as RegistrationForm } from "./registration-form/registration-form";
