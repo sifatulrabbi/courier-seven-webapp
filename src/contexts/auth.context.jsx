@@ -1,8 +1,10 @@
 import React from "react";
 
 const AuthContext = React.createContext({
-  isAuthenticated: () => null,
-  getUser: () => null,
+  isAuthenticated: false,
+  login: () => null,
+  logout: () => null,
+  user: {},
 });
 
 export function useAuth() {
@@ -10,38 +12,24 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const [authStatus, setAuthStatus] = React.useState(false);
-  const [user, setUser] = React.useState({
-    name: {
-      first: "Sifatul",
-      last: "Rabbi",
-    },
-    mobile: "+8801882070400",
-    email: "mdsifatulislam.rabbi@gmail.com",
-    accountType: "diamond",
-    presentAddress: {
-      district: "Dhaka",
-      area: "Kamrangirchar",
-      street: "Chad Mosjid, Jom Jom House",
-    },
-    permanentAddress: {
-      district: "Dhaka",
-      area: "Kamrangirchar",
-      street: "Chad Mosjid, Jom Jom House",
-    },
-  });
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+  const [user, setUser] = React.useState(null);
 
-  async function getUser() {
-    return user;
+  function login(user) {
+    setIsAuthenticated(true);
+    setUser(user);
   }
 
-  async function isAuthenticated() {
-    return authStatus;
+  function logout() {
+    setIsAuthenticated(false);
+    setUser(null);
   }
 
   const context = {
-    getUser,
+    user,
     isAuthenticated,
+    login,
+    logout,
   };
 
   return (

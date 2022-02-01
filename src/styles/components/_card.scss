@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 430px;
+  width: 100%;
+  flex-direction: column;
+  border-radius: $border-radius;
+  box-shadow: $shadow-bottom;
+  padding: 1.6rem;
+
+  &-title {
+    @include title-h3();
+    width: 100%;
+    margin-bottom: 1.6rem;
+    font-weight: $font-medium;
+  }
+
+  &-desc {
+    margin-bottom: 3rem;
+  }
+}

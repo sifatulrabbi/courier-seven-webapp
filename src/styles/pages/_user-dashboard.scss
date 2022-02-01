@@ -1,0 +1,30 @@
+.user-dashboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 7rem 0;
+  padding: 1.6rem 0;
+  @include padding();
+
+  .page-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .title {
+      @include title-h2();
+      color: $black-primary;
+    }
+  }
+
+  .page-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 3.2rem;
+    flex-wrap: wrap;
+  }
+}

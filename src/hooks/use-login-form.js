@@ -1,8 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts";
 
 export function useLoginForm() {
   const [mobile, setMobile] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   function handleMobileChange(e) {
     setMobile(e.currentTarget.value);
@@ -15,10 +19,16 @@ export function useLoginForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    console.log({ mobile, password });
-
+    login({
+      name: {
+        first: "Sifatul",
+        last: "Rabbi",
+      },
+      email: "mdsifatulislam.rabbi@gmail.com",
+    });
     setMobile("");
     setPassword("");
+    navigate("/users/dashboard");
   }
 
   return {

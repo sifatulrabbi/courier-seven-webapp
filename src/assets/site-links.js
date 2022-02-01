@@ -44,14 +44,18 @@ export const allLinks = [
 export const userLinks = [
   {
     name: "Dashboard",
-    link: "/user/dashboard",
+    link: "/users/dashboard",
   },
   {
     name: "Parcels",
-    link: "/user/parcels",
+    link: "/users/parcels",
+  },
+  {
+    name: "Track",
+    link: "/users/track",
   },
   {
     name: "Logout",
-    link: "/user/logout",
+    link: "/users/logout",
   },
 ];

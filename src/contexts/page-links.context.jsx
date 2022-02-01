@@ -15,7 +15,7 @@ export function PageLinksProvider({ children }) {
   const location = useLocation();
 
   React.useEffect(() => {
-    if (location.pathname.split("/").includes("user")) {
+    if (location.pathname.split("/").includes("users")) {
       setLinks(userLinks);
     } else {
       setLinks(allLinks);
