@@ -53,8 +53,10 @@ export default function RegistrationForm() {
 
   return (
     <form action="submit" onSubmit={handleSubmit} className="page-form">
-      <div className="form-group">
-        <label htmlFor="first-name">First name</label>
+      <div className="form-control">
+        <label className="form-label" htmlFor="first-name">
+          First name
+        </label>
         <input
           type="text"
           name="first-name"
@@ -65,8 +67,10 @@ export default function RegistrationForm() {
           onChange={handleFirstNameChange}
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="last-name">Last name</label>
+      <div className="form-control">
+        <label className="form-label" htmlFor="last-name">
+          Last name
+        </label>
         <input
           type="text"
           name="last-name"
@@ -77,8 +81,10 @@ export default function RegistrationForm() {
           onChange={handleLastNameChange}
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
+      <div className="form-control">
+        <label className="form-label" htmlFor="email">
+          Email
+        </label>
         <input
           type="email"
           name="email"
@@ -89,8 +95,10 @@ export default function RegistrationForm() {
           onChange={handleEmailChange}
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
+      <div className="form-control">
+        <label className="form-label" htmlFor="password">
+          Password
+        </label>
         <input
           type="password"
           name="password"
@@ -101,8 +109,10 @@ export default function RegistrationForm() {
           onChange={handlePasswordChange}
         />
       </div>
-      <div className="form-group">
-        <label htmlFor="confirm-password">Confirm password</label>
+      <div className="form-control">
+        <label className="form-label" htmlFor="confirm-password">
+          Confirm password
+        </label>
         <input
           type="confirm-password"
           name="confirm-password"
@@ -120,7 +130,7 @@ export default function RegistrationForm() {
         updateValue={updateAccountType}
       />
       <div className="form-wrapper">
-        <h4 className="form-group-title">Permanent address</h4>
+        <span className="form-group-title">Permanent address</span>
         <Dropdown
           label="District"
           value={permanentDistrict}
@@ -133,8 +143,10 @@ export default function RegistrationForm() {
           items={permanentAreas}
           updateValue={updatePermanentArea}
         />
-        <div className="form-group">
-          <label htmlFor="permanent-street">Permanent Street</label>
+        <div className="form-control">
+          <label className="form-label" htmlFor="permanent-street">
+            Permanent Street
+          </label>
           <input
             type="text"
             name="permanent-street"
@@ -142,11 +154,12 @@ export default function RegistrationForm() {
             required
             value={permanentStreet}
             onChange={updatePermanentStreet}
+            placeholder="Enter your street, house name/number"
           />
         </div>
       </div>
       <div className="form-wrapper">
-        <h4 className="form-group-title">Present address</h4>
+        <span className="form-group-title">Present address</span>
         <Dropdown
           label="District"
           items={districtsList}
@@ -159,8 +172,10 @@ export default function RegistrationForm() {
           value={presentArea}
           updateValue={updatePresentArea}
         />
-        <div className="form-group">
-          <label htmlFor="present-street">Present Street</label>
+        <div className="form-control">
+          <label className="form-label" htmlFor="present-street">
+            Present Street
+          </label>
           <input
             type="text"
             name="present-street"
@@ -168,6 +183,7 @@ export default function RegistrationForm() {
             required
             value={presentStreet}
             onChange={updatePresentStreet}
+            placeholder="Enter your street, house name/number"
           />
         </div>
       </div>

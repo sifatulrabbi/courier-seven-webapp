@@ -1,8 +1,11 @@
 import React from "react";
 import Button from "../button/button";
 import { heroImg } from "../../assets";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   return (
     <header className="hero">
       <div className="hero-left">
@@ -12,8 +15,19 @@ export default function Hero() {
           <span className="colored">sparkle</span> of thunder
         </h1>
         <div className="hero-left-bottom">
-          <Button label="Register" />
-          <Button label="Login" secondary />
+          <Button
+            label="Register"
+            onClickFnc={function () {
+              navigate("/registration");
+            }}
+          />
+          <Button
+            label="Login"
+            secondary
+            onClickFnc={function () {
+              navigate("/login");
+            }}
+          />
         </div>
       </div>
       <img src={heroImg} alt="Hero" className="hero-img" />

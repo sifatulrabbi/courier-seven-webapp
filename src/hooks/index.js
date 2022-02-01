@@ -1,3 +1,4 @@
-export * from "./useLoginForm";
-export * from "./usePriceCalculator";
-export * from "./useRegistrationForm";
+export * from "./use-login-form";
+export * from "./use-price-calc";
+export * from "./use-registration-form";
+export * from "./use-otp-form";

@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { RegistrationForm } from "../../components";
+import { OTPForm, RegistrationForm } from "../../components";
 
 export default function Registration() {
+  const [nextStep, setNextStep] = React.useState(false);
+
   return (
     <div className="registration-page">
       <header className="header">
@@ -12,7 +14,17 @@ export default function Registration() {
         </Link>
       </header>
       <main>
-        <RegistrationForm />
+        <div className="steps">
+          <div className={`step ${nextStep ? "inactive" : "active"}`}>OTP</div>
+          <div className={`step ${nextStep ? "active" : "inactive"}`}>
+            Register
+          </div>
+        </div>
+        {!nextStep ? (
+          <OTPForm setOtpVerified={setNextStep} />
+        ) : (
+          <RegistrationForm />
+        )}
       </main>
     </div>
   );

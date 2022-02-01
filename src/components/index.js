@@ -9,3 +9,5 @@ export { default as PricingSection } from "./pricing-section/pricing-section";
 export { default as FaqSection } from "./faq-section/faq-section";
 export { default as ScrollToTop } from "./scroll-to-top/scroll-to-top";
 export { default as RegistrationForm } from "./registration-form/registration-form";
+export { default as LoginForm } from "./login-form/login-form";
+export { default as OTPForm } from "./otp-form/otp-form";

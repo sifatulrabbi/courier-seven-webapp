@@ -3,8 +3,11 @@ import { faqData } from "../../assets";
 import QuestionCard from "../question-card/question-card";
 import { v4 as uuid } from "uuid";
 import Button from "../button/button";
+import { useNavigate } from "react-router-dom";
 
 export default function FaqSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="faq-section" id="faq">
       <h2 className="section-title">
@@ -23,7 +26,13 @@ export default function FaqSection() {
         <h3>
           Become our <span className="colored">Partner</span>
         </h3>
-        <Button label="Register now" big />
+        <Button
+          label="Register now"
+          big
+          onClickFnc={function () {
+            navigate("/registration");
+          }}
+        />
       </div>
     </section>
   );

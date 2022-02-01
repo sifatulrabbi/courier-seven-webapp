@@ -4,11 +4,10 @@ import { BiStopwatch, BiCustomize } from "react-icons/bi";
 import { CgTrack } from "react-icons/cg";
 import { RiCompassDiscoverLine } from "react-icons/ri";
 import Button from "../button/button";
+import { useNavigate } from "react-router-dom";
 
 export default function ServicesSection() {
-  function gotoRegister(e) {
-    window.location.href = "/";
-  }
+  const navigate = useNavigate();
 
   return (
     <section className="services-section" id="services">
@@ -91,7 +90,13 @@ export default function ServicesSection() {
       </ul>
       <div className="bottom">
         <p>Start your journey</p>
-        <Button label="Register now" big onClickFnc={gotoRegister} />
+        <Button
+          label="Register now"
+          big
+          onClickFnc={function () {
+            navigate("/registration");
+          }}
+        />
       </div>
     </section>
   );
