@@ -18,14 +18,14 @@ export default function Hero() {
           <Button
             label="Register"
             onClickFnc={function () {
-              navigate("/registration");
+              navigate("/registration", { replace: true });
             }}
           />
           <Button
             label="Login"
             secondary
             onClickFnc={function () {
-              navigate("/login");
+              navigate("/login", { replace: true });
             }}
           />
         </div>

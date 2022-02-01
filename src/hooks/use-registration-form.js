@@ -42,8 +42,8 @@ export function useRegistrationForm() {
     setPresentArea(value);
   }
 
-  function updatePresentStreet(value) {
-    setPresentStreet(value);
+  function updatePresentStreet(e) {
+    setPresentStreet(e.currentTarget.value);
   }
 
   function updatePermanentDistrict(value) {
@@ -54,8 +54,8 @@ export function useRegistrationForm() {
     setPermanentArea(value);
   }
 
-  function updatePermanentStreet(value) {
-    setPermanentStreet(value);
+  function updatePermanentStreet(e) {
+    setPermanentStreet(e.currentTarget.value);
   }
 
   function updateAccountType(value) {

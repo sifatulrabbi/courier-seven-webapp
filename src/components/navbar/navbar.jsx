@@ -19,6 +19,7 @@ function NavMenu({ toggleMenu }) {
             <button
               className="link"
               onClick={function () {
+                toggleMenu();
                 scrollableLinks(data.id);
               }}
             >

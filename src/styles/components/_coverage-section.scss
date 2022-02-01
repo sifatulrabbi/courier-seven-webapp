@@ -17,6 +17,18 @@
 
   .wrapper {
     max-width: 45ch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: $breakpoint) {
+      align-items: flex-start;
+    }
+
+    .btn {
+      margin-top: 4rem;
+    }
   }
 
   .section-title {

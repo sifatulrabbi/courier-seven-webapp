@@ -30,7 +30,7 @@ export default function FaqSection() {
           label="Register now"
           big
           onClickFnc={function () {
-            navigate("/registration");
+            navigate("/registration", { replace: true });
           }}
         />
       </div>
