@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { siteLinks } from "../../assets";
 import { FaFacebook, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
 import { v4 as uuid } from "uuid";
 import BrandLogo from "../brand-logo/brand-logo";
 import { scrollableLinks } from "../../utils";
+import { usePageLinks } from "../../contexts";
 
 export default function Footer() {
+  const { links } = usePageLinks();
+
   return (
     <>
       <footer className="footer">
@@ -22,7 +24,7 @@ export default function Footer() {
         <div className="site-links">
           <h3 className="site-links-title">Site links</h3>
           <ul className="site-links-list">
-            {siteLinks.map((data) => (
+            {links.map((data) => (
               <li key={uuid()} className="site-links-list-item">
                 {data.link ? (
                   <Link to={data.link} className="link">

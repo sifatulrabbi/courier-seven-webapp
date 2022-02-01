@@ -1,5 +1,8 @@
 import React from "react";
 import {
+  Navbar,
+  Footer,
+  ScrollToTop,
   Hero,
   TrackingSection,
   ServicesSection,
@@ -10,13 +13,18 @@ import {
 
 export default function Home() {
   return (
-    <div className="home-page">
-      <Hero />
-      <TrackingSection />
-      <ServicesSection />
-      <CoverageSection />
-      <PricingSection />
-      <FaqSection />
-    </div>
+    <>
+      <Navbar />
+      <ScrollToTop />
+      <div className="home-page">
+        <Hero />
+        <TrackingSection />
+        <ServicesSection />
+        <CoverageSection />
+        <PricingSection />
+        <FaqSection />
+      </div>
+      <Footer />
+    </>
   );
 }

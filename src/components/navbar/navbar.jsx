@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaEquals, FaTimes } from "react-icons/fa";
-import { siteLinks } from "../../assets";
 import { v4 as uuid } from "uuid";
 import { scrollableLinks } from "../../utils";
 import BrandLogo from "../brand-logo/brand-logo";
+import { usePageLinks } from "../../contexts";
 
 function NavMenu({ toggleMenu }) {
+  const { links } = usePageLinks();
+
   return (
     <ul className="navbar-links-list">
-      {siteLinks.map((data) => (
+      {links.map((data) => (
         <li key={uuid()} className="navbar-links-list-item">
           {data.link ? (
             <Link to={data.link} className="link" onClick={toggleMenu}>

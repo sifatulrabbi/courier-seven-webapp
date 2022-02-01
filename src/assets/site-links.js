@@ -1,4 +1,4 @@
-export const siteLinks = [
+export const allLinks = [
   {
     name: "Home",
     link: "/",
@@ -38,5 +38,20 @@ export const siteLinks = [
     name: "FAQs",
     id: "faq",
     link: false,
+  },
+];
+
+export const userLinks = [
+  {
+    name: "Dashboard",
+    link: "/user/dashboard",
+  },
+  {
+    name: "Parcels",
+    link: "/user/parcels",
+  },
+  {
+    name: "Logout",
+    link: "/user/logout",
   },
 ];
