@@ -1,11 +1,18 @@
 import React from "react";
 import Button from "../button/button";
 import Dropdown from "../dropdown/dropdown";
+import { useCreateParcel } from "../../hooks";
 
 export default function CreateParcelForm() {
+  const formHook = useCreateParcel();
+
   return (
-    <form className="page-form create-parcel-form" action="submit">
-      <div className="form-control">
+    <form
+      className="page-form create-parcel-form"
+      action="submit"
+      onSubmit={formHook.handleSubmit}
+    >
+      <div className="form-control name">
         <label htmlFor="customer-name" className="form-label">
           Customer name
         </label>
@@ -17,7 +24,7 @@ export default function CreateParcelForm() {
           placeholder="Enter customer name"
         />
       </div>
-      <div className="form-control">
+      <div className="form-control weight">
         <label htmlFor="product-weight" className="form-label">
           Product weight
         </label>
@@ -32,7 +39,7 @@ export default function CreateParcelForm() {
           <div className="right">gm</div>
         </div>
       </div>
-      <div className="form-control">
+      <div className="form-control collection">
         <label htmlFor="collection-price" className="form-label">
           Collection price
         </label>
@@ -47,7 +54,7 @@ export default function CreateParcelForm() {
           <div className="right">BDT</div>
         </div>
       </div>
-      <div className="form-control">
+      <div className="form-control price">
         <label htmlFor="product-price" className="form-label">
           Product price
         </label>
@@ -62,7 +69,7 @@ export default function CreateParcelForm() {
           <div className="right">BDT</div>
         </div>
       </div>
-      <div className="form-control">
+      <div className="form-control invoice">
         <label htmlFor="invoice-id" className="form-label">
           Invoice ID (optional)
         </label>
@@ -73,7 +80,7 @@ export default function CreateParcelForm() {
           placeholder="Enter your invoice"
         />
       </div>
-      <div className="form-wrapper">
+      <div className="form-wrapper c-address">
         <span className="form-group-title">Customer address</span>
         <Dropdown label="District" title="hello" items={[0, 1]} />
         <Dropdown label="Area" title="hello" items={[0, 1]} />
@@ -102,7 +109,7 @@ export default function CreateParcelForm() {
           />
         </div>
       </div>
-      <div className="form-wrapper">
+      <div className="form-wrapper p-address">
         <span className="form-group-title">Pickup address</span>
         <Dropdown label="District" title="hello" items={[0, 1]} />
         <Dropdown label="Area" title="hello" items={[0, 1]} />
@@ -131,11 +138,22 @@ export default function CreateParcelForm() {
           />
         </div>
       </div>
-      <div className="form-control">
+      <div className="form-control notes">
         <label htmlFor="notes" className="form-label">
           Special notes (optional)
         </label>
-        <textarea type="text"></textarea>
+        <textarea
+          type="text"
+          placeholder="Write about any special instructions if needed"
+        ></textarea>
+      </div>
+      <div className="form-control-checkbox terms">
+        <input type="checkbox" id="term-policy" name="term-policy" required />
+        <label htmlFor="term-policy" className="form-label">
+          Make sure to provide valid information. We will be responsible for
+          damaging the parcels but any miss-information will be your
+          responsibility
+        </label>
       </div>
       <Button label="Create parcel" type="submit" big />
     </form>

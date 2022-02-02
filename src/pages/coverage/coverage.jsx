@@ -1,10 +1,11 @@
 import React from "react";
-import { Footer } from "../../components";
+import {} from "../../components";
 
 export default function Coverage() {
   return (
-    <>
-      <Footer />
-    </>
+    <div className="coverage-page">
+      <header className="page-header"></header>
+      <main className="page-main"></main>
+    </div>
   );
 }

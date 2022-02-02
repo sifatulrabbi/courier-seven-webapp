@@ -9,7 +9,7 @@ import {
   UserDashboard,
   CreateParcel,
 } from "./pages";
-import { Navbar, ProtectedRoute, ScrollToTop } from "./components";
+import { Navbar, ProtectedRoute, ScrollToTop, Footer } from "./components";
 import { AuthProvider, PageLinksProvider } from "./contexts";
 
 export default function App() {
@@ -32,6 +32,7 @@ export default function App() {
             <Route path="/users/profile" />
           </Route>
         </Routes>
+        <Footer />
       </PageLinksProvider>
     </AuthProvider>
   );

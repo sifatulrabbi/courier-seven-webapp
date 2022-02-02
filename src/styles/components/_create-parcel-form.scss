@@ -1,11 +1,83 @@
 .create-parcel-form {
-  // width: 100%;
-  // max-width: 900px;
-  // display: gird;
-  // grid-template-areas:
-  //   "name collection"
-  //   "weight price"
-  //   "invoice ...."
-  //   "c-address p-address"
-  //   "notes terms";
+  width: 100%;
+  max-width: 900px;
+
+  @media screen and (min-width: $breakpoint) {
+    display: grid;
+    grid-template-areas:
+      "name collection"
+      "weight price"
+      "invoice ...."
+      "c-address p-address"
+      "notes terms"
+      "btn btn";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+
+    .form-control {
+      margin: 0;
+    }
+
+    .form-wrapper > .form-control {
+      margin: 0.5rem 0;
+    }
+
+    .name {
+      grid-area: name;
+    }
+
+    .collection {
+      grid-area: collection;
+    }
+
+    .weight {
+      grid-area: weight;
+    }
+
+    .price {
+      grid-area: price;
+    }
+
+    .invoice {
+      grid-area: invoice;
+    }
+
+    .c-address {
+      grid-area: c-address;
+    }
+
+    .p-address {
+      grid-area: p-address;
+    }
+
+    .notes {
+      grid-area: notes;
+    }
+
+    .terms {
+      grid-area: terms;
+    }
+  }
+
+  .btn {
+    margin-top: 2rem;
+    grid-area: btn;
+  }
+
+  .form-control-checkbox {
+    padding: 1rem;
+
+    input {
+      cursor: pointer;
+    }
+
+    .form-label {
+      position: initial;
+      font-size: $font-size-body;
+      color: $black-secondary;
+      cursor: pointer;
+      padding-left: 1.6rem;
+    }
+  }
 }

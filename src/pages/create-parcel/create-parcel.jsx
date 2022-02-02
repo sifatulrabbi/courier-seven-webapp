@@ -7,7 +7,7 @@ export default function Parcels() {
 
   return (
     <div className="create-parcel-page">
-      <header className="">
+      <header className="page-header">
         <h3 className="page-title">
           <span className="colored">Create</span> parcel
         </h3>
