@@ -1,4 +1,5 @@
 import React from "react";
+import { sortAreas } from "../utils";
 
 export function useCreateParcel() {
   const [customerName, setCustomerName] = React.useState("");
@@ -18,6 +19,9 @@ export function useCreateParcel() {
   const [pickupArea, setPickupArea] = React.useState("");
   const [pickupStreet, setPickupStreet] = React.useState("");
   const [pickupHouse, setPickupHouse] = React.useState("");
+  // area lists
+  const [customerAreas, setCustomerAreas] = React.useState([]);
+  const [pickupAreas, setPickupAreas] = React.useState([]);
 
   function handleCustomerName(e) {
     setCustomerName(e.currentTarget.value);
@@ -39,12 +43,13 @@ export function useCreateParcel() {
     setInvoiceId(e.currentTarget.value);
   }
 
-  function handleCustomerDistrict(e) {
-    setCustomerDistrict(e.currentTarget.value);
+  function handleCustomerDistrict(value) {
+    setCustomerAreas(sortAreas(value));
+    setCustomerDistrict(value);
   }
 
-  function handleCustomerArea(e) {
-    setCustomerArea(e.currentTarget.value);
+  function handleCustomerArea(value) {
+    setCustomerArea(value);
   }
 
   function handleCustomerStreet(e) {
@@ -55,12 +60,13 @@ export function useCreateParcel() {
     setCustomerHouse(e.currentTarget.value);
   }
 
-  function handlePickupDistrict(e) {
-    setPickupDistrict(e.currentTarget.value);
+  function handlePickupDistrict(value) {
+    setPickupAreas(sortAreas(value));
+    setPickupDistrict(value);
   }
 
-  function handlePickupArea(e) {
-    setPickupArea(e.currentTarget.value);
+  function handlePickupArea(value) {
+    setPickupArea(value);
   }
 
   function handlePickupStreet(e) {
@@ -93,8 +99,14 @@ export function useCreateParcel() {
     customerArea,
     customerStreet,
     customerHouse,
+    pickupDistrict,
+    pickupArea,
+    pickupStreet,
+    pickupHouse,
     notes,
     terms,
+    customerAreas,
+    pickupAreas,
     handleCustomerName,
     handleCollectionAmount,
     handleProductPrice,

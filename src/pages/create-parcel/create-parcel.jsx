@@ -1,10 +1,7 @@
 import React from "react";
-import { useAuth } from "../../contexts";
 import { CreateParcelForm } from "../../components";
 
 export default function Parcels() {
-  const { user } = useAuth();
-
   return (
     <div className="create-parcel-page">
       <header className="page-header">
