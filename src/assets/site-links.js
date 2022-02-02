@@ -47,15 +47,15 @@ export const userLinks = [
     link: "/users/dashboard",
   },
   {
-    name: "Parcels",
-    link: "/users/parcels",
+    name: "Create Parcel",
+    link: "/users/create-parcel",
   },
   {
     name: "Track",
     link: "/users/track",
   },
   {
-    name: "Logout",
-    link: "/users/logout",
+    name: "Profile",
+    link: "/users/profile",
   },
 ];

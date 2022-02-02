@@ -3,4 +3,4 @@ export { default as Registration } from "./registration/registration";
 export { default as Login } from "./login/login";
 export { default as Coverage } from "./coverage/coverage";
 export { default as UserDashboard } from "./user-dashboard/user-dashboard";
-export { default as Parcels } from "./parcels/parcels";
+export { default as CreateParcel } from "./create-parcel/create-parcel";

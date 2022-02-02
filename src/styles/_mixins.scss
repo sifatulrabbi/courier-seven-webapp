@@ -43,6 +43,10 @@
   font-size: $font-size-h3;
   color: $black-primary;
   font-weight: $font-bold;
+
+  .colored {
+    color: $primary-main;
+  }
 }
 
 @mixin title-h4() {
@@ -51,4 +55,8 @@
   font-size: $font-size-h4;
   color: $black-primary;
   font-weight: $font-bold;
+
+  .colored {
+    color: $primary-main;
+  }
 }

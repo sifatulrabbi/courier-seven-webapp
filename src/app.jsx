@@ -7,7 +7,7 @@ import {
   Login,
   Coverage,
   UserDashboard,
-  Parcels,
+  CreateParcel,
 } from "./pages";
 import { Navbar, ProtectedRoute, ScrollToTop } from "./components";
 import { AuthProvider, PageLinksProvider } from "./contexts";
@@ -27,8 +27,9 @@ export default function App() {
           <Route path="/users" element={<ProtectedRoute />}>
             <Route path="/users/dashboard" element={<UserDashboard />} />
             <Route path="/users/payments" />
-            <Route path="/users/parcels" element={<Parcels />} />
+            <Route path="/users/create-parcel" element={<CreateParcel />} />
             <Route path="/users/track" />
+            <Route path="/users/profile" />
           </Route>
         </Routes>
       </PageLinksProvider>

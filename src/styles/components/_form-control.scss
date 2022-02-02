@@ -6,7 +6,8 @@
   position: relative;
   margin: 1rem 0;
 
-  input {
+  input,
+  textarea {
     width: 100%;
     border: none;
     outline: none;
@@ -25,12 +26,38 @@
       border-color: $primary-main;
     }
   }
+
+  textarea {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .input-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr;
+
+    input,
+    textarea {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .right {
+      background-color: $primary-light;
+      padding: 1rem;
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
 }
 
 .form-label {
   position: absolute;
   top: -1.2rem;
   left: 1.2rem;
+  z-index: 10;
   background-color: $white-primary;
   padding: 0 0.5rem;
   color: $black-primary;
