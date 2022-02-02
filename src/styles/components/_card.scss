@@ -6,14 +6,15 @@
   width: 100%;
   flex-direction: column;
   border-radius: $border-radius;
-  box-shadow: $shadow-bottom;
+  border: 2px solid $primary-light;
+  overflow: hidden;
   padding: 1.6rem;
 
   &-title {
     @include title-h3();
     width: 100%;
-    margin-bottom: 1.6rem;
     font-weight: $font-medium;
+    margin-bottom: 1.6rem;
   }
 
   &-desc {

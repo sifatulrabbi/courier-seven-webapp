@@ -6,7 +6,7 @@ export default function Registration() {
   const [nextStep, setNextStep] = React.useState(false);
 
   return (
-    <div className="registration-page">
+    <div className="registration-page page-container">
       <header className="header">
         <h2 className="page-title">Registration</h2>
         <Link to="/login" className="header-link">

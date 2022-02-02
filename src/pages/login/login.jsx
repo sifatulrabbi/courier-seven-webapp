@@ -4,7 +4,7 @@ import { LoginForm } from "../../components";
 
 export default function Login() {
   return (
-    <div className="registration-page">
+    <div className="login-page page-container">
       <header className="header">
         <h2 className="page-title">Login</h2>
         <Link to="/registration" className="header-link">

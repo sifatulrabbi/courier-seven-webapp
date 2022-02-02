@@ -5,7 +5,6 @@ import {
   Home,
   Registration,
   Login,
-  Coverage,
   UserDashboard,
   CreateParcel,
 } from "./pages";
@@ -22,8 +21,6 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/Login" element={<Login />} />
-          <Route path="/coverage" element={<Coverage />} />
-          <Route path="/about" element={<Home />} />
           <Route path="/users" element={<ProtectedRoute />}>
             <Route path="/users/dashboard" element={<UserDashboard />} />
             <Route path="/users/payments" />

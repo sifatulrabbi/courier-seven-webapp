@@ -3,7 +3,7 @@ import { CreateParcelForm } from "../../components";
 
 export default function Parcels() {
   return (
-    <div className="create-parcel-page">
+    <div className="create-parcel-page page-container">
       <header className="page-header">
         <h3 className="page-title">
           <span className="colored">Create</span> parcel

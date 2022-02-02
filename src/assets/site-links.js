@@ -13,31 +13,23 @@ export const allLinks = [
   },
   {
     name: "Coverage",
-    link: "/coverage",
-  },
-  {
-    name: "About",
-    link: "/about",
+    link: "#coverage",
   },
   {
     name: "Services",
-    id: "services",
-    link: false,
+    link: "#services",
   },
   {
     name: "Pricing",
-    id: "pricing",
-    link: false,
+    link: "#pricing",
   },
   {
     name: "Track",
-    id: "tracking",
-    link: false,
+    link: "#tracking",
   },
   {
     name: "FAQs",
-    id: "faq",
-    link: false,
+    link: "#faq",
   },
 ];
 

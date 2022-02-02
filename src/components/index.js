@@ -13,3 +13,4 @@ export { default as LoginForm } from "./login-form/login-form";
 export { default as OTPForm } from "./otp-form/otp-form";
 export { default as ProtectedRoute } from "./protected-route/protected-route";
 export { default as CreateParcelForm } from "./create-parcel-form/create-parcel-form";
+export { default as Card } from "./card/card";

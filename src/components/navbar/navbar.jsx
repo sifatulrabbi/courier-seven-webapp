@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { FaEquals, FaTimes } from "react-icons/fa";
 import { v4 as uuid } from "uuid";
-import { scrollableLinks } from "../../utils";
 import BrandLogo from "../brand-logo/brand-logo";
 import { usePageLinks } from "../../contexts";
 
@@ -13,20 +13,18 @@ function NavMenu({ toggleMenu }) {
     <ul className="navbar-links-list">
       {links.map((data) => (
         <li key={uuid()} className="navbar-links-list-item">
-          {data.link ? (
-            <Link to={data.link} className="link" onClick={toggleMenu}>
+          {data.link.includes("#") ? (
+            <HashLink to={data.link} replace className="link">
               {data.name}
-            </Link>
+            </HashLink>
           ) : (
-            <button
+            <Link
+              to={data.link}
               className="link"
-              onClick={function () {
-                toggleMenu();
-                scrollableLinks(data.id);
-              }}
+              onClick={() => toggleMenu(false)}
             >
               {data.name}
-            </button>
+            </Link>
           )}
         </li>
       ))}
@@ -37,25 +35,25 @@ function NavMenu({ toggleMenu }) {
 export default function Navbar() {
   const [showMenu, setShowMenu] = React.useState(false);
 
-  function toggleMenu(e, value) {
-    if (value) {
-      setShowMenu(value);
-    } else {
-      setShowMenu((prev) => !prev);
-    }
+  function toggleMenu(e) {
+    setShowMenu((prev) => !prev);
+  }
+
+  function closeMenu(e) {
+    setShowMenu(false);
   }
 
   return (
     <nav className="navbar">
       <BrandLogo />
       <div className="desktop-menu">
-        <NavMenu toggleMenu={toggleMenu} />
+        <NavMenu toggleMenu={closeMenu} />
       </div>
       <button type="button" className="menu-btn" onClick={toggleMenu}>
         {showMenu ? <FaTimes /> : <FaEquals />}
       </button>
       <aside className={`mobile-menu ${showMenu ? "show" : "hide"}`}>
-        <NavMenu toggleMenu={toggleMenu} />
+        <NavMenu toggleMenu={closeMenu} />
       </aside>
     </nav>
   );

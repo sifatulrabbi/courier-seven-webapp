@@ -1,6 +1,7 @@
 export function scrollableLinks(id) {
   const element = document.getElementById(id);
   if (element) {
+    window.location.href = "/";
     element.scrollIntoView({
       behavior: "smooth",
     });
