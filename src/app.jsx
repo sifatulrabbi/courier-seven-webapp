@@ -7,6 +7,7 @@ import {
   Login,
   UserDashboard,
   CreateParcel,
+  TrackParcel,
 } from "./pages";
 import { Navbar, ProtectedRoute, ScrollToTop, Footer } from "./components";
 import { AuthProvider, PageLinksProvider } from "./contexts";
@@ -25,7 +26,7 @@ export default function App() {
             <Route path="/users/dashboard" element={<UserDashboard />} />
             <Route path="/users/payments" />
             <Route path="/users/create-parcel" element={<CreateParcel />} />
-            <Route path="/users/track" />
+            <Route path="/users/track" element={<TrackParcel />} />
             <Route path="/users/profile" />
           </Route>
         </Routes>
