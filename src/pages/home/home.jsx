@@ -10,13 +10,13 @@ import {
 
 export default function Home() {
   return (
-    <div className="home-page">
+    <>
       <Hero />
       <TrackingSection />
       <ServicesSection />
       <CoverageSection />
       <PricingSection />
       <FaqSection />
-    </div>
+    </>
   );
 }

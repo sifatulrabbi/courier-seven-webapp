@@ -17,8 +17,7 @@ export default function App() {
   return (
     <AuthProvider>
       <PageLinksProvider>
-        <Navbar />
-        <ScrollToTop />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/registration" element={<Registration />} />

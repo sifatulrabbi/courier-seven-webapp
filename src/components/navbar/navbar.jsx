@@ -1,36 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import { FaEquals, FaTimes } from "react-icons/fa";
 import { v4 as uuid } from "uuid";
-import BrandLogo from "../brand-logo/brand-logo";
-import { usePageLinks } from "../../contexts";
-
-function NavMenu({ toggleMenu }) {
-  const { links } = usePageLinks();
-
-  return (
-    <ul className="navbar-links-list">
-      {links.map((data) => (
-        <li key={uuid()} className="navbar-links-list-item">
-          {data.link.includes("#") ? (
-            <HashLink to={data.link} replace className="link">
-              {data.name}
-            </HashLink>
-          ) : (
-            <Link
-              to={data.link}
-              className="link"
-              onClick={() => toggleMenu(false)}
-            >
-              {data.name}
-            </Link>
-          )}
-        </li>
-      ))}
-    </ul>
-  );
-}
+import { brandLogoFull } from "../../assets";
+import { Navbar as BNavbar, Nav, Button } from "react-bootstrap";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = React.useState(false);
@@ -39,22 +12,48 @@ export default function Navbar() {
     setShowMenu((prev) => !prev);
   }
 
-  function closeMenu(e) {
-    setShowMenu(false);
-  }
-
   return (
-    <nav className="navbar">
-      <BrandLogo />
-      <div className="desktop-menu">
-        <NavMenu toggleMenu={closeMenu} />
+    <BNavbar
+      bg="white"
+      fixed="top"
+      expand="lg"
+      className="shadow"
+      style={{ minHeight: 60 }}
+    >
+      <div className="container">
+        <Link to="/">
+          <img
+            src={brandLogoFull}
+            alt="Courier 007"
+            style={{ height: 50 }}
+            className="img-fluid"
+          />
+        </Link>
+        <BNavbar.Toggle aria-controls="navbar" className="toggler">
+          <button className="btn shadow-0 p-0 icon-btn" onClick={toggleMenu}>
+            {showMenu ? <FaTimes /> : <FaEquals />}
+          </button>
+        </BNavbar.Toggle>
+        <BNavbar.Collapse id="navbar" className="justify-content-end">
+          <Nav className="d-flex align-items-center">
+            <Nav.Link className="text-dark p-3" href="/">
+              Home
+            </Nav.Link>
+            <Nav.Link className="text-dark p-3" href="#pricing">
+              Pricing
+            </Nav.Link>
+            <Nav.Link className="text-dark p-3" href="/users/profile">
+              Tracking
+            </Nav.Link>
+            <Nav.Link className="p-2">
+              <Button className="btn-secondary w-100">Sign Up</Button>
+            </Nav.Link>
+            <Nav.Link className="p-2">
+              <Button className="btn-primary w-100">Login</Button>
+            </Nav.Link>
+          </Nav>
+        </BNavbar.Collapse>
       </div>
-      <button type="button" className="menu-btn" onClick={toggleMenu}>
-        {showMenu ? <FaTimes /> : <FaEquals />}
-      </button>
-      <aside className={`mobile-menu ${showMenu ? "show" : "hide"}`}>
-        <NavMenu toggleMenu={closeMenu} />
-      </aside>
-    </nav>
+    </BNavbar>
   );
 }
