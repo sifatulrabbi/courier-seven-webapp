@@ -4,3 +4,4 @@ export { default as Login } from "./login/login";
 export { default as UserDashboard } from "./user-dashboard/user-dashboard";
 export { default as CreateParcel } from "./create-parcel/create-parcel";
 export { default as TrackParcel } from "./track-parcel/track-parcel";
+export { default as Parcels } from "./parcels/parcels";

@@ -43,6 +43,10 @@ export const userLinks = [
     link: "/users/create-parcel",
   },
   {
+    name: "Parcels",
+    link: "/users/parcels",
+  },
+  {
     name: "Track",
     link: "/users/track",
   },
