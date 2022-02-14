@@ -1,4 +1,19 @@
 .hero-form {
-  border: 2px solid $light;
   max-width: 500px;
+}
+
+.hero {
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -35%;
+    right: -20%;
+    left: -70%;
+    height: 100vh;
+    background-color: $primary;
+    transform: translate(0, 0) rotate(-20deg);
+  }
 }

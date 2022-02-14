@@ -1,19 +1,22 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Hero() {
   const navigate = useNavigate();
 
   return (
-    <div className="container-lg py-5">
+    <div className="container-lg py-5 hero">
       <div className="row">
-        <div className="col-md-6 py-5">
-          <h1 className="display-2 my-5">
+        <div className="col-md-7 py-5">
+          <h1 className="display-2 my-5 text-white">
             Deliver your products as fast as the sparkle of thunder
           </h1>
         </div>
-        <div className="col-md-6 d-flex justify-content-center justify-content-md-end align-items-center">
-          <form action="none" className="hero-form p-3 rounded">
+        <div className="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
+          <form
+            action="none"
+            className="hero-form px-3 pt-3 rounded bg-white shadow"
+          >
             <div className="form-floating">
               <input
                 type="text"
@@ -40,35 +43,15 @@ export default function Hero() {
             <button type="submit" className="btn btn-primary btn-lg w-100 mt-3">
               Sign Up
             </button>
+            <p className="w-100 pt-3 text-center">
+              Already have an account?{" "}
+              <Link to="/login" className="link">
+                Login
+              </Link>
+            </p>
           </form>
         </div>
       </div>
     </div>
   );
 }
-
-// <header className="hero">
-//   <div className="hero-left">
-//     <h1 className="hero-title">
-//       <span className="colored">Deliver</span> your product as{" "}
-//       <span className="colored">fast</span> as the{" "}
-//       <span className="colored">sparkle</span> of thunder
-//     </h1>
-//     <div className="hero-left-bottom">
-//       <Button
-//         label="Register"
-//         onClickFnc={function () {
-//           navigate("/registration", { replace: true });
-//         }}
-//       />
-//       <Button
-//         label="Login"
-//         secondary
-//         onClickFnc={function () {
-//           navigate("/login", { replace: true });
-//         }}
-//       />
-//     </div>
-//   </div>
-//   <img src={heroImg} alt="Hero" className="hero-img" />
-// </header>

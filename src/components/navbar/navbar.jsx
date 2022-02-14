@@ -14,20 +14,23 @@ export default function Navbar() {
 
   return (
     <BNavbar
-      bg="white"
+      bg="primary"
       fixed="top"
       expand="lg"
-      className="shadow"
+      className="navbar-dark shadow text-white"
       style={{ minHeight: 60 }}
     >
       <div className="container">
         <Link to="/">
-          <img
+          {/* <img
             src={brandLogoFull}
             alt="Courier 007"
             style={{ height: 50 }}
             className="img-fluid"
-          />
+          /> */}
+          <span className="text-white h5" style={{ fontWeight: 900 }}>
+            Courier 007
+          </span>
         </Link>
         <BNavbar.Toggle aria-controls="navbar" className="toggler">
           <button className="btn shadow-0 p-0 icon-btn" onClick={toggleMenu}>
@@ -36,20 +39,20 @@ export default function Navbar() {
         </BNavbar.Toggle>
         <BNavbar.Collapse id="navbar" className="justify-content-end">
           <Nav className="d-flex align-items-center">
-            <Nav.Link className="text-dark p-3" href="/">
+            <Nav.Link className="text-light p-3" href="/">
               Home
             </Nav.Link>
-            <Nav.Link className="text-dark p-3" href="#pricing">
+            <Nav.Link className="text-light p-3" href="#pricing">
               Pricing
             </Nav.Link>
-            <Nav.Link className="text-dark p-3" href="/users/profile">
+            <Nav.Link className="text-light p-3" href="/users/profile">
               Tracking
             </Nav.Link>
-            <Nav.Link className="p-2">
+            <Nav.Link className="text-light p-2">
               <Button className="btn-secondary w-100">Sign Up</Button>
             </Nav.Link>
             <Nav.Link className="p-2">
-              <Button className="btn-primary w-100">Login</Button>
+              <Button className="btn-light w-100">Login</Button>
             </Nav.Link>
           </Nav>
         </BNavbar.Collapse>

@@ -10,14 +10,14 @@ import {
   TrackParcel,
   Parcels,
 } from "./pages";
-import { Navbar, ProtectedRoute, ScrollToTop, Footer } from "./components";
+import { Navbar, ProtectedRoute, Footer } from "./components";
 import { AuthProvider, PageLinksProvider } from "./contexts";
 
 export default function App() {
   return (
     <AuthProvider>
       <PageLinksProvider>
-        {/* <Navbar /> */}
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/registration" element={<Registration />} />

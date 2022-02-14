@@ -11,7 +11,7 @@ $light: #f7ebff;
 $black: #41324a;
 $secondary: #584c60;
 $border-color: #f7ebff;
-$input-border-color: #f7ebff;
+$input-border-color: $secondary;
 
 $border-radius: 0.8rem;
 
@@ -81,3 +81,7 @@ $btn-border-radius-lg: $border-radius;
     color: $primary;
   }
 }
+
+// .form-control {
+//   border: 2px solid $secondary;
+// }
