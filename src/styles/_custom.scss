@@ -66,6 +66,14 @@ $btn-border-radius-lg: $border-radius;
       color: $primary;
     }
   }
+
+  &-light {
+    transition: $btn-transition, filter 0.15s ease-in-out;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
 }
 
 .navbar {
@@ -85,3 +93,11 @@ $btn-border-radius-lg: $border-radius;
 // .form-control {
 //   border: 2px solid $secondary;
 // }
+
+.text-bolder {
+  font-weight: 900 !important;
+}
+
+.text-bold {
+  font-weight: 700 !important;
+}

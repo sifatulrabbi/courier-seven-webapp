@@ -1,7 +1,7 @@
-export { default as Home } from "./home/home";
-export { default as Registration } from "./registration/registration";
-export { default as Login } from "./login/login";
-export { default as UserDashboard } from "./user-dashboard/user-dashboard";
-export { default as CreateParcel } from "./create-parcel/create-parcel";
-export { default as TrackParcel } from "./track-parcel/track-parcel";
-export { default as Parcels } from "./parcels/parcels";
+export { default as Home } from "./home";
+export { default as Registration } from "./registration";
+export { default as Login } from "./login";
+export { default as UserDashboard } from "./user-dashboard";
+export { default as CreateParcel } from "./create-parcel";
+export { default as TrackParcel } from "./track-parcel";
+export { default as Parcels } from "./parcels";
