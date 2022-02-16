@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <TrackingSection /> */}
       <ServicesSection />
+      {/* <TrackingSection /> */}
       {/* <CoverageSection /> */}
       {/* <PricingSection />
       <FaqSection /> */}

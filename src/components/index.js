@@ -1,16 +1,3 @@
-export { default as Button } from "./button";
 export { default as Navbar } from "./navbar";
 export { default as Hero } from "./hero";
-export { default as TrackingSection } from "./tracking-section";
-export { default as Footer } from "./footer";
 export { default as ServicesSection } from "./services-section";
-export { default as CoverageSection } from "./coverage-section";
-export { default as PricingSection } from "./pricing-section";
-export { default as FaqSection } from "./faq-section";
-export { default as ScrollToTop } from "./scroll-to-top";
-export { default as RegistrationForm } from "./registration-form";
-export { default as LoginForm } from "./login-form";
-export { default as OTPForm } from "./otp-form";
-export { default as ProtectedRoute } from "./protected-route";
-export { default as CreateParcelForm } from "./create-parcel-form";
-export { default as Card } from "./card";

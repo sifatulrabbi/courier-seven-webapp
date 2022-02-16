@@ -1,19 +1,13 @@
-//###################################################//
-//                    OVERRIDES                      //
-//###################################################//
-
-$font-family-sans-serif: "Gothic A1", sans-serif;
+$font-family-sans-serif: "Nunito", sans-serif;
 $font-weight-bolder: 900;
 $primary: #790b98;
-// $primary: #56008b;
-// $primary: #3e0064;
 $light: #f7ebff;
 $black: #41324a;
 $secondary: #584c60;
 $border-color: #f7ebff;
 $input-border-color: $secondary;
 
-$border-radius: 0.8rem;
+$border-radius: 1rem;
 
 $btn-padding-y: 0.7rem;
 $btn-padding-x: 1.5rem;
@@ -39,10 +33,6 @@ $btn-border-radius-lg: $border-radius;
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
-
-//###################################################//
-//                    CLASSES                        //
-//###################################################//
 
 .display-2 {
   font-weight: $font-weight-bolder;
@@ -90,9 +80,10 @@ $btn-border-radius-lg: $border-radius;
   }
 }
 
-// .form-control {
-//   border: 2px solid $secondary;
-// }
+.form-control {
+  background-color: $light;
+  border: none;
+}
 
 .text-bolder {
   font-weight: 900 !important;

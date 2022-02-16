@@ -1,9 +1,5 @@
 import React from "react";
-import { AiOutlineSafety } from "react-icons/ai";
-import { BiStopwatch, BiCustomize } from "react-icons/bi";
-import { CgTrack } from "react-icons/cg";
-import { RiCompassDiscoverLine } from "react-icons/ri";
-import Button from "./button";
+import { BiCustomize } from "react-icons/bi";
 import { useNavigate, Link } from "react-router-dom";
 
 function Card() {
