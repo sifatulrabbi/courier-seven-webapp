@@ -1,11 +1,11 @@
 import React from "react";
 import { Card as BSCard, Container, Col, Row, Button } from "react-bootstrap";
-import { BiCustomize } from "react-icons/bi";
+import { BiBook } from "react-icons/bi";
 import { useNavigate, Link } from "react-router-dom";
 
 function Card() {
   return (
-    <Col md="6" sm="6" xl="4" className="" style={{ maxWidth: "24rem" }}>
+    <Col md="6" sm="6" xl="4" style={{ maxWidth: "24rem" }}>
       <BSCard className="bg-gray border-0 shadow">
         <BSCard.Header className="bg-gray border-0">
           <span className="subtitle">Step one</span>
@@ -20,6 +20,21 @@ function Card() {
         <BSCard.Footer className="bg-gray border-0">
           <Button variant="outline-primary">Learn More</Button>
         </BSCard.Footer>
+      </BSCard>
+    </Col>
+  );
+}
+
+function FeatureCard() {
+  return (
+    <Col md="6" sm="6" xl="4" style={{ maxWidth: "24rem" }}>
+      <BSCard className="border-0 text-center">
+        <BSCard.Body>
+          <div className="mb-4 text-secondary">
+            <BiBook style={{ fontSize: "3rem" }} />
+          </div>
+          <BSCard.Title>We do something which is awesome</BSCard.Title>
+        </BSCard.Body>
       </BSCard>
     </Col>
   );
@@ -46,7 +61,17 @@ export default function About() {
         <Card />
         <Card />
       </Row>
-      <Row className="my-5 pt-5"></Row>
+      <Row className="my-5 pt-5 justify-content-center">
+        <h2 className="h2 text-center text-bolder mb-5">
+          Our <span className="text-primary">Promises</span>
+          <br />
+          are realistic
+        </h2>
+        <FeatureCard />
+        <FeatureCard />
+        <FeatureCard />
+        <FeatureCard />
+      </Row>
     </section>
   );
 }
