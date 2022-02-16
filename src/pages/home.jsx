@@ -1,22 +1,12 @@
 import React from "react";
-import {
-  Hero,
-  TrackingSection,
-  ServicesSection,
-  CoverageSection,
-  PricingSection,
-  FaqSection,
-} from "../components";
+import Hero from "../components/hero";
+import About from "../components/about";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <ServicesSection />
-      {/* <TrackingSection /> */}
-      {/* <CoverageSection /> */}
-      {/* <PricingSection />
-      <FaqSection /> */}
+      <About />
     </>
   );
 }

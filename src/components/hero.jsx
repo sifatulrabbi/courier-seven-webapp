@@ -1,55 +1,49 @@
 import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+const HeroRegForm = () => {
+  return (
+    <form action="post" className="hero-form bg-white p-4 rounded w-100">
+      <input
+        type="number"
+        className="form-control mb-3"
+        id="mobile"
+        placeholder="Mobile"
+        aria-placeholder="input your mobile number"
+        autoComplete="phone"
+      />
+      <input
+        type="email"
+        className="form-control mb-3"
+        id="email"
+        placeholder="Email"
+        aria-placeholder="input your email address"
+        autoComplete="email"
+      />
+      <button className="btn btn-secondary w-100">Register</button>
+    </form>
+  );
+};
 
 export default function Hero() {
-  const navigate = useNavigate();
-
   return (
-    <div className="container-lg py-5 hero">
-      <div className="row">
-        <div className="col-md-7 py-5">
-          <h1 className="display-2 my-5 text-white">
-            Deliver your products as fast as the sparkle of thunder
-          </h1>
-        </div>
-        <div className="col-md-5 d-flex justify-content-center justify-content-md-end align-items-center">
-          <form
-            action="none"
-            className="hero-form px-3 pt-3 rounded bg-white shadow"
-          >
-            <div className="form-floating">
-              <input
-                type="text"
-                name="mobile"
-                id="mobile"
-                className="form-control mt-2"
-                placeholder="Mobile"
-                autoComplete="phone"
-              />
-              <label htmlFor="mobile">Mobile</label>
-            </div>
-            <div className="clearfix w-100 text-center py-2">Or</div>
-            <div className="form-floating">
-              <input
-                type="text"
-                name="email"
-                id="email"
-                className="form-control"
-                placeholder="Email"
-                autoComplete="email"
-              />
-              <label htmlFor="email">Email</label>
-            </div>
-            <button type="submit" className="btn btn-primary btn-lg w-100 mt-3">
-              Sign Up
-            </button>
-            <p className="w-100 pt-3 text-center">
-              Already have an account?{" "}
-              <Link to="/login" className="link">
-                Login
-              </Link>
-            </p>
-          </form>
+    <div className="container-fluid hero bg-gray">
+      <div className="container container-lg h-100 p-0">
+        <div className="row h-100">
+          <div className="col-12 col-lg-6 d-flex flex-column justify-content-center text-center text-lg-start">
+            <h1 className="display-3 text-bolder">
+              Deliver your products as fast as the sparkle of thunder
+            </h1>
+            <Link
+              to="/login"
+              className="align-self-center align-self-lg-start mt-5"
+            >
+              <button className="btn btn-primary hero-btn">Login</button>
+            </Link>
+          </div>
+          <div className="col d-flex align-items-center justify-content-center justify-content-lg-end">
+            <HeroRegForm />
+          </div>
         </div>
       </div>
     </div>
