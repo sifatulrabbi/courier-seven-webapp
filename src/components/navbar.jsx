@@ -6,13 +6,12 @@ import {
   Navbar as BNavbar,
   Nav,
   Dropdown,
-  Accordion,
-  ListGroup,
-  ListGroupItem,
+  // Accordion,
+  // ListGroup,
+  // ListGroupItem,
 } from "react-bootstrap";
 import { FaUserCircle } from "react-icons/fa";
-import AccordionBody from "react-bootstrap/esm/AccordionBody";
-// import { Link } from "react-router-dom";
+// import AccordionBody from "react-bootstrap/esm/AccordionBody";
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -50,28 +49,28 @@ const ProfileDropdown = () => {
   );
 };
 
-const ProfileAccordion = () => {
-  return (
-    <Accordion id="navProfileAccordion">
-      <Accordion.Item>
-        <Accordion.Header id="headingOne">Profile</Accordion.Header>
-        <Accordion.Collapse
-          id="collapseOne"
-          aria-labelledby="headingOne"
-          data-bs-parent="#navProfileAccordion"
-        >
-          <AccordionBody>
-            <ListGroup>
-              {navProfileLinks.map((link) => (
-                <ListGroupItem>{link.name}</ListGroupItem>
-              ))}
-            </ListGroup>
-          </AccordionBody>
-        </Accordion.Collapse>
-      </Accordion.Item>
-    </Accordion>
-  );
-};
+// const ProfileAccordion = () => {
+//   return (
+//     <Accordion id="navProfileAccordion">
+//       <Accordion.Item>
+//         <Accordion.Header id="headingOne">Profile</Accordion.Header>
+//         <Accordion.Collapse
+//           id="collapseOne"
+//           aria-labelledby="headingOne"
+//           data-bs-parent="#navProfileAccordion"
+//         >
+//           <AccordionBody>
+//             <ListGroup>
+//               {navProfileLinks.map((link) => (
+//                 <ListGroupItem>{link.name}</ListGroupItem>
+//               ))}
+//             </ListGroup>
+//           </AccordionBody>
+//         </Accordion.Collapse>
+//       </Accordion.Item>
+//     </Accordion>
+//   );
+// };
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = React.useState(false);
