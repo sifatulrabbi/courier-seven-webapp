@@ -6,12 +6,12 @@ import {
   Navbar as BNavbar,
   Nav,
   Dropdown,
-  Accordion,
-  ListGroup,
-  ListGroupItem,
+  // Accordion,
+  // ListGroup,
+  // ListGroupItem,
 } from "react-bootstrap";
 import { FaUserCircle } from "react-icons/fa";
-import AccordionBody from "react-bootstrap/esm/AccordionBody";
+// import AccordionBody from "react-bootstrap/esm/AccordionBody";
 
 const navItems = [
   { name: "Home", link: "/" },
