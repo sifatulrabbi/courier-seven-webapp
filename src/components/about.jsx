@@ -1,7 +1,6 @@
 import React from "react";
-import { Card as BSCard, Container, Col, Row, Button } from "react-bootstrap";
+import { Card as BSCard, Col, Row, Button } from "react-bootstrap";
 import { BiBook } from "react-icons/bi";
-import { useNavigate, Link } from "react-router-dom";
 
 function Card() {
   return (
@@ -41,8 +40,6 @@ function FeatureCard() {
 }
 
 export default function About() {
-  const navigate = useNavigate();
-
   return (
     <section className="container container-lg py-5">
       <span className="subtitle">Easy Process</span>
