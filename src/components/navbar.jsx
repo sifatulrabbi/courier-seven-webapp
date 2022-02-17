@@ -91,7 +91,7 @@ export default function Navbar() {
         <BNavbar.Brand className="p-0">
           <Nav.Link href="/" className="h5 m-0 text-bolder p-0">
             <img src={brand} alt="Courier Seven BD" height="50px" />
-            Courier Seven BD
+            Courier 007
           </Nav.Link>
         </BNavbar.Brand>
         <button
