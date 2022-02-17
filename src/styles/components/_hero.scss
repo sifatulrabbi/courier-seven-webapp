@@ -1,68 +1,26 @@
+.hero-form {
+  max-width: 380px;
+}
+
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-gap: 2rem;
-  min-height: 80vh;
-  @include padding();
+  z-index: 1;
+  height: 90vh;
+  padding-top: 90px;
 
-  @media screen and (min-width: $breakpoint) {
-    justify-content: space-between;
+  &-btn {
+    width: 150px;
   }
 
-  &-title {
-    line-height: $line-height-title;
-    font-weight: $font-bold;
-    color: $black-primary;
-    font-size: clamp(40px, 6vw, 58px);
-
-    .colored {
-      color: $primary-main;
-    }
-  }
-
-  &-img {
-    display: none;
-    height: auto;
-    width: clamp(340px, 45vw, 680px);
-
-    @media screen and (min-width: $breakpoint) {
-      display: block;
-    }
-  }
-
-  &-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    grid-gap: 10vh;
-    max-width: 48ch;
-
-    @media screen and (min-width: $breakpoint) {
-      align-items: flex-start;
-      text-align: start;
-    }
-
-    &-bottom {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: max-content;
-      grid-gap: 2rem;
-      width: 200px;
-
-      @media screen and (min-width: $breakpoint) {
-        flex-direction: row;
-        justify-content: flex-start;
-        width: 100%;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   z-index: -1;
+  //   top: -35%;
+  //   right: -20%;
+  //   left: -70%;
+  //   height: 100vh;
+  //   min-height: 860px;
+  //   background-color: $primary;
+  //   transform: translate(0, 0) rotate(-20deg);
+  // }
 }

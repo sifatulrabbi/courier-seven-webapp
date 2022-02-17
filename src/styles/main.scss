@@ -1,85 +1,14 @@
-@import "./theme";
-@import "./mixins";
-
-html {
-  font-size: $font-size;
-  box-sizing: border-box;
-}
+@use "./custom" as *;
+@import "./components/hero";
+@import "./components/navbar";
 
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: inherit;
-  background-color: transparent;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  color: inherit;
-  text-decoration: none;
 }
 
 body {
-  font-size: $font-size-body;
-  font-family: $font-family-secondary;
-  background-color: $white-primary;
-  line-height: $line-height-body;
-  font-weight: 400;
-  max-width: 100vw;
-  color: $black-secondary;
-
-  .brand {
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    outline: none;
-    margin: none;
-    border: none;
-    cursor: pointer;
-
-    .brand-logo {
-      height: 50px;
-      width: auto;
-    }
-  }
-
-  .scroll-to-top {
-    position: fixed;
-    bottom: 3rem;
-    right: 2rem;
-    z-index: 2000;
-    color: $white-primary;
-    font-size: 3rem;
-    background: $linear;
-    border: none;
-    outline: none;
-    border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid $primary-light;
-    cursor: pointer;
-
-    &:hover {
-      background: $primary-dark;
-    }
-  }
-
-  .page-container {
-    margin: 10rem 0;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 100%;
-  }
+  max-width: 100vw !important;
+  overflow-x: hidden;
 }
-
-@import "./components/index.scss";
-@import "./pages/index.scss";
