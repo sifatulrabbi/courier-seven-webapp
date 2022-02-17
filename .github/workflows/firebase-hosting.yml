@@ -5,9 +5,15 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
+  deploy_to_firebase:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
     steps:
+      - name: Checkout repo
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
@@ -19,8 +25,8 @@ jobs:
         run: npm ci
       - name: Build app
         run: npm run build
-      - uses: FirebaseExtended/action-hosting-deploy@v0
       - name: Deploy to firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_COURIER_007 }}"
