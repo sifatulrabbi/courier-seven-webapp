@@ -85,15 +85,14 @@ $box-shadow-lg: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   }
 }
 
-.form-control {
+.form-control,
+.form-select {
+  border-color: $gray-200;
   background-color: $gray-200;
-  border: 1px solid transparent;
-  padding-right: 1rem;
-  padding-left: 1rem;
+}
 
-  &:focus {
-    border-color: $primary;
-  }
+.form-control ~ .input-group-text {
+  border-color: transparent;
 }
 
 .text-bolder {
