@@ -1,23 +1,11 @@
 export const allLinks = [
   {
-    name: "Home",
-    link: "/",
-  },
-  {
-    name: "Register",
-    link: "/registration",
-  },
-  {
-    name: "Login",
-    link: "/login",
-  },
-  {
     name: "Coverage",
     link: "#coverage",
   },
   {
-    name: "Services",
-    link: "#services",
+    name: "Why us",
+    link: "#why-us",
   },
   {
     name: "Pricing",
@@ -25,7 +13,7 @@ export const allLinks = [
   },
   {
     name: "Track",
-    link: "#tracking",
+    link: "/users/track",
   },
   {
     name: "FAQs",

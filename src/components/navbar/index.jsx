@@ -2,8 +2,9 @@ import React from "react";
 import { FaEquals, FaTimes } from "react-icons/fa";
 import { v4 } from "uuid";
 import { brand } from "../../assets";
-import { Navbar as BNavbar, Nav } from "react-bootstrap";
+import { Navbar as BNavbar, Nav, Container, Button } from "react-bootstrap";
 import ProfileDropdown from "./profile-dropdown";
+import ProfileAccordion from "./profile-accordion";
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -33,25 +34,26 @@ export default function Navbar() {
       className="shadow-sm"
       style={{ minHeight: 60, maxWidth: "100vw" }}
     >
-      <div className="container">
+      <Container>
         <BNavbar.Brand className="p-0">
           <Nav.Link href="/" className="h5 m-0 text-bolder p-0">
             <img src={brand} alt="Courier Seven BD" height="50px" />
             Courier 007
           </Nav.Link>
         </BNavbar.Brand>
-        <button
-          className="btn shadow-0 p-0 icon-btn justify-self-end d-block d-lg-none"
+        <Button
+          variant="white"
+          className="shadow-0 p-0 icon-btn justify-self-end d-block d-lg-none"
           onClick={toggleMenu}
         >
           {showMenu ? <FaTimes /> : <FaEquals />}
-        </button>
+        </Button>
         <div
           className={`justify-content-end navbar-nav-menu bg-white ${
             showMenu ? "active" : "hide"
           }`}
         >
-          <Nav className="container-sm d-flex align-items-start align-items-lg-center">
+          <Nav className="d-flex align-items-center justify-content-center">
             {navItems.map((item) => (
               <Nav.Link
                 key={v4()}
@@ -62,9 +64,10 @@ export default function Navbar() {
               </Nav.Link>
             ))}
             <ProfileDropdown links={navProfileLinks} />
+            <ProfileAccordion links={navProfileLinks} />
           </Nav>
         </div>
-      </div>
+      </Container>
     </BNavbar>
   );
 }

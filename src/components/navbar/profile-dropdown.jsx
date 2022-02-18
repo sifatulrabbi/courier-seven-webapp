@@ -5,7 +5,7 @@ import { FaUserCircle } from "react-icons/fa";
 
 const ProfileDropdown = ({ links }) => {
   return (
-    <Dropdown className="navbar-dropdown">
+    <Dropdown className="navbar-dropdown d-none d-lg-block">
       <Dropdown.Toggle
         type="button"
         id="navProfileDropdown"

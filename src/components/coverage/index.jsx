@@ -4,7 +4,7 @@ import AreaList from "./area-list";
 
 const Coverage = () => {
   return (
-    <Container fluid className="py-5 bg-gray">
+    <Container fluid id="coverage" className="py-5 bg-gray">
       <Container className="container-lg">
         <Row>
           <Col sm="12" lg="6" className="p-3">
@@ -17,7 +17,9 @@ const Coverage = () => {
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
               quaerat veniam culpa quidem.
             </p>
-            <Button variant="secondary mt-3 mb-5">Full List</Button>
+            <Button variant="outline-primary" className="mt-3 mb-5">
+              Full List
+            </Button>
           </Col>
           <Col className="">
             <AreaList />
