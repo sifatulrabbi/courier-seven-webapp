@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroRegForm = () => {
   return (
-    <form action="post" className="hero-form bg-white p-4 rounded w-100">
+    <form action="post" className="hero-form bg-white p-4 rounded w-100 shadow">
       <input
         type="number"
         className="form-control mb-3"
