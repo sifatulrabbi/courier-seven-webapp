@@ -1,17 +1,9 @@
 import React from "react";
 import { FaEquals, FaTimes } from "react-icons/fa";
 import { v4 } from "uuid";
-import { brand } from "../assets";
-import {
-  Navbar as BNavbar,
-  Nav,
-  Dropdown,
-  // Accordion,
-  // ListGroup,
-  // ListGroupItem,
-} from "react-bootstrap";
-import { FaUserCircle } from "react-icons/fa";
-// import AccordionBody from "react-bootstrap/esm/AccordionBody";
+import { brand } from "../../assets";
+import { Navbar as BNavbar, Nav } from "react-bootstrap";
+import ProfileDropdown from "./profile-dropdown";
 
 const navItems = [
   { name: "Home", link: "/" },
@@ -26,52 +18,6 @@ const navProfileLinks = [
   { name: "Logout", link: "/users/logout" },
 ];
 
-const ProfileDropdown = () => {
-  return (
-    <Dropdown className="navbar-dropdown">
-      <Dropdown.Toggle
-        type="button"
-        id="navProfileDropdown"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-        className="bg-white border-0 text-dark"
-      >
-        <FaUserCircle style={{ fontSize: "2rem" }} />
-      </Dropdown.Toggle>
-      <Dropdown.Menu aria-labelledby="navProfileDropdown">
-        {navProfileLinks.map((link) => (
-          <Dropdown.Item key={v4()} href={link.link}>
-            {link.name}
-          </Dropdown.Item>
-        ))}
-      </Dropdown.Menu>
-    </Dropdown>
-  );
-};
-
-// const ProfileAccordion = () => {
-//   return (
-//     <Accordion id="navProfileAccordion">
-//       <Accordion.Item>
-//         <Accordion.Header id="headingOne">Profile</Accordion.Header>
-//         <Accordion.Collapse
-//           id="collapseOne"
-//           aria-labelledby="headingOne"
-//           data-bs-parent="#navProfileAccordion"
-//         >
-//           <AccordionBody>
-//             <ListGroup>
-//               {navProfileLinks.map((link) => (
-//                 <ListGroupItem>{link.name}</ListGroupItem>
-//               ))}
-//             </ListGroup>
-//           </AccordionBody>
-//         </Accordion.Collapse>
-//       </Accordion.Item>
-//     </Accordion>
-//   );
-// };
-
 export default function Navbar() {
   const [showMenu, setShowMenu] = React.useState(false);
 
@@ -85,7 +31,7 @@ export default function Navbar() {
       fixed="top"
       expand="lg"
       className="shadow-sm"
-      style={{ minHeight: 60 }}
+      style={{ minHeight: 60, maxWidth: "100vw" }}
     >
       <div className="container">
         <BNavbar.Brand className="p-0">
@@ -115,7 +61,7 @@ export default function Navbar() {
                 {item.name}
               </Nav.Link>
             ))}
-            <ProfileDropdown />
+            <ProfileDropdown links={navProfileLinks} />
           </Nav>
         </div>
       </div>

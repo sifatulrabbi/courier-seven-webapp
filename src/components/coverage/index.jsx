@@ -16,7 +16,7 @@ const Coverage = () => {
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
             quaerat veniam culpa quidem.
           </p>
-          <Button variant="secondary mt-5">Full list</Button>
+          <Button variant="secondary mt-3 mb-5">Full List</Button>
         </Col>
         <Col className="">
           <AreaList />

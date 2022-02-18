@@ -34,9 +34,9 @@ const About = () => {
         <FeatureCard />
         <FeatureCard />
       </Row>
-      <Row className="justify-content-center py-5">
+      <Row className="justify-content-center py-5 m-0 px-0">
         <h3 className="h3 text-center">
-          Join us{" "}
+          Join us
           <Link to="/register">
             <Button variant="primary mx-3">Register</Button>
           </Link>
