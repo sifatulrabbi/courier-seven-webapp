@@ -4,7 +4,7 @@ import CalculatorForm from "./calculator-form";
 
 const PriceCalculator = () => {
   return (
-    <Container fluid className="bg-gray py-5">
+    <Container fluid id="pricing" className="py-5">
       <Container className="container-lg">
         <Row>
           <Col sm="12" lg="6" className="mb-5">

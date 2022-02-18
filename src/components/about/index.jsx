@@ -1,12 +1,12 @@
 import React from "react";
-import { Button, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import Card from "./card";
 import FeatureCard from "./feature-card";
 import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <section className="container container-lg py-5">
+    <Container id="why-us" className="container-lg py-5 px-4">
       <span className="subtitle">Easy Process</span>
       <h2 className="h2 mb-4 text-bolder">
         <span className="text-primary">Three steps</span> to
@@ -18,7 +18,7 @@ const About = () => {
         quod corrupti est quidem reiciendis quo recusandae cumque. Quaerat dolor
         fuga ut nihil at.
       </p>
-      <Row className="g-5 justify-content-center mt-5">
+      <Row className="justify-content-center mt-5">
         <Card />
         <Card />
         <Card />
@@ -42,7 +42,7 @@ const About = () => {
           </Link>
         </h3>
       </Row>
-    </section>
+    </Container>
   );
 };
 

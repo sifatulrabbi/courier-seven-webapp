@@ -1,13 +1,21 @@
 import React from "react";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import HeroRegForm from "./hero-reg-form";
 
 const Hero = () => {
   return (
-    <div className="container-fluid hero bg-gray">
-      <div className="container container-lg h-100 p-0">
-        <div className="row h-100">
-          <div className="col-12 col-lg-6 d-flex flex-column justify-content-center text-center text-lg-start">
+    <Container
+      fluid
+      className="bg-gray d-flex align-items-center"
+      style={{ paddingTop: "7rem", paddingBottom: "2rem", minHeight: "90vh" }}
+    >
+      <Container className="container-lg px-4">
+        <Row className="align-items-center">
+          <Col
+            lg="6"
+            className="d-flex flex-column justify-content-center text-center text-lg-start"
+          >
             <h1 className="display-3 text-bolder">
               Deliver your products as fast as the sparkle of thunder
             </h1>
@@ -15,15 +23,17 @@ const Hero = () => {
               to="/login"
               className="align-self-center align-self-lg-start mt-5"
             >
-              <button className="btn btn-primary hero-btn">Login</button>
+              <Button className="hero-btn mb-5" style={{ width: "150px" }}>
+                Login
+              </Button>
             </Link>
-          </div>
-          <div className="col d-flex align-items-center justify-content-center justify-content-lg-end">
+          </Col>
+          <Col className="d-flex align-items-center justify-content-center justify-content-lg-end p-0">
             <HeroRegForm />
-          </div>
-        </div>
-      </div>
-    </div>
+          </Col>
+        </Row>
+      </Container>
+    </Container>
   );
 };
 
