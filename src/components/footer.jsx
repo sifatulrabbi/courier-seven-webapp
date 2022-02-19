@@ -8,7 +8,7 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
-import { brand, allLinks } from "../../assets";
+import { brand, allLinks } from "../assets";
 import { Link } from "react-router-dom";
 import { v4 } from "uuid";
 import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
@@ -83,7 +83,9 @@ const Footer = () => {
           className="border-top border-2 mt-4 pt-2 d-flex flex-column flex-md-row align-items-center"
           style={{ justifyContent: "space-between", gridGap: "2rem" }}
         >
-          <small className="text-secondary">Copyright Courier 007</small>
+          <small className="text-secondary">
+            &copy; {new Date().getFullYear()} Courier 007, Bangladesh
+          </small>
           <Nav>
             <Nav.Link href="/" target="_blank" className="p-0 px-3">
               <FaFacebook style={{ fontSize: "1.3rem" }} />
