@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import FormGroup from "./form-group";
+import { v4 } from "uuid";
 
 const profileRegFields = [
   {
@@ -49,6 +50,7 @@ const ProfileRegForm = () => {
     >
       {profileRegFields.map(({ id, label, type, required, name }) => (
         <FormGroup
+          key={v4()}
           id={id}
           label={label}
           type={type}
