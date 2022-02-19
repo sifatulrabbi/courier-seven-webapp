@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/protected-route";
 import { AuthProvider, PageLinksProvider } from "./contexts";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import Login from "./pages/login";
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/users" element={<ProtectedRoute />}></Route>
         </Routes>
         <Footer />
