@@ -7,6 +7,7 @@ import { AuthProvider, PageLinksProvider } from "./contexts";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Login from "./pages/login";
+import Register from "./pages/register";
 
 export default function App() {
   return (
@@ -16,7 +17,12 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/users" element={<ProtectedRoute />}></Route>
+          <Route path="/register/*" element={<Register />} />
+          <Route path="/users" element={<ProtectedRoute />}>
+            <Route path="/users/track" element={<div />} />
+            <Route path="/users/dashboard" element={<div />} />
+            <Route path="/users/create-parcel" element={<div />} />
+          </Route>
         </Routes>
         <Footer />
       </PageLinksProvider>
