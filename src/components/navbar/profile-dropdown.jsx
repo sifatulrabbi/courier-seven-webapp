@@ -13,7 +13,8 @@ const ProfileDropdown = ({ links }) => {
         aria-expanded="false"
         className="bg-white border-0 text-dark"
       >
-        <FaUserCircle style={{ fontSize: "2rem" }} />
+        {/* <FaUserCircle style={{ fontSize: "2rem" }} /> */}
+        Profile
       </Dropdown.Toggle>
       <Dropdown.Menu aria-labelledby="navProfileDropdown">
         {links.map((link) => (
