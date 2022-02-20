@@ -1,7 +1,7 @@
-import { locations } from "../../assets/locations";
+import { locations } from "./locations";
 
 const areas = locations[0].areas.sort();
-export const formData = [
+export const calculatorData = [
   {
     select: false,
     name: "price",

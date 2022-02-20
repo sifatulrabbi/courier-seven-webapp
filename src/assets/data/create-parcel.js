@@ -1,0 +1,113 @@
+export const createParcelData = {
+  fields: [
+    {
+      type: "number",
+      id: "collection-amount",
+      name: "collection_amount",
+      label: "Collection Amount",
+      required: true,
+    },
+    {
+      select: true,
+      id: "pickup-district",
+      name: "pickup_district",
+      label: "Pickup District",
+      required: true,
+      options: ["Dhaka", "Gazipur"],
+    },
+    {
+      select: true,
+      id: "pickup-sub-district",
+      name: "pickup_sub_district",
+      label: "Pickup Sub District",
+      required: true,
+      options: ["Dhanmondi", "Kamrangirchar"],
+    },
+    {
+      id: "pickup-area",
+      name: "pickup_area",
+      label: "Pickup Area",
+      type: "text",
+      required: true,
+    },
+    {
+      id: "pickup-area",
+      name: "pickup_area",
+      label: "Pickup Location details",
+      type: "text",
+      required: true,
+    },
+  ],
+
+  fieldsCustomer: [
+    {
+      type: "text",
+      id: "customer-name",
+      name: "customer_name",
+      label: "Customer Name",
+      required: true,
+    },
+    {
+      type: "number",
+      id: "customer-mobile",
+      name: "customer_mobile",
+      label: "Customer Mobile",
+      required: true,
+    },
+    {
+      select: true,
+      id: "customer-district",
+      name: "customer_district",
+      label: "Customer District",
+      required: true,
+      options: ["Dhaka", "Gazipur"],
+    },
+    {
+      select: true,
+      id: "customer-sub-district",
+      name: "customer_sub_district",
+      label: "Customer District",
+      required: true,
+      options: ["Dhanmondi", "Kamrangirchar"],
+    },
+    {
+      id: "customer-area",
+      name: "customer_area",
+      label: "Customer Area",
+      type: "text",
+      required: true,
+    },
+    {
+      id: "customer-area",
+      name: "customer_area",
+      label: "Customer Location Details",
+      type: "text",
+      required: true,
+    },
+  ],
+
+  fieldsProduct: [
+    {
+      type: "number",
+      id: "product-price",
+      name: "product_price",
+      label: "Product Price",
+      required: true,
+    },
+    {
+      type: "number",
+      id: "product-mobile",
+      name: "product_weight",
+      label: "Product Weight",
+      required: true,
+    },
+    {
+      select: true,
+      id: "product-type",
+      name: "product_type",
+      required: true,
+      label: "Product Type",
+      options: ["Fragile", "Solid", "Liquid"],
+    },
+  ],
+};

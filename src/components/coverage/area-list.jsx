@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Table } from "react-bootstrap";
-import { locations } from "../../assets/locations";
+import { locations } from "../../assets";
 import { v4 } from "uuid";
 
 const InfoTable = ({ location }) => {

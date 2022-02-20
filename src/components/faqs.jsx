@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Accordion } from "react-bootstrap";
-import { faqData } from "../assets/faq-data";
+import { faqData } from "../assets";
 import { v4 } from "uuid";
 
 const FAQs = () => {
