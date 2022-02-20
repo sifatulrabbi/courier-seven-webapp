@@ -16,7 +16,7 @@ const ProfileDropdown = ({ links }) => {
       </Dropdown.Toggle>
       <Dropdown.Menu aria-labelledby="navProfileDropdown">
         {links.map((link) => (
-          <Dropdown.Item key={v4()} href={link.link}>
+          <Dropdown.Item key={v4()} href={link.path}>
             {link.name}
           </Dropdown.Item>
         ))}

@@ -1,15 +1,15 @@
-export const navLinks = [];
-
-export const accountLinks = [];
-
-export const socialLinks = [];
-
 export const siteLinks = {
   navLinks: [
     { name: "Home", path: "/" },
     { name: "Pricing", path: "/#pricing" },
-    { name: "Why us", path: "/#about" },
+    { name: "Features", path: "/#features" },
     { name: "FAQs", path: "/#faqs" },
-    { name: "Tracing", path: "/users/tracking" },
+    { name: "Tracking", path: "/users/tracking" },
+  ],
+  userLinks: [
+    { name: "Dashboard", path: "/users" },
+    { name: "Create parcel", path: "/users/create-parcel" },
+    { name: "Parcels", path: "/users/parcels" },
+    { name: "Payments", path: "/users/payments" },
   ],
 };

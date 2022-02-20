@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <Container id="why-us" className="container-lg py-5 px-4">
+    <Container id="features" className="container-lg py-5 px-4">
       <span className="subtitle">Easy Process</span>
       <h2 className="h2 mb-4 text-bolder">
         <span className="text-primary">Three steps</span> to
