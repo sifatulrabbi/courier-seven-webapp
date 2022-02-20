@@ -123,5 +123,9 @@ a {
   text-decoration: none;
 }
 
+.divider {
+  background-color: $gray-300;
+}
+
 @import "./components/accordion";
 @import "./components/navbar";

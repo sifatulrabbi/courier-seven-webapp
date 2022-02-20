@@ -2,12 +2,12 @@ import React from "react";
 import "./styles/main.scss";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages";
-import ProtectedRoute from "./components/protected-route";
 import { AuthProvider, PageLinksProvider } from "./contexts";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Login from "./pages/login";
 import Register from "./pages/register";
+import Users from "./pages/users";
 
 export default function App() {
   return (
@@ -18,11 +18,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register/*" element={<Register />} />
-          <Route path="/users" element={<ProtectedRoute />}>
-            <Route path="/users/track" element={<div />} />
-            <Route path="/users/dashboard" element={<div />} />
-            <Route path="/users/create-parcel" element={<div />} />
-          </Route>
+          <Route path="/users/*" element={<Users />} />
         </Routes>
         <Footer />
       </PageLinksProvider>

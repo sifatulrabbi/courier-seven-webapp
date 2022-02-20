@@ -1,7 +1,6 @@
 import React from "react";
 import { Button, Form, Container } from "react-bootstrap";
 import FormGroup from "./form-group";
-import { v4 } from "uuid";
 import { useNavigate, Link } from "react-router-dom";
 
 const PrimaryRegForm = ({ callBack }) => {

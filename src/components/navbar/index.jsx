@@ -8,22 +8,28 @@ import ProfileAccordion from "./profile-accordion";
 
 const navItems = [
   { name: "Home", link: "/" },
-  { name: "Pricing", link: "#pricing" },
-  { name: "Tracking", link: "/users/track" },
+  { name: "Pricing", link: "/#pricing" },
+  { name: "Tracking", link: "/users/tracking" },
 ];
 
 const navProfileLinks = [
-  { name: "Dashboard", link: "/users/profile" },
+  { name: "Dashboard", link: "/users/" },
+  { name: "Profile", link: "/users/profile" },
   { name: "Create parcel", link: "/users/create-parcel" },
-  { name: "Payments", link: "/users/payments" },
+  { name: "Parcels", link: "/users/parcels" },
+  { name: "payments", link: "/users/payments" },
   { name: "Logout", link: "/users/logout" },
 ];
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = React.useState(false);
 
-  function toggleMenu(e) {
-    setShowMenu((prev) => !prev);
+  function toggleMenu(e, value) {
+    if (value !== undefined) {
+      setShowMenu(value);
+    } else {
+      setShowMenu((prev) => !prev);
+    }
   }
 
   return (
@@ -64,7 +70,10 @@ export default function Navbar() {
               </Nav.Link>
             ))}
             <ProfileDropdown links={navProfileLinks} />
-            <ProfileAccordion links={navProfileLinks} />
+            <ProfileAccordion
+              links={navProfileLinks}
+              callback={(e) => toggleMenu(e, false)}
+            />
           </Nav>
         </div>
       </Container>

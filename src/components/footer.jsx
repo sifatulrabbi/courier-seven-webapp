@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <Container fluid className="bg-gray py-5">
       <Container className="container-lg h-100">
-        <Row className="g-4">
+        <Row className="g-4 mb-3">
           <Col md="5" lg="5" className="text-center text-md-start mb-3">
             <Link to="/" style={{ textDecoration: "none" }}>
               <img src={brand} alt="Courier 007" height="45px" />
@@ -78,9 +78,10 @@ const Footer = () => {
             </Button>
           </Col>
         </Row>
+        <div className="w-100 divider" style={{ height: 1 }} />
         <Container
           fluid
-          className="border-top border-2 mt-4 pt-2 d-flex flex-column flex-md-row align-items-center"
+          className="pt-2   d-flex flex-column flex-md-row align-items-center"
           style={{ justifyContent: "space-between", gridGap: "2rem" }}
         >
           <small className="text-secondary">
