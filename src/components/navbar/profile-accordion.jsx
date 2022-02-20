@@ -25,7 +25,7 @@ const ProfileAccordion = ({ links, callback }) => {
                 className="border-0 border-bottom"
                 onClick={handleClick}
               >
-                <Link to={link.link} className="text-secondary w-100 d-block">
+                <Link to={link.path} className="text-secondary w-100 d-block">
                   {link.name}
                 </Link>
               </ListGroupItem>
