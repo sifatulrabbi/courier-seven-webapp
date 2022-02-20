@@ -12,7 +12,7 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+  const [isAuthenticated, setIsAuthenticated] = React.useState(true);
   const [user, setUser] = React.useState(null);
 
   function login(user) {

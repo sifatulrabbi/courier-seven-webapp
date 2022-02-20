@@ -17,10 +17,10 @@ const FAQs = () => {
           <Accordion.Item
             key={v4()}
             eventKey={index}
-            className="my-3 rounded shadow border-0 bg-gray"
+            className="my-3 rounded shadow border-0"
             style={{ overflow: "hidden" }}
           >
-            <Accordion.Header className="bg-gray">
+            <Accordion.Header>
               <span className="d-block" style={{ width: "90%" }}>
                 {data.ques}
               </span>

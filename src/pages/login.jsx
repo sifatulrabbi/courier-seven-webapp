@@ -35,16 +35,13 @@ const Login = () => {
             className="mb-3"
           />
         ))}
-        <Button type="submit" className="w-100">
-          Login
-        </Button>
+        <Container fluid className="p-0 d-flex justify-content-between">
+          <Link to="/register/primary">
+            <Button variant="outline-primary">Register</Button>
+          </Link>
+          <Button type="submit">Login</Button>
+        </Container>
       </Form>
-      <div className="text-center mt-5">
-        Don't have an account?{" "}
-        <Link to="/register" className="link">
-          Register
-        </Link>
-      </div>
     </Container>
   );
 };

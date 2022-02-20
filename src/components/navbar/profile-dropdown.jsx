@@ -12,7 +12,7 @@ const ProfileDropdown = ({ links }) => {
         aria-expanded="false"
         className="bg-white border-0 text-dark"
       >
-        Profile
+        Account
       </Dropdown.Toggle>
       <Dropdown.Menu aria-labelledby="navProfileDropdown">
         {links.map((link) => (
