@@ -8,7 +8,7 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
-import { brand, allLinks } from "../assets";
+import { brand, siteLinks } from "../assets";
 import { Link } from "react-router-dom";
 import { v4 } from "uuid";
 import { FaFacebook, FaInstagram, FaEnvelope } from "react-icons/fa";
@@ -31,7 +31,7 @@ const Footer = () => {
           <Col md="2" lg="2" className="text-center text-md-start mb-3">
             <Nav className="flex-column">
               <h6>Site links</h6>
-              {allLinks.map((link) => (
+              {siteLinks.navLinks.map((link) => (
                 <Nav.Link
                   key={v4()}
                   href={link.link}
