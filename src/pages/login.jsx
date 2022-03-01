@@ -7,18 +7,11 @@ import {
   FormControl,
   FloatingLabel,
 } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/auth.context';
+import { Link } from 'react-router-dom';
+import { useLoginForm } from '../hooks';
 
 const Login = () => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const navigate = useNavigate();
-  const { login } = useAuth();
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-  }
+  const loginForm = useLoginForm();
 
   return (
     <Container
@@ -34,7 +27,7 @@ const Login = () => {
         action='submit'
         className='bg-white shadow p-3 rounded mx-auto'
         style={{ maxWidth: '450px' }}
-        onSubmit={handleSubmit}
+        onSubmit={loginForm.handleSubmit}
       >
         <FloatingLabel label='Mobile'>
           <FormControl
@@ -44,8 +37,8 @@ const Login = () => {
             placeholder='Mobile'
             required
             className='mb-3'
-            value={email}
-            onChange={(e) => {}}
+            value={loginForm.email}
+            onChange={loginForm.handleEmailChange}
           />
         </FloatingLabel>
         <FloatingLabel label='Password'>
@@ -56,10 +49,8 @@ const Login = () => {
             placeholder='Password'
             required
             className='mb-3'
-            value={password}
-            onChange={(e) => {
-              setPassword(e.currentTarget.value);
-            }}
+            value={loginForm.password}
+            onChange={loginForm.handlePasswordChange}
           />
         </FloatingLabel>
         <Container fluid className='p-0 d-flex justify-content-between'>
