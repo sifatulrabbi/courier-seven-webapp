@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts';
+// import { useAuth } from '../contexts';
 import axios from 'axios';
 
 export function useLoginForm() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
-  const { login } = useAuth();
+  // const { login } = useAuth();
   const url = process.env.REACT_APP_PROXY + '/auth/login';
 
   function handleEmailChange(e) {
@@ -22,17 +22,13 @@ export function useLoginForm() {
     e.preventDefault();
     const result = await axios.post(url, { email, password });
     const res = result.data;
+
     if (res.status !== 200 && res.error) {
       console.log('Login failed');
     }
 
-    login({
-      name: {
-        first: 'Sifatul',
-        last: 'Rabbi',
-      },
-      email: 'mdsifatulislam.rabbi@gmail.com',
-    });
+    console.log(res.data[0]);
+
     setEmail('');
     setPassword('');
     navigate('/users/dashboard');
