@@ -29,12 +29,12 @@ const Login = () => {
         style={{ maxWidth: '450px' }}
         onSubmit={loginForm.handleSubmit}
       >
-        <FloatingLabel label='Mobile'>
+        <FloatingLabel label='Email'>
           <FormControl
-            type='number'
-            id='mobile'
-            name='mobile'
-            placeholder='Mobile'
+            type='email'
+            id='email'
+            name='email'
+            placeholder='Email'
             required
             className='mb-3'
             value={loginForm.email}

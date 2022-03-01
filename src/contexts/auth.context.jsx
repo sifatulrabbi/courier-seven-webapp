@@ -16,11 +16,9 @@ export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   const [user, setUser] = React.useState(null);
 
-  function login(mobile, password) {
-    loginFn(mobile, password, (user) => {
-      setIsAuthenticated(true);
-      setUser(user);
-    });
+  function login(user) {
+    setUser(user);
+    setIsAuthenticated(true);
   }
 
   function logout() {

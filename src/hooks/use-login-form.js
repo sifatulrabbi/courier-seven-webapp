@@ -1,13 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { useAuth } from '../contexts';
+import { useAuth } from '../contexts';
 import axios from 'axios';
 
 export function useLoginForm() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
-  // const { login } = useAuth();
+  const { login } = useAuth();
   const url = process.env.REACT_APP_PROXY + '/auth/login';
 
   function handleEmailChange(e) {
@@ -20,18 +20,18 @@ export function useLoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const result = await axios.post(url, { email, password });
-    const res = result.data;
-
-    if (res.status !== 200 && res.error) {
-      console.log('Login failed');
+    let res;
+    try {
+      const result = await axios.post(url, { email, password });
+      res = result.data;
+      setEmail('');
+      setPassword('');
+      console.log(res.data[0]);
+      login(res.data[0]);
+      navigate('/users');
+    } catch (err) {
+      console.log(err);
     }
-
-    console.log(res.data[0]);
-
-    setEmail('');
-    setPassword('');
-    navigate('/users/dashboard');
   }
 
   return {
