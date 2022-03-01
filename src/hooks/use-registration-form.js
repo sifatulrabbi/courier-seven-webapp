@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
 export function useRegistrationForm() {
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [confirmPassword, setConfirmPassword] = React.useState("");
-  const [permanentDistrict, setPermanentDistrict] = React.useState("");
-  const [permanentArea, setPermanentArea] = React.useState("");
-  const [permanentStreet, setPermanentStreet] = React.useState("");
-  const [presentDistrict, setPresentDistrict] = React.useState("");
-  const [presentArea, setPresentArea] = React.useState("");
-  const [presentStreet, setPresentStreet] = React.useState("");
-  const [accountType, setAccountType] = React.useState("");
+  const [firstName, setFirstName] = React.useState('');
+  const [lastName, setLastName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [confirmPassword, setConfirmPassword] = React.useState('');
+  const [permanentDistrict, setPermanentDistrict] = React.useState('');
+  const [permanentArea, setPermanentArea] = React.useState('');
+  const [permanentStreet, setPermanentStreet] = React.useState('');
+  const [presentDistrict, setPresentDistrict] = React.useState('');
+  const [presentArea, setPresentArea] = React.useState('');
+  const [presentStreet, setPresentStreet] = React.useState('');
+  const [accountType, setAccountType] = React.useState('');
 
   function handleFirstNameChange(e) {
     setFirstName(e.currentTarget.value);
@@ -66,20 +66,20 @@ export function useRegistrationForm() {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      console.log("Registration failed password mismatch");
+      console.log('Registration failed password mismatch');
     }
 
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPassword("");
-    setConfirmPassword("");
-    setPermanentDistrict("");
-    setPermanentArea("");
-    setPermanentStreet("");
-    setPresentDistrict("");
-    setPresentArea("");
-    setPresentStreet("");
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+    setPermanentDistrict('');
+    setPermanentArea('');
+    setPermanentStreet('');
+    setPresentDistrict('');
+    setPresentArea('');
+    setPresentStreet('');
   }
 
   return {

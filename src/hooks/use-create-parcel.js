@@ -1,24 +1,24 @@
-import React from "react";
-import { sortAreas } from "../utils";
+import React from 'react';
+import { sortAreas } from '../utils';
 
 export function useCreateParcel() {
-  const [customerName, setCustomerName] = React.useState("");
-  const [collectionAmount, setCollectionAmount] = React.useState("");
-  const [productPrice, setProductPrice] = React.useState("");
-  const [productWeight, setProductWeight] = React.useState("");
-  const [invoiceId, setInvoiceId] = React.useState("");
-  const [notes, setNotes] = React.useState("");
-  const [terms, setTerms] = React.useState("");
+  const [customerName, setCustomerName] = React.useState('');
+  const [collectionAmount, setCollectionAmount] = React.useState('');
+  const [productPrice, setProductPrice] = React.useState('');
+  const [productWeight, setProductWeight] = React.useState('');
+  const [invoiceId, setInvoiceId] = React.useState('');
+  const [notes, setNotes] = React.useState('');
+  const [terms, setTerms] = React.useState('');
   // customer address
-  const [customerDistrict, setCustomerDistrict] = React.useState("");
-  const [customerArea, setCustomerArea] = React.useState("");
-  const [customerStreet, setCustomerStreet] = React.useState("");
-  const [customerHouse, setCustomerHouse] = React.useState("");
+  const [customerDistrict, setCustomerDistrict] = React.useState('');
+  const [customerArea, setCustomerArea] = React.useState('');
+  const [customerStreet, setCustomerStreet] = React.useState('');
+  const [customerHouse, setCustomerHouse] = React.useState('');
   // pickup address
-  const [pickupDistrict, setPickupDistrict] = React.useState("");
-  const [pickupArea, setPickupArea] = React.useState("");
-  const [pickupStreet, setPickupStreet] = React.useState("");
-  const [pickupHouse, setPickupHouse] = React.useState("");
+  const [pickupDistrict, setPickupDistrict] = React.useState('');
+  const [pickupArea, setPickupArea] = React.useState('');
+  const [pickupStreet, setPickupStreet] = React.useState('');
+  const [pickupHouse, setPickupHouse] = React.useState('');
   // area lists
   const [customerAreas, setCustomerAreas] = React.useState([]);
   const [pickupAreas, setPickupAreas] = React.useState([]);

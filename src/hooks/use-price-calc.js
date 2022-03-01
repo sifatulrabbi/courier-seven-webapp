@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
 export function usePriceCalculator() {
-  const [productWeight, setProductWeight] = React.useState("");
-  const [productPrice, setProductPrice] = React.useState("");
-  const [pickupDistrict, setPickupDistrict] = React.useState("");
-  const [deliveryDistrict, setDeliveryDistrict] = React.useState("");
-  const [deliveryArea, setDeliveryArea] = React.useState("");
-  const [pickupArea, setPickupArea] = React.useState("");
+  const [productWeight, setProductWeight] = React.useState('');
+  const [productPrice, setProductPrice] = React.useState('');
+  const [pickupDistrict, setPickupDistrict] = React.useState('');
+  const [deliveryDistrict, setDeliveryDistrict] = React.useState('');
+  const [deliveryArea, setDeliveryArea] = React.useState('');
+  const [pickupArea, setPickupArea] = React.useState('');
   const [result, setResult] = React.useState({});
   const [errors, setErrors] = React.useState([]);
   const [showResult, setShowResult] = React.useState(false);
@@ -14,8 +14,8 @@ export function usePriceCalculator() {
   React.useEffect(() => {
     setResult({
       product: { price: 0, weight: 0 },
-      pickup: "",
-      delivery: "",
+      pickup: '',
+      delivery: '',
       total: 0,
     });
   }, []);
@@ -50,8 +50,8 @@ export function usePriceCalculator() {
     setErrors([]);
     if (!pickupArea || !pickupDistrict || !deliveryArea || !deliveryDistrict) {
       const errors = [];
-      errors.push("Enter pickup location");
-      errors.push("Enter delivery location");
+      errors.push('Enter pickup location');
+      errors.push('Enter delivery location');
 
       setErrors(errors);
       return;
@@ -68,12 +68,12 @@ export function usePriceCalculator() {
     });
 
     setShowResult(true);
-    setProductPrice("");
-    setProductWeight("");
-    setPickupDistrict("");
-    setPickupArea("");
-    setDeliveryDistrict("");
-    setDeliveryArea("");
+    setProductPrice('');
+    setProductWeight('');
+    setPickupDistrict('');
+    setPickupArea('');
+    setDeliveryDistrict('');
+    setDeliveryArea('');
   }
 
   return {

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 export function useOTPForm(setOtpVerified) {
-  const [mobile, setMobile] = React.useState("");
-  const [otp, setOtp] = React.useState("");
+  const [mobile, setMobile] = React.useState('');
+  const [otp, setOtp] = React.useState('');
   const [nextStep, setNextStep] = React.useState(false);
 
   function handleMobileChange(e) {

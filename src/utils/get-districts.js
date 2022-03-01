@@ -1,4 +1,4 @@
-import { locations } from "../assets";
+import { locations } from '../assets';
 
 export function getDistricts() {
   const districts = [];

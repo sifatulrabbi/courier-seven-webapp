@@ -1,8 +1,8 @@
-import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export function useScrollableLinks() {
-  const [elementId, setElementId] = React.useState("");
+  const [elementId, setElementId] = React.useState('');
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
@@ -11,7 +11,7 @@ export function useScrollableLinks() {
 
     if (element) {
       element.scrollIntoView({
-        behavior: "smooth",
+        behavior: 'smooth',
       });
     } else {
       document.documentElement.scrollTo(0, 0);
@@ -21,13 +21,13 @@ export function useScrollableLinks() {
   return function scrollTo(id) {
     setElementId(id);
 
-    if (pathname === "/") {
+    if (pathname === '/') {
       console.log(pathname);
       doScroll();
       return;
     }
 
-    navigate("/", { replace: true });
+    navigate('/', { replace: true });
     setTimeout(() => {
       doScroll();
     }, [500]);

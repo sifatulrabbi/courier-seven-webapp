@@ -1,14 +1,14 @@
-import React from "react";
-import { Container, Table, Row } from "react-bootstrap";
-import { parcelsData } from "../assets";
-import { v4 } from "uuid";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Container, Table, Row } from 'react-bootstrap';
+import { parcelsData } from '../assets';
+import { v4 } from 'uuid';
+import { Link } from 'react-router-dom';
 
 const Parcels = () => {
   return (
-    <Container className="container-lg p-3">
-      <Row className="m-0" style={{ maxWidth: "100vw", overflowX: "scroll" }}>
-        <Table striped size="lg" style={{ minWidth: 800 }}>
+    <Container className='container-lg p-3'>
+      <Row className='m-0' style={{ maxWidth: '100vw', overflowX: 'scroll' }}>
+        <Table striped size='lg' style={{ minWidth: 800 }}>
           <thead>
             <tr>
               {parcelsData.fields.map((field) => (
@@ -28,7 +28,7 @@ const Parcels = () => {
                 <td>{value.customerName}</td>
                 <td>{value.customerMobile}</td>
                 <td>{value.collectionAmount}</td>
-                <td>{value.delivered ? "Yes" : "No"}</td>
+                <td>{value.delivered ? 'Yes' : 'No'}</td>
               </tr>
             ))}
           </tbody>

@@ -1,10 +1,10 @@
-import React from "react";
-import { FaEquals, FaTimes } from "react-icons/fa";
-import { v4 } from "uuid";
-import { brand, siteLinks } from "../../assets";
-import { Navbar as BNavbar, Nav, Container, Button } from "react-bootstrap";
-import ProfileDropdown from "./profile-dropdown";
-import ProfileAccordion from "./profile-accordion";
+import React from 'react';
+import { FaEquals, FaTimes } from 'react-icons/fa';
+import { v4 } from 'uuid';
+import { brand, siteLinks } from '../../assets';
+import { Navbar as BNavbar, Nav, Container, Button } from 'react-bootstrap';
+import ProfileDropdown from './profile-dropdown';
+import ProfileAccordion from './profile-accordion';
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = React.useState(false);
@@ -19,36 +19,36 @@ export default function Navbar() {
 
   return (
     <BNavbar
-      bg="white"
-      fixed="top"
-      expand="lg"
-      className="shadow-sm"
-      style={{ minHeight: 60, maxWidth: "100vw" }}
+      bg='white'
+      fixed='top'
+      expand='lg'
+      className='shadow-sm text-white'
+      style={{ minHeight: 60, maxWidth: '100vw' }}
     >
       <Container>
-        <BNavbar.Brand className="p-0">
-          <Nav.Link href="/" className="h5 m-0 text-bolder p-0">
-            <img src={brand} alt="Courier Seven BD" height="50px" />
+        <BNavbar.Brand className='p-0'>
+          <Nav.Link href='/' className='h5 m-0 text-bolder p-0'>
+            <img src={brand} alt='Courier Seven BD' height='50px' />
             Courier 007
           </Nav.Link>
         </BNavbar.Brand>
         <Button
-          variant="white"
-          className="shadow-0 p-0 icon-btn justify-self-end d-block d-lg-none"
+          variant='white'
+          className='shadow-0 p-0 icon-btn justify-self-end d-block d-lg-none'
           onClick={toggleMenu}
         >
           {showMenu ? <FaTimes /> : <FaEquals />}
         </Button>
         <div
           className={`justify-content-end navbar-nav-menu bg-white ${
-            showMenu ? "active" : "hide"
+            showMenu ? 'active' : 'hide'
           }`}
         >
-          <Nav className="d-flex align-items-center justify-content-center">
+          <Nav className='d-flex align-items-center justify-content-center'>
             {siteLinks.navLinks.map((item) => (
               <Nav.Link
                 key={v4()}
-                className="nav-link text-dark p-2 px-3 w-100"
+                className='nav-link text-dark p-2 px-3 w-100'
                 href={item.path}
               >
                 {item.name}

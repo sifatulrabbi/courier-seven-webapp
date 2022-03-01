@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { login as loginFn } from '../utils';
 
 const AuthContext = React.createContext({
   isAuthenticated: false,
@@ -12,12 +13,14 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = React.useState(true);
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   const [user, setUser] = React.useState(null);
 
-  function login(user) {
-    setIsAuthenticated(true);
-    setUser(user);
+  function login(mobile, password) {
+    loginFn(mobile, password, (user) => {
+      setIsAuthenticated(true);
+      setUser(user);
+    });
   }
 
   function logout() {

@@ -1,4 +1,4 @@
-$font-family-sans-serif: "Nunito", sans-serif;
+$font-family-sans-serif: 'Nunito', sans-serif;
 $font-weight-bolder: 900;
 $primary: #790b98;
 $light: #f7ebff;
@@ -6,6 +6,7 @@ $black: #41324a;
 $secondary: #584c60;
 $border-color: #f7ebff;
 $input-border-color: $secondary;
+$linear-gradient: linear-gradient(125.09deg, #3e0064 23.01%, $primary 87.5%);
 
 $border-radius: 1rem;
 
@@ -35,10 +36,10 @@ $box-shadow-lg: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   box-shadow: none !important;
 }
 
-@import "~bootstrap/scss/bootstrap.scss";
-@import "~bootstrap/scss/root";
-@import "~bootstrap/scss/variables";
-@import "~bootstrap/scss/mixins";
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
 
 .display-2 {
   font-weight: $font-weight-bolder;
@@ -107,6 +108,11 @@ $box-shadow-lg: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   background-color: $gray-100 !important;
 }
 
+.bg-linear {
+  background-color: transparent;
+  background: $linear-gradient;
+}
+
 .subtitle {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -127,5 +133,5 @@ a {
   background-color: $gray-300;
 }
 
-@import "./components/accordion";
-@import "./components/navbar";
+@import './components/accordion';
+@import './components/navbar';
