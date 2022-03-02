@@ -1,5 +1,4 @@
 import React from 'react';
-import { login as loginFn } from '../utils';
 
 const AuthContext = React.createContext({
   isAuthenticated: false,
@@ -19,6 +18,8 @@ export function AuthProvider({ children }) {
   function login(user) {
     setUser(user);
     setIsAuthenticated(true);
+    const cookie = document.cookie;
+    console.log(cookie);
   }
 
   function logout() {
