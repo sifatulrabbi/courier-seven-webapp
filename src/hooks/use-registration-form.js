@@ -7,9 +7,11 @@ export function useRegistrationForm() {
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
   const [permanentDistrict, setPermanentDistrict] = React.useState('');
+  const [permanentSubDistrict, setPermanentSubDistrict] = React.useState('');
   const [permanentArea, setPermanentArea] = React.useState('');
   const [permanentStreet, setPermanentStreet] = React.useState('');
   const [presentDistrict, setPresentDistrict] = React.useState('');
+  const [presentSubDistrict, setPresentSubDistrict] = React.useState('');
   const [presentArea, setPresentArea] = React.useState('');
   const [presentStreet, setPresentStreet] = React.useState('');
   const [accountType, setAccountType] = React.useState('');
@@ -38,6 +40,10 @@ export function useRegistrationForm() {
     setPresentDistrict(value);
   }
 
+  function updatePresentSubDistrict(value) {
+    setPresentSubDistrict(value);
+  }
+
   function updatePresentArea(value) {
     setPresentArea(value);
   }
@@ -48,6 +54,9 @@ export function useRegistrationForm() {
 
   function updatePermanentDistrict(value) {
     setPermanentDistrict(value);
+  }
+  function updatePermanentSubDistrict(value) {
+    setPermanentSubDistrict(value);
   }
 
   function updatePermanentArea(value) {
@@ -89,10 +98,12 @@ export function useRegistrationForm() {
     password,
     confirmPassword,
     presentDistrict,
+    presentSubDistrict,
     presentArea,
     presentStreet,
     permanentArea,
     permanentDistrict,
+    permanentSubDistrict,
     permanentStreet,
     accountType,
     updateAccountType,
@@ -108,5 +119,7 @@ export function useRegistrationForm() {
     updatePresentArea,
     updatePresentDistrict,
     updatePresentStreet,
+    updatePresentSubDistrict,
+    updatePermanentSubDistrict,
   };
 }
