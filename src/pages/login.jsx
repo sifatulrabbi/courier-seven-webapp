@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Container,
-  Breadcrumb,
   Form,
   Button,
   FormControl,
@@ -25,14 +24,10 @@ const Login = () => {
       className='container-lg p-4'
       style={{ marginTop: '90px', marginBottom: '90px' }}
     >
-      <Breadcrumb>
-        <Breadcrumb.Item href='/'>Home</Breadcrumb.Item>
-        <Breadcrumb.Item active>Login</Breadcrumb.Item>
-      </Breadcrumb>
       <div className='mb-5 w-100' />
       <Form
         action='submit'
-        className='bg-white shadow p-3 rounded mx-auto'
+        className='bg-white shadow-sm p-3 rounded mx-auto'
         style={{ maxWidth: '450px' }}
         onSubmit={loginForm.handleSubmit}
       >
