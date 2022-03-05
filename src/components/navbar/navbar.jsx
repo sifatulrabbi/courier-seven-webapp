@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { brand } from '../../assets';
-import { Navbar as BNavbar, Container } from 'react-bootstrap';
+import { Navbar as BNavbar, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavLinks } from '../../contexts';
 import NavMenu from './nav-menu';
@@ -25,17 +25,11 @@ const Navbar = () => {
 
   return (
     <BNavbar
-      collapseOnSelect
       bg='white'
       fixed='top'
       expand='lg'
-      variant='white'
-      style={{
-        minHeight: 60,
-        maxWidth: '100vw',
-        animation: animation,
-      }}
-      className='shadow-sm p-2'
+      style={{ minHeight: 60, maxWidth: '100vw', animation: animation }}
+      className='shadow-sm'
     >
       <Container>
         <BNavbar.Brand className='p-0'>
@@ -44,12 +38,13 @@ const Navbar = () => {
             Courier 007
           </Link>
         </BNavbar.Brand>
-        <BNavbar.Toggle
-          className='p-0 icon-btn justify-self-end'
+        <Button
+          variant='white'
+          className={`shadow-0 p-0 icon-btn justify-self-end d-block d-lg-none`}
           onClick={toggleMenu}
         >
           {showMenu ? <FaTimes /> : <FaBars />}
-        </BNavbar.Toggle>
+        </Button>
         <NavMenu links={links} showMenu={showMenu} setShowMenu={setShowMenu} />
       </Container>
     </BNavbar>

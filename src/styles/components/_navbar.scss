@@ -2,12 +2,12 @@
   @media screen and (max-width: 995px) {
     padding: 0;
 
-    &-nav-menu {
+    .nav-menu {
       position: fixed;
       top: 60px;
       left: 0;
       right: 0;
-      bottom: 0;
+      height: 100vh;
       padding-top: 3rem;
       transition: $btn-transition;
       transform: translateX(-200%);
@@ -15,15 +15,18 @@
       &.active {
         transform: translateX(0);
       }
+    }
+  }
 
-      .nav-link {
-        border-bottom: 1px solid $light;
-        transition: $btn-transition;
+  .nav-link {
+    transition: $btn-transition;
 
-        &:hover {
-          background-color: $light;
-        }
-      }
+    &:hover {
+      background-color: $light;
+    }
+    @media screen and (max-width: 995px) {
+      width: 100%;
+      text-align: center;
     }
   }
 }

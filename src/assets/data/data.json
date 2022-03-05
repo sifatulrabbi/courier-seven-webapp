@@ -1,0 +1,277 @@
+{
+  "accountTypes": [
+    {
+      "name": "Bronze (Less than 1200 parcels per month)",
+      "value": "bronze"
+    },
+    {
+      "name": "Silver (1201 to 2000 parcels per month)",
+      "value": "silver"
+    },
+    {
+      "name": "Platinum (2001 to 4000 parcels per month)",
+      "value": "platinum"
+    },
+    {
+      "name": "Diamond (4000+ parcels per month)",
+      "value": "diamond"
+    }
+  ],
+
+  "calculatorData": [
+    {
+      "select": false,
+      "name": "price",
+      "id": "price",
+      "label": "Product price (TK)",
+      "required": true,
+      "type": "number"
+    },
+    {
+      "select": false,
+      "name": "weight",
+      "id": "weight",
+      "label": "Product weight (gm)",
+      "required": true,
+      "type": "number"
+    },
+    {
+      "select": true,
+      "name": "district",
+      "id": "district",
+      "label": "District",
+      "required": true,
+      "options": ["Dhaka"]
+    },
+    {
+      "select": true,
+      "name": "area",
+      "id": "area",
+      "label": "Area",
+      "required": true,
+      "options": ["areas"]
+    }
+  ],
+
+  "createParcelData": {
+    "fields": [
+      {
+        "type": "number",
+        "id": "collection-amount",
+        "name": "collection_amount",
+        "label": "Collection Amount",
+        "required": true
+      },
+      {
+        "select": true,
+        "id": "pickup-district",
+        "name": "pickup_district",
+        "label": "Pickup District",
+        "required": true,
+        "options": ["Dhaka", "Gazipur"]
+      },
+      {
+        "select": true,
+        "id": "pickup-sub-district",
+        "name": "pickup_sub_district",
+        "label": "Pickup Sub District",
+        "required": true,
+        "options": ["Dhanmondi", "Kamrangirchar"]
+      },
+      {
+        "id": "pickup-area",
+        "name": "pickup_area",
+        "label": "Pickup Area",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "pickup-area",
+        "name": "pickup_area",
+        "label": "Pickup Location details",
+        "type": "text",
+        "required": true
+      }
+    ],
+
+    "fieldsCustomer": [
+      {
+        "type": "text",
+        "id": "customer-name",
+        "name": "customer_name",
+        "label": "Customer Name",
+        "required": true
+      },
+      {
+        "type": "number",
+        "id": "customer-mobile",
+        "name": "customer_mobile",
+        "label": "Customer Mobile",
+        "required": true
+      },
+      {
+        "select": true,
+        "id": "customer-district",
+        "name": "customer_district",
+        "label": "Customer District",
+        "required": true,
+        "options": ["Dhaka", "Gazipur"]
+      },
+      {
+        "select": true,
+        "id": "customer-sub-district",
+        "name": "customer_sub_district",
+        "label": "Customer District",
+        "required": true,
+        "options": ["Dhanmondi", "Kamrangirchar"]
+      },
+      {
+        "id": "customer-area",
+        "name": "customer_area",
+        "label": "Customer Area",
+        "type": "text",
+        "required": true
+      },
+      {
+        "id": "customer-area",
+        "name": "customer_area",
+        "label": "Customer Location Details",
+        "type": "text",
+        "required": true
+      }
+    ],
+
+    "fieldsProduct": [
+      {
+        "type": "number",
+        "id": "product-price",
+        "name": "product_price",
+        "label": "Product Price",
+        "required": true
+      },
+      {
+        "type": "number",
+        "id": "product-mobile",
+        "name": "product_weight",
+        "label": "Product Weight",
+        "required": true
+      },
+      {
+        "select": true,
+        "id": "product-type",
+        "name": "product_type",
+        "required": true,
+        "label": "Product Type",
+        "options": ["Fragile", "Solid", "Liquid"]
+      }
+    ]
+  },
+
+  "dashBoardData": [
+    {
+      "header": "Parcels created",
+      "value": "67",
+      "ext": "pcs",
+      "link": { "name": "Create one", "path": "/users/create-parcel" }
+    },
+    {
+      "header": "Parcels delivered",
+      "value": "50",
+      "ext": "pcs",
+      "link": { "name": "See all", "path": "/users/parcels" }
+    },
+    {
+      "header": "In progress",
+      "value": "17",
+      "ext": "pcs",
+      "link": { "name": "See all", "path": "/users/parcels" }
+    },
+    {
+      "header": "Amount collected",
+      "value": "6500",
+      "ext": "TK",
+      "link": { "name": "See all", "path": "/users/payments" }
+    },
+    {
+      "header": "Payment due",
+      "value": "1200",
+      "ext": "TK",
+      "link": { "name": "See all", "path": "/users/payments" }
+    }
+  ],
+
+  "siteLinks": {
+    "navLinks": [
+      { "name": "Home", "path": "/" },
+      { "name": "Tracking", "path": "/users/tracking" },
+      { "name": "Login", "path": "/login" },
+      { "name": "Register", "path": "/register" }
+    ],
+    "userLinks": [
+      { "name": "Dashboard", "path": "/users" },
+      { "name": "Tracking", "path": "/users/tracking" },
+      { "name": "Create-parcel", "path": "/users/create-parcel" },
+      { "name": "Parcels", "path": "/users/parcels" },
+      { "name": "Payments", "path": "/users/payments" }
+    ]
+  },
+
+  "userRegistration": {
+    "profileFields": [
+      {
+        "type": "text",
+        "id": "first-name",
+        "name": "first_name",
+        "label": "First name",
+        "required": true
+      },
+      {
+        "type": "text",
+        "id": "last-name",
+        "name": "last_name",
+        "label": "Last name",
+        "required": true
+      },
+      {
+        "type": "email",
+        "id": "email",
+        "name": "email",
+        "label": "Email",
+        "required": true
+      },
+      {
+        "type": "password",
+        "id": "password",
+        "name": "password",
+        "label": "Password",
+        "required": true
+      },
+      {
+        "type": "password",
+        "id": "confirm-password",
+        "name": "confirm_password",
+        "label": "Confirm Password",
+        "required": true
+      }
+    ]
+  },
+
+  "faqData": [
+    {
+      "ques": "Where is our office located?",
+      "ans": "He standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+    },
+    {
+      "ques": "What kinds of services does Courier 007 provide?",
+      "ans": "He standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. He standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham"
+    },
+    {
+      "ques": "What is the coverage ares Courier 007?",
+      "ans": "He standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+    },
+    {
+      "ques": "Another dummy question about Courier 007?",
+      "ans": "He standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from 'de Finibus Bonorum et Malorum' by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham."
+    }
+  ]
+}

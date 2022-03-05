@@ -13,16 +13,21 @@ import { useNavLinks } from '../contexts';
 const Login = () => {
   const loginForm = useLoginForm();
   const { homeLinks } = useNavLinks();
+  const [animation, setAnimation] = React.useState('');
 
   React.useEffect(() => {
     homeLinks();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  React.useEffect(() => {
+    setAnimation('on-mount 0.6s ease-out forwards');
+  }, []);
+
   return (
     <Container
       className='container-lg p-4'
-      style={{ marginTop: '90px', marginBottom: '90px' }}
+      style={{ marginTop: '90px', marginBottom: '90px', animation: animation }}
     >
       <div className='mb-5 w-100' />
       <Form

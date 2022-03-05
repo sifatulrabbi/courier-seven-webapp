@@ -5,7 +5,7 @@ import { makeFetch } from '../utils/make-fetch';
 const SAVED_USER_KEY = 'Courier-007-user';
 const AuthContext = React.createContext({
   isAuthenticated: false,
-  login: function () {},
+  login: async (email, password) => false,
   logout: function () {},
   getUser: function () {},
   user: {},
