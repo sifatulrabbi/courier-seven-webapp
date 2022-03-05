@@ -3,6 +3,7 @@ import { Col, FormCheck } from 'react-bootstrap';
 import FormGroup from '../form-group';
 import { v4 } from 'uuid';
 import { createParcelData } from '../../assets';
+import { Link } from 'react-router-dom';
 
 const Fields = () => {
   return (
@@ -22,14 +23,6 @@ const Fields = () => {
           </Col>
         )
       )}
-      <Col sm='12' lg='6' className='p-2'>
-        <FormCheck
-          type='checkbox'
-          id='terms-policy'
-          required
-          label='Accept our terms and policy text will be here'
-        />
-      </Col>
     </>
   );
 };

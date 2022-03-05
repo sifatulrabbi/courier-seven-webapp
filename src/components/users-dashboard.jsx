@@ -6,20 +6,20 @@ import { dashboardData } from '../assets';
 
 const UsersDashboard = () => {
   return (
-    <Container className='container-lg p-0'>
-      <Row className='p-0'>
-        {dashboardData.map(({ header, value, ext, link }) => (
-          <Col key={v4()} sm='12' md='4' lg='3' className='p-4'>
-            <Card className='shadow-sm border-0 bg-gray'>
+    <Container className='container-lg p-3'>
+      <Row>
+        {dashboardData.map((data) => (
+          <Col key={v4()} sm='12' md='6' lg='3' className='my-2'>
+            <Card className='border-0 shadow-sm bg-white'>
               <Card.Body>
-                <span className='h6'>{header}</span>
-                <Card.Title className='display-4 fw-bold'>
-                  {value}
-                  <small className='fs-5 fw-normal px-2'>{ext}</small>
-                </Card.Title>
+                <Card.Subtitle>{data.header}</Card.Subtitle>
+                <div className='mt-2'>
+                  <span className='display-5 fw-bold'>{data.value}</span>
+                  <small>{data.ext}</small>
+                </div>
               </Card.Body>
-              <Card.Footer className='bg-gray border-0'>
-                <Link to={link.path}>{link.name}</Link>
+              <Card.Footer>
+                <Link to={data.link.path}>{data.link.name}</Link>
               </Card.Footer>
             </Card>
           </Col>
