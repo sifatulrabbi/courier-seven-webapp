@@ -17,7 +17,7 @@ const FAQs = () => {
           <Accordion.Item
             key={v4()}
             eventKey={index}
-            className='my-3 rounded shadow border-0'
+            className='my-3 rounded shadow-sm border-0'
             style={{ overflow: 'hidden' }}
           >
             <Accordion.Header>
