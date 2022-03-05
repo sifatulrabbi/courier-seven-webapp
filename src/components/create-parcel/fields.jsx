@@ -1,9 +1,8 @@
 import React from 'react';
-import { Col, FormCheck } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import FormGroup from '../form-group';
 import { v4 } from 'uuid';
 import { createParcelData } from '../../assets';
-import { Link } from 'react-router-dom';
 
 const Fields = () => {
   return (
