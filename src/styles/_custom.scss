@@ -88,16 +88,6 @@ $box-shadow-lg: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
       color: #fff;
     }
   }
-
-  .navbar-nav-menu {
-    @media screen and (max-width: 992px) {
-      background-color: #fff !important;
-
-      .menu-item {
-        color: #41324a !important;
-      }
-    }
-  }
 }
 
 .form-control,
