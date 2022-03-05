@@ -36,13 +36,9 @@ const Footer = () => {
             <Nav className='flex-column'>
               <h6 className='fw-bold'>Site links</h6>
               {siteLinks.navLinks.map((link) => (
-                <Nav.Link
-                  key={v4()}
-                  href={link.link}
-                  className='p-1 link-light'
-                >
+                <Link key={v4()} to={link.path} className='p-1 link-light'>
                   <small>{link.name}</small>
-                </Nav.Link>
+                </Link>
               ))}
             </Nav>
           </Col>
