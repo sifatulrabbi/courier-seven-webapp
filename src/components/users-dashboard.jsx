@@ -11,10 +11,8 @@ const UsersDashboard = () => {
         {dashboardData.map(({ header, value, ext, link }) => (
           <Col key={v4()} sm='12' md='4' lg='3' className='p-4'>
             <Card className='shadow-sm border-0 bg-gray'>
-              <Card.Header className='bg-gray border-0'>
-                <span className='h6'>{header}</span>
-              </Card.Header>
               <Card.Body>
+                <span className='h6'>{header}</span>
                 <Card.Title className='display-4 fw-bold'>
                   {value}
                   <small className='fs-5 fw-normal px-2'>{ext}</small>

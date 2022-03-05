@@ -3,11 +3,18 @@ import { Container } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
 import ProtectedRoute from '../components/protected-route';
 import UsersDashboard from '../components/users-dashboard';
-import CreateParcel from '../components/create-parcel';
-import Parcels from '../components/parcels';
+import { CreateParcel, Parcels } from '../components';
 import ParcelView from '../components/parcel-view';
+import { useNavLinks } from '../contexts';
 
 const Users = () => {
+  const { userLinks } = useNavLinks();
+
+  React.useEffect(() => {
+    userLinks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Container
       fluid

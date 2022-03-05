@@ -1,3 +1,9 @@
+/**
+ * @param {string} path
+ * @param {'GET' | 'POST' | 'DELETE' | 'PUT'} method
+ * @param {any | undefined} body
+ * @returns {Promise<any>}
+ */
 export async function makeFetch(path, method, body) {
   const url = process.env.REACT_APP_PROXY + path;
   const headers = new Headers();

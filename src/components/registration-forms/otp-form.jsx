@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button, Form, Container } from 'react-bootstrap';
-import FormGroup from './form-group';
+import FormGroup from '../form-group';
 import { useNavigate, Link } from 'react-router-dom';
 
-const OtpForm = ({ callBack }) => {
+export const OtpForm = ({ callBack }) => {
   const navigate = useNavigate();
 
   function handleSubmit(e) {
@@ -36,5 +36,3 @@ const OtpForm = ({ callBack }) => {
     </Form>
   );
 };
-
-export default OtpForm;

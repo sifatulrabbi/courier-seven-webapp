@@ -1,4 +1,5 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 
 const LoadingContext = React.createContext({
   loading: false,
@@ -15,9 +16,13 @@ export const LoadingProvider = ({ children }) => {
   return (
     <LoadingContext.Provider value={{ loading, setLoading }}>
       {loading ? (
-        <div>
+        <Container
+          fluid
+          className='d-flex justify-content-center align-items-center'
+          style={{ height: '100vh' }}
+        >
           <h1>Loading...</h1>
-        </div>
+        </Container>
       ) : (
         children
       )}
