@@ -8,12 +8,12 @@ const Hero = () => {
     <Container
       fluid
       className='bg-linear d-flex align-items-center text-white'
-      style={{ paddingTop: '7rem', paddingBottom: '2rem', minHeight: '90vh' }}
+      style={{ paddingTop: '8rem', paddingBottom: '2rem', minHeight: '95vh' }}
     >
       <Container className='container-lg px-4'>
         <Row className='align-items-center'>
-          <HeroRight />
           <HeroLeft />
+          <HeroRight />
         </Row>
       </Container>
     </Container>

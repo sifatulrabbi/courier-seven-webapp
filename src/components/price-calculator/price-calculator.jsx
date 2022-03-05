@@ -16,7 +16,7 @@ const PriceCalculator = () => {
             </h2>
           </Col>
           <Col>
-            <Container fluid className='bg-white p-3 rounded shadow'>
+            <Container fluid className='bg-white p-3 rounded shadow-sm'>
               <CalculatorForm />
             </Container>
           </Col>

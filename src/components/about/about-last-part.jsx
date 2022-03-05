@@ -4,9 +4,9 @@ import FeatureCard from './feature-card';
 
 const AboutLastPart = () => {
   return (
-    <Row className='my-5 pt-5 justify-content-center'>
-      <h2 className='h2 text-center text-bolder mb-5'>
-        Our <span className='text-primary'>Promises</span>
+    <Row className='justify-content-center'>
+      <h2 className='h2 text-center text-bolder mb-5 text-white'>
+        Our Promises
         <br />
         are realistic
       </h2>

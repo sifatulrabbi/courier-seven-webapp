@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 function Card() {
   return (
     <Col md='6' sm='6' xl='4' className='p-4' style={{ maxWidth: '24rem' }}>
-      <BSCard className='bg-gray border-0 shadow'>
-        <BSCard.Header className='bg-gray border-0'>
+      <BSCard className='border-0 shadow-sm'>
+        <BSCard.Header className='bg-white border-0'>
           <span className='subtitle'>001</span>
         </BSCard.Header>
         <BSCard.Body>

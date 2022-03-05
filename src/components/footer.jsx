@@ -8,7 +8,7 @@ import {
   OverlayTrigger,
   Tooltip,
 } from 'react-bootstrap';
-import { brand, siteLinks } from '../assets';
+import { brandLight, siteLinks } from '../assets';
 import { Link } from 'react-router-dom';
 import { v4 } from 'uuid';
 import { FaFacebook, FaInstagram, FaEnvelope } from 'react-icons/fa';
@@ -19,23 +19,27 @@ const Footer = () => {
   }
 
   return (
-    <Container fluid className='bg-gray py-5'>
+    <Container fluid className='bg-linear py-5 text-white'>
       <Container className='container-lg h-100'>
         <Row className='g-4 mb-3'>
           <Col md='5' lg='5' className='text-center text-md-start mb-3'>
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <img src={brand} alt='Courier 007' height='45px' />
-              <span className='text-primary fw-bolder h5'>Courier 007</span>
+              <img src={brandLight} alt='Courier 007' height='45px' />
+              <span className='text-white fw-bolder h5'>Courier 007</span>
             </Link>
           </Col>
-          <Col md='2' lg='2' className='text-center text-md-start mb-3'>
+          <Col
+            md='2'
+            lg='2'
+            className='text-center text-md-start mb-3 text-white'
+          >
             <Nav className='flex-column'>
-              <h6>Site links</h6>
+              <h6 className='fw-bold'>Site links</h6>
               {siteLinks.navLinks.map((link) => (
                 <Nav.Link
                   key={v4()}
                   href={link.link}
-                  className='p-1 link-secondary'
+                  className='p-1 link-light'
                 >
                   <small>{link.name}</small>
                 </Nav.Link>
@@ -46,8 +50,8 @@ const Footer = () => {
             md='3'
             className='d-flex flex-column align-items-center align-items-md-start mb-3'
           >
-            <h6>Contact us</h6>
-            <small className='text-secondary mb-3'>
+            <h6 className='fw-bold'>Contact us</h6>
+            <small className='text-light mb-3'>
               Some house, Dhanmondi, Dhaka - 1205
             </small>
 
@@ -57,7 +61,7 @@ const Footer = () => {
             >
               <Button
                 variant='white'
-                className='btn p-0 text-start text-secondary'
+                className='btn p-0 text-start text-light'
                 onClick={copyMobile}
                 style={{ width: 'max-content' }}
               >
@@ -71,14 +75,16 @@ const Footer = () => {
               className='w-100 mb-3'
               style={{ maxWidth: '120px' }}
             >
-              <Button className='w-100'>Login</Button>
+              <Button variant='light' className='w-100'>
+                Login
+              </Button>
             </Link>
             <Link
               to='/register'
               className='w-100'
               style={{ maxWidth: '120px' }}
             >
-              <Button variant='outline-primary' className='w-100'>
+              <Button variant='secondary' className='w-100'>
                 Register
               </Button>
             </Link>
@@ -90,17 +96,17 @@ const Footer = () => {
           className='pt-2   d-flex flex-column flex-md-row align-items-center'
           style={{ justifyContent: 'space-between', gridGap: '2rem' }}
         >
-          <small className='text-secondary'>
+          <small className='text-white'>
             &copy; {new Date().getFullYear()} Courier 007, Bangladesh
           </small>
           <Nav>
-            <Nav.Link href='/' target='_blank' className='p-0 px-3'>
+            <Nav.Link href='/' target='_blank' className='p-0 px-3 text-white'>
               <FaFacebook style={{ fontSize: '1.3rem' }} />
             </Nav.Link>
-            <Nav.Link href='/' target='_blank' className='p-0 px-3'>
+            <Nav.Link href='/' target='_blank' className='p-0 px-3 text-white'>
               <FaInstagram style={{ fontSize: '1.3rem' }} />
             </Nav.Link>
-            <Nav.Link href='/' target='_blank' className='p-0 px-3'>
+            <Nav.Link href='/' target='_blank' className='p-0 px-3 text-white'>
               <FaEnvelope style={{ fontSize: '1.3rem' }} />
             </Nav.Link>
           </Nav>
