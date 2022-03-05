@@ -1,10 +1,9 @@
 export const siteLinks = {
   navLinks: [
     { name: 'Home', path: '/' },
-    { name: 'Pricing', path: '/#pricing' },
-    { name: 'Features', path: '/#features' },
-    { name: 'FAQs', path: '/#faqs' },
     { name: 'Tracking', path: '/users/tracking' },
+    { name: 'Login', path: '/login' },
+    { name: 'Register', path: '/register' },
   ],
   userLinks: [
     { name: 'Dashboard', path: '/users' },

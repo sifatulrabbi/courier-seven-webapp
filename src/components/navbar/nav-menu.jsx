@@ -5,9 +5,9 @@ import { v4 } from 'uuid';
 const NavMenu = ({ links, showMenu, setShowMenu }) => {
   return (
     <div
-      className={`justify-content-end bg-white ${
-        showMenu ? 'active' : 'hide'
-      } navbar-nav-menu`}
+      className={`justify-content-end navbar-collapse collapse ${
+        showMenu ? 'show' : ''
+      }`}
     >
       <Nav className='d-flex align-items-center justify-content-center'>
         {links.map((item) => (
