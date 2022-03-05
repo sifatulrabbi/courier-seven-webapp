@@ -8,7 +8,7 @@ export const siteLinks = {
   ],
   userLinks: [
     { name: 'Dashboard', path: '/users' },
-    { name: 'Create parcel', path: '/users/create-parcel' },
+    { name: 'Create-parcel', path: '/users/create-parcel' },
     { name: 'Parcels', path: '/users/parcels' },
     { name: 'Payments', path: '/users/payments' },
   ],

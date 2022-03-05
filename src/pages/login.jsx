@@ -9,9 +9,16 @@ import {
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useLoginForm } from '../hooks';
+import { useNavLinks } from '../contexts';
 
 const Login = () => {
   const loginForm = useLoginForm();
+  const { homeLinks } = useNavLinks();
+
+  React.useEffect(() => {
+    homeLinks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Container

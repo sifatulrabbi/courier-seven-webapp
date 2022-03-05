@@ -1,28 +1,22 @@
 import React from 'react';
-import { Breadcrumb, Container } from 'react-bootstrap';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import OtpForm from '../components/otp-form';
-import PrimaryRegForm from '../components/reg-form-primary';
-import ProfileRegForm from '../components/reg-form-profile';
+import { Container } from 'react-bootstrap';
+import { Routes, Route } from 'react-router-dom';
+import { useNavLinks } from '../contexts';
+import { PrimaryRegForm, ProfileRegForm, OtpForm } from '../components';
 
 const Register = () => {
-  const location = useLocation();
+  const { homeLinks } = useNavLinks();
 
-  function getCurrentLocation() {
-    const locationArr = location.pathname.split('/');
-    return locationArr[locationArr.length - 1];
-  }
+  React.useEffect(() => {
+    homeLinks();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <Container
       className='container-lg p-4'
       style={{ marginTop: '90px', marginBottom: '90px' }}
     >
-      <Breadcrumb className='mb-5'>
-        <Breadcrumb.Item href='/'>Home</Breadcrumb.Item>
-        <Breadcrumb.Item href='/register'>Register</Breadcrumb.Item>
-        <Breadcrumb.Item active>{getCurrentLocation()}</Breadcrumb.Item>
-      </Breadcrumb>
       <Routes>
         <Route path='/' element={<PrimaryRegForm />} />
         <Route path='/otp' element={<OtpForm />} />
