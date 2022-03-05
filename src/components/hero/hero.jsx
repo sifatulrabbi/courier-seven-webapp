@@ -8,7 +8,12 @@ const Hero = () => {
     <Container
       fluid
       className='bg-linear d-flex align-items-center text-white'
-      style={{ paddingTop: '8rem', paddingBottom: '2rem', minHeight: '95vh' }}
+      style={{
+        paddingTop: '8rem',
+        paddingBottom: '2rem',
+        minHeight: '95vh',
+        animation: 'on-mount 0.6s ease-out forwards',
+      }}
     >
       <Container className='container-lg px-4'>
         <Row className='align-items-center'>

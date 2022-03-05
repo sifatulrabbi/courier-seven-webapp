@@ -8,6 +8,7 @@ import NavMenu from './nav-menu';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = React.useState(false);
+  const [animation, setAnimation] = React.useState('');
   const { links } = useNavLinks();
 
   function toggleMenu(e, value) {
@@ -18,12 +19,20 @@ const Navbar = () => {
     }
   }
 
+  React.useEffect(() => {
+    setAnimation('on-mount 0.6s ease-out forwards');
+  }, []);
+
   return (
     <BNavbar
       bg='white'
       fixed='top'
       expand='lg'
-      style={{ minHeight: 60, maxWidth: '100vw' }}
+      style={{
+        minHeight: 60,
+        maxWidth: '100vw',
+        animation: animation,
+      }}
       className='shadow-sm'
     >
       <Container>

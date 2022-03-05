@@ -5,3 +5,4 @@ export * from './price-calculator';
 export * from './create-parcel';
 export * from './parcels';
 export * from './registration-forms';
+export * from './loading-screen';
