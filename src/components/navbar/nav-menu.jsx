@@ -7,13 +7,13 @@ const NavMenu = ({ links, showMenu, setShowMenu }) => {
     <div
       className={`justify-content-end bg-white ${
         showMenu ? 'active' : 'hide'
-      } navbar-nav-menu`}
+      } nav-menu`}
     >
       <Nav className='d-flex align-items-center justify-content-center'>
         {links.map((item) => (
           <Link
             key={v4()}
-            className='nav-link p-2 px-3 text-dark'
+            className='nav-link p-2 px-3 text-dark rounded'
             to={item.path}
             onClick={() => setShowMenu(false)}
           >

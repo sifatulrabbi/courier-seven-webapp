@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Container,
-  Breadcrumb,
   Form,
   Button,
   FormControl,
@@ -14,25 +13,26 @@ import { useNavLinks } from '../contexts';
 const Login = () => {
   const loginForm = useLoginForm();
   const { homeLinks } = useNavLinks();
+  const [animation, setAnimation] = React.useState('');
 
   React.useEffect(() => {
     homeLinks();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  React.useEffect(() => {
+    setAnimation('on-mount 0.6s ease-out forwards');
+  }, []);
+
   return (
     <Container
       className='container-lg p-4'
-      style={{ marginTop: '90px', marginBottom: '90px' }}
+      style={{ marginTop: '90px', marginBottom: '90px', animation: animation }}
     >
-      <Breadcrumb>
-        <Breadcrumb.Item href='/'>Home</Breadcrumb.Item>
-        <Breadcrumb.Item active>Login</Breadcrumb.Item>
-      </Breadcrumb>
       <div className='mb-5 w-100' />
       <Form
         action='submit'
-        className='bg-white shadow p-3 rounded mx-auto'
+        className='bg-white shadow-sm p-3 rounded mx-auto'
         style={{ maxWidth: '450px' }}
         onSubmit={loginForm.handleSubmit}
       >

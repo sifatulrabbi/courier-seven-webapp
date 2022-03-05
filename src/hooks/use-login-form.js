@@ -19,8 +19,8 @@ export function useLoginForm() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    const success = await login(email, password);
-    if (!success) return;
+    await login(email, password);
+    // if (!success) return;
 
     setEmail('');
     setPassword('');

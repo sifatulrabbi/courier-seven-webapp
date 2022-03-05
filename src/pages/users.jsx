@@ -9,16 +9,26 @@ import { useNavLinks } from '../contexts';
 
 const Users = () => {
   const { userLinks } = useNavLinks();
+  const [animation, setAnimation] = React.useState('');
 
   React.useEffect(() => {
     userLinks();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  React.useEffect(() => {
+    setAnimation('on-mount 0.6s ease-out forwards');
+  }, []);
+
   return (
     <Container
       fluid
-      style={{ padding: 0, paddingTop: '90px', paddingBottom: '90px' }}
+      style={{
+        padding: 0,
+        paddingTop: '90px',
+        paddingBottom: '90px',
+        animation: animation,
+      }}
     >
       <Routes>
         <Route path='/' element={<ProtectedRoute />}>

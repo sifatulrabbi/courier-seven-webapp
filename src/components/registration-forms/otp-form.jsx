@@ -15,7 +15,7 @@ export const OtpForm = ({ callBack }) => {
   return (
     <Form
       action='submit'
-      className='bg-white rounded p-3 shadow mx-auto'
+      className='bg-white rounded p-3 shadow-sm mx-auto'
       style={{ maxWidth: '450px' }}
       onSubmit={handleSubmit}
     >

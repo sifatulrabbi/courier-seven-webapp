@@ -11,3 +11,38 @@ body {
   overflow-x: hidden !important;
   @extend .bg-gray;
 }
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $gray-100;
+
+  .logo {
+    animation: fade-in-out 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fade-in-out {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes on-mount {
+  0% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
