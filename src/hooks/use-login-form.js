@@ -9,11 +9,11 @@ export function useLoginForm() {
   const { login } = useAuth();
 
   function handleEmailChange(e) {
-    setEmail(e.currentTarget.value);
+    setEmail(e.target.value);
   }
 
   function handlePasswordChange(e) {
-    setPassword(e.currentTarget.value);
+    setPassword(e.target.value);
   }
 
   async function handleSubmit(e) {
@@ -21,7 +21,7 @@ export function useLoginForm() {
 
     await login(email, password);
     // if (!success) return;
-
+    console.log(email, password);
     setEmail('');
     setPassword('');
     navigate('/users');

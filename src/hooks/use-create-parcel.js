@@ -1,127 +1,96 @@
 import React from 'react';
-import { sortAreas } from '../utils';
 
 export function useCreateParcel() {
+  const [invoice, setInvoice] = React.useState('');
+  const [collection, setCollection] = React.useState('');
   const [customerName, setCustomerName] = React.useState('');
-  const [collectionAmount, setCollectionAmount] = React.useState('');
+  const [customerMobile, setCustomerMobile] = React.useState('');
+  const [deliveryDivision, setDeliveryDivision] = React.useState('');
+  const [deliveryUpazila, setDeliveryUpazila] = React.useState('');
+  const [deliveryDistrict, setDeliveryDistrict] = React.useState('');
+  const [deliveryArea, setDeliveryArea] = React.useState('');
+  const [deliveryStreet, setDeliveryStreet] = React.useState('');
+  const [deliveryHouse, setDeliveryHouse] = React.useState('');
   const [productPrice, setProductPrice] = React.useState('');
   const [productWeight, setProductWeight] = React.useState('');
-  const [invoiceId, setInvoiceId] = React.useState('');
-  const [notes, setNotes] = React.useState('');
-  const [terms, setTerms] = React.useState('');
-  // customer address
-  const [customerDistrict, setCustomerDistrict] = React.useState('');
-  const [customerArea, setCustomerArea] = React.useState('');
-  const [customerStreet, setCustomerStreet] = React.useState('');
-  const [customerHouse, setCustomerHouse] = React.useState('');
-  // pickup address
-  const [pickupDistrict, setPickupDistrict] = React.useState('');
-  const [pickupArea, setPickupArea] = React.useState('');
-  const [pickupStreet, setPickupStreet] = React.useState('');
-  const [pickupHouse, setPickupHouse] = React.useState('');
-  // area lists
-  const [customerAreas, setCustomerAreas] = React.useState([]);
-  const [pickupAreas, setPickupAreas] = React.useState([]);
-
-  function handleCustomerName(e) {
-    setCustomerName(e.currentTarget.value);
-  }
-
-  function handleCollectionAmount(e) {
-    setCollectionAmount(e.currentTarget.value);
-  }
-
-  function handleProductPrice(e) {
-    setProductPrice(e.currentTarget.value);
-  }
-
-  function handleProductWeight(e) {
-    setProductWeight(e.currentTarget.value);
-  }
-
-  function handleInvoiceId(e) {
-    setInvoiceId(e.currentTarget.value);
-  }
-
-  function handleCustomerDistrict(value) {
-    setCustomerAreas(sortAreas(value));
-    setCustomerDistrict(value);
-  }
-
-  function handleCustomerArea(value) {
-    setCustomerArea(value);
-  }
-
-  function handleCustomerStreet(e) {
-    setCustomerStreet(e.currentTarget.value);
-  }
-
-  function handleCustomerHouse(e) {
-    setCustomerHouse(e.currentTarget.value);
-  }
-
-  function handlePickupDistrict(value) {
-    setPickupAreas(sortAreas(value));
-    setPickupDistrict(value);
-  }
-
-  function handlePickupArea(value) {
-    setPickupArea(value);
-  }
-
-  function handlePickupStreet(e) {
-    setPickupStreet(e.currentTarget.value);
-  }
-
-  function handlePickupHouse(e) {
-    setPickupHouse(e.currentTarget.value);
-  }
-
-  function handleNotes(e) {
-    setNotes(e.currentTarget.value);
-  }
-
-  function handleTerms(e) {
-    setTerms(e.currentTarget.value);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
+  const [productType, setProductType] = React.useState('');
+  const [acceptTerms, setAcceptTerms] = React.useState(false);
+  const [shopId, setShopId] = React.useState('');
 
   return {
+    invoice,
+    collection,
     customerName,
-    collectionAmount,
+    customerMobile,
+    deliveryDivision,
+    deliveryUpazila,
+    deliveryDistrict,
+    deliveryArea,
+    deliveryStreet,
+    deliveryHouse,
     productPrice,
     productWeight,
-    invoiceId,
-    customerDistrict,
-    customerArea,
-    customerStreet,
-    customerHouse,
-    pickupDistrict,
-    pickupArea,
-    pickupStreet,
-    pickupHouse,
-    notes,
-    terms,
-    customerAreas,
-    pickupAreas,
-    handleCustomerName,
-    handleCollectionAmount,
-    handleProductPrice,
-    handleProductWeight,
-    handleInvoiceId,
-    handleCustomerDistrict,
-    handleCustomerArea,
-    handleCustomerStreet,
-    handleCustomerHouse,
-    handlePickupDistrict,
-    handlePickupArea,
-    handlePickupStreet,
-    handlePickupHouse,
-    handleTerms,
-    handleNotes,
-    handleSubmit,
+    productType,
+    acceptTerms,
+    shopId,
+    handleInvoice: function (e) {
+      setInvoice(e.target.value);
+    },
+
+    handleCollection: function (e) {
+      setCollection(e.target.value);
+    },
+
+    handleCustomerName: function (e) {
+      setCustomerName(e.target.value);
+    },
+
+    handleCustomerMobile: function (e) {
+      setCustomerMobile(e.target.value);
+    },
+
+    handleDeliveryDivision: function (e) {
+      setDeliveryDivision(e.target.value);
+    },
+
+    handleDeliveryDistrict: function (e) {
+      setDeliveryDistrict(e.target.value);
+    },
+
+    handleDeliveryUpazila: function (e) {
+      setDeliveryUpazila(e.target.value);
+    },
+
+    handleDeliveryArea: function (e) {
+      setDeliveryArea(e.target.value);
+    },
+
+    handleDeliveryStreet: function (e) {
+      setDeliveryStreet(e.target.value);
+    },
+
+    handleDeliveryHouse: function (e) {
+      setDeliveryHouse(e.target.value);
+    },
+
+    handleProductPrice: function (e) {
+      setProductPrice(e.target.value);
+    },
+
+    handleProductWeight: function (e) {
+      setProductWeight(e.target.value);
+    },
+
+    handleProductType: function (e) {
+      setProductType(e.target.value);
+    },
+
+    handleAcceptTerms: function (e) {
+      setAcceptTerms(e.target.value);
+    },
+
+    updateShopId: function (e) {
+      setShopId(e.target.value);
+    },
   };
 }
