@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Card, Form } from 'react-bootstrap';
+import { Card, Form } from 'react-bootstrap';
 import { v4 } from 'uuid';
 
 const data = [
@@ -31,7 +31,7 @@ const data = [
   },
 ];
 
-export const ChooseShop = () => {
+const ChooseShop = () => {
   const [shop, setShop] = React.useState(data[0]);
 
   function handleChange(e) {
@@ -96,3 +96,5 @@ export const ChooseShop = () => {
     </Card>
   );
 };
+
+export default ChooseShop;

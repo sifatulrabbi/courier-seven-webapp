@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Fields from './fields';
 import CustomerInfo from './customer-info';
 import ProductInfo from './product-info';
-import { ChooseShop } from './choose-shop';
+import Aside from './aside';
 
 const CreateParcel = () => {
   return (
@@ -43,7 +43,7 @@ const CreateParcel = () => {
           <Button type='submit'>Create</Button>
         </div>
       </Form>
-      <ChooseShop />
+      <Aside />
     </Container>
   );
 };
