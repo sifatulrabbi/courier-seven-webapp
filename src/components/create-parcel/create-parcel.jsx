@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 import Fields from './fields';
 import CustomerInfo from './customer-info';
 import ProductInfo from './product-info';
+import Aside from './aside';
 
 const CreateParcel = () => {
   return (
-    <Container className='container-lg p-3'>
+    <Container
+      className='container-lg p-3 d-flex flex-column-reverse flex-lg-row'
+      style={{ gridGap: '2rem' }}
+    >
       <Form
         className='bg-white shadow-sm rounded mx-auto b-block'
         style={{ maxWidth: 800 }}
@@ -39,6 +43,7 @@ const CreateParcel = () => {
           <Button type='submit'>Create</Button>
         </div>
       </Form>
+      <Aside />
     </Container>
   );
 };
