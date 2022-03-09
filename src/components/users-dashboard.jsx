@@ -6,7 +6,7 @@ import { dashboardData } from '../assets';
 
 const UsersDashboard = () => {
   return (
-    <Container className='container-lg p-3'>
+    <Container className='container-lg p-4'>
       <Row>
         {dashboardData.map((data) => (
           <Col key={v4()} sm='12' md='6' lg='3' className='my-2'>

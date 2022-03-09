@@ -19,7 +19,7 @@ const ParcelsTable = () => {
           <tr key={v4()}>
             <td>{index}</td>
             <td>
-              <Link to={`/users/parcels/${value.parcelId}`}>
+              <Link to={`/users/tracking?id=${value.parcelId}`}>
                 {value.parcelId}
               </Link>
             </td>

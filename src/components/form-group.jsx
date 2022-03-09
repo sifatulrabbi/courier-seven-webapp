@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, FloatingLabel, FormControl, FormSelect } from 'react-bootstrap';
+import { FloatingLabel, FormControl, FormSelect } from 'react-bootstrap';
 import { v4 } from 'uuid';
 
 const FormGroup = ({
