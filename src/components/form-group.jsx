@@ -6,39 +6,34 @@ const FormGroup = ({
   select,
   label,
   name,
-  id,
   type,
   required,
   options,
   value,
-  onChangeValue,
+  onChange,
   className,
 }) => {
-  function handleChange(e) {
-    onChangeValue(e.currentTarget.value);
-  }
-
   return !select ? (
     <FloatingLabel label={label}>
       <FormControl
         type={type ? type : 'text'}
-        id={id}
+        id={name}
         name={name}
         placeholder={label}
         required={required}
         className={className}
         value={value}
-        onChange={handleChange}
+        onChange={onChange}
       />
     </FloatingLabel>
   ) : (
     <FloatingLabel label={label} className={className}>
       <FormSelect
-        id={id}
+        id={name}
         name={name}
         required={required}
         value={value}
-        onChange={handleChange}
+        onChange={onChange}
       >
         {options.map((option) => (
           <option key={v4()} value={option}>
