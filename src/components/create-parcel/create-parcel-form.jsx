@@ -4,14 +4,6 @@ import FormGroup from '../form-group';
 import { useCreateParcel } from '../../hooks';
 import { Link } from 'react-router-dom';
 
-const WrappedForm = (props) => {
-  return (
-    <Col sm='12' lg='6'>
-      <FormGroup props={props} />
-    </Col>
-  );
-};
-
 const CreateParcelForm = () => {
   const hook = useCreateParcel();
 
