@@ -21,7 +21,7 @@ const Login = () => {
   }, []);
 
   React.useEffect(() => {
-    setAnimation('on-mount 0.6s ease-out forwards');
+    setAnimation('on-mount 0.4s ease-out forwards');
   }, []);
 
   return (
@@ -62,7 +62,7 @@ const Login = () => {
         </FloatingLabel>
         <Container fluid className='p-0 d-flex justify-content-between'>
           <Link to='/register'>
-            <Button variant='outline-primary'>Register</Button>
+            <Button variant='secondary'>Register</Button>
           </Link>
           <Button type='submit'>Login</Button>
         </Container>

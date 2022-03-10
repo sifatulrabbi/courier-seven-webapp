@@ -12,6 +12,7 @@ const FormGroup = ({
   value,
   onChange,
   className,
+  disabled,
 }) => {
   return !select ? (
     <FloatingLabel label={label}>
@@ -24,6 +25,7 @@ const FormGroup = ({
         className={className}
         value={value}
         onChange={onChange}
+        disabled={disabled}
       />
     </FloatingLabel>
   ) : (
@@ -34,10 +36,11 @@ const FormGroup = ({
         required={required}
         value={value}
         onChange={onChange}
+        disabled={disabled}
       >
         {options.map((option) => (
-          <option key={v4()} value={option}>
-            {option}
+          <option key={v4()} value={option.value}>
+            {option.label}
           </option>
         ))}
       </FormSelect>

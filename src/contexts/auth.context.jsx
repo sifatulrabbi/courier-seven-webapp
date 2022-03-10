@@ -28,16 +28,17 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }) {
-  const [isAuthenticated, setIsAuthenticated] = React.useState(true);
+  const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   const [user, setUser] = React.useState(null);
   const { setLoading } = useLoading();
 
   async function login(email, password) {
+    const url = process.env.REACT_APP_PROXY_URL + '/auth/login';
     setLoading(true);
     let success;
 
     try {
-      const data = await makeFetch('/auth/login', 'POST', { email, password });
+      const data = await makeFetch(url, 'POST', { email, password });
       if (data) {
         setUser(data.data[0]);
         setIsAuthenticated(true);

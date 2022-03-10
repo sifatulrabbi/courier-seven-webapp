@@ -28,7 +28,7 @@ export const OtpForm = ({ callBack }) => {
         className='mb-3'
       />
       <Container fluid className='p-0 d-flex justify-content-between'>
-        <Link to='/register/primary'>
+        <Link to='/register'>
           <Button variant='secondary'>Previous</Button>
         </Link>
         <Button type='submit'>Verify</Button>

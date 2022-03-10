@@ -34,8 +34,13 @@ const Navbar = () => {
       <Container>
         <BNavbar.Brand className='p-0'>
           <Link to='/#' className='h5 m-0 text-bolder p-0 text-primary'>
-            <img src={brand} alt='Courier Seven BD' height='50px' />
-            Courier 007
+            Courier 00
+            <img
+              src={brand}
+              alt='Courier Seven BD'
+              height='50px'
+              width='50px'
+            />
           </Link>
         </BNavbar.Brand>
         <Button

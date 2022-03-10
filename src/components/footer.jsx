@@ -24,8 +24,8 @@ const Footer = () => {
         <Row className='g-4 mb-3'>
           <Col md='5' lg='5' className='text-center text-md-start mb-3'>
             <Link to='/' style={{ textDecoration: 'none' }}>
+              <span className='text-white fw-bolder h5'>Courier 00</span>
               <img src={brandLight} alt='Courier 007' height='45px' />
-              <span className='text-white fw-bolder h5'>Courier 007</span>
             </Link>
           </Col>
           <Col
