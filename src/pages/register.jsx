@@ -14,7 +14,7 @@ const Register = () => {
   }, []);
 
   React.useEffect(() => {
-    setAnimation('on-mount 0.6s ease-out forwards');
+    setAnimation('on-mount 0.4s ease-out forwards');
   }, []);
 
   return (
