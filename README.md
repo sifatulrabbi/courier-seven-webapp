@@ -72,4 +72,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ```bash
 curl -X POST http://localhost:5007/api/v1/auth/register -H "Content-Type: application/json" -d '{"name":{"first":"Sifatul","last":"Rabbi"},"account_type":"d","confirm_password":"sifatul","password":"sifatul","email":"mdsifatulislam.rabbi@gmail.com","mobile":"01882970400","address":{"district":"Dhaka","division":"Dhaka","upazila":"","area":"Area name","street":"Street name","house":"House: 20"}}'
 
+
+```
+
+```json
+{
+  "build:dev": "env-cmd -f .env.development npm run build && firebase deploy -P dev",
+  "build:prod": "env-cmd -f .env.production npm run build && firebase deploy -P prod"
+}
 ```
