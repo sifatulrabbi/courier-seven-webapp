@@ -3,51 +3,51 @@ import locations from '../assets/static/locations.json';
 export const useLocations = () => {
   const functions = {};
 
-  functions.districts = function () {
-    let districts = locations.map((location) => location.district);
-    districts = districts.filter(
-      (item, index, self) => self.indexOf(item) === index
-    );
-    return districts;
-  };
-
-  functions.divisions = function () {
-    let divisions = locations.map((location) => ({
-      label: location.division,
-      value: location.division,
-    }));
-    divisions = divisions.filter(
-      (item, index, self) => self.indexOf(item) === index
-    );
+  /** Get the division list
+   * @returns {{label: string, value: string}[]}
+   */
+  functions.getDivisions = function () {
+    const divisions = [];
+    for (const location of locations) {
+      divisions.push({ label: location.division, value: locations.division });
+    }
     return divisions;
   };
 
-  functions.upazilas = function () {
-    const upazilas = locations.map((location) => location.upazila);
-    return upazilas;
-  };
-
-  functions.districtsByDivision = function (division) {
-    let districts = [];
-    locations.forEach((location) => {
-      if (location.division === division) {
-        districts.push(location.district);
+  /** Get the districts of a division
+   * @param {string} division
+   * @returns {{label: string, value: string}[]}
+   */
+  functions.getDistricts = function (division) {
+    const districts = [];
+    for (const location of locations) {
+      if (division === location.division) {
+        for (const district of location.districts) {
+          districts.push({
+            label: district.name,
+            value: district.name,
+          });
+        }
       }
-    });
-    districts = districts.filter(
-      (item, index, self) => self.indexOf(item) === index
-    );
+    }
     return districts;
   };
 
-  functions.upazilasByDistrict = function (district) {
+  /** Get the upazilas of a district
+   * @param {string} district
+   * @returns {{label: string, value: string}[]}
+   */
+  functions.getUpazilas = function (district) {
     const upazilas = [];
-    locations.forEach((location) => {
-      if (location.district === district) {
-        upazilas.push(location.upazila);
+    for (const location of locations) {
+      for (const dis of location.districts) {
+        if (dis.name === district) {
+          for (const upazila of dis.upazilas) {
+            upazilas.push({ label: upazila, value: upazila });
+          }
+        }
       }
-    });
-    upazilas.sort();
+    }
     return upazilas;
   };
 
