@@ -6,13 +6,14 @@ export class UseApi {
   /**
    * @private
    */
-  url;
+  url = 'http://localhost:5007/api/v1';
 
   constructor() {
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Accept', 'application/json');
-    this.url = process.env.REACT_APP_PROXY_URL;
+    // this.url = process.env.REACT_APP_PROXY_URL;
+    this.url = 'http://localhost:5007/api/v1';
   }
 
   /** Set headers

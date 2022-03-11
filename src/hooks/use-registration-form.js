@@ -93,8 +93,9 @@ export function useRegistrationForm() {
       first_name: firstName,
       last_name: lastName,
       account_type: accountType,
-      email,
+      confirm_password: confirmPassword,
       password,
+      email,
       mobile,
       district,
       division,
@@ -103,8 +104,8 @@ export function useRegistrationForm() {
       street,
       house,
     };
-
-    useApi.makeRequest('/auth/register', 'GET', data, (err, result) => {
+    localStorage.setItem('user-registration-data', JSON.stringify(data));
+    useApi.makeRequest('/auth/register', 'POST', data, (err, result) => {
       if (err) return console.log(err.message);
       if (!result) return console.log('Unable to register user');
       console.log(result);

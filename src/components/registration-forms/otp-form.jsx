@@ -1,23 +1,18 @@
 import React from 'react';
 import { Button, Form, Container } from 'react-bootstrap';
 import FormGroup from '../form-group';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useOTPForm } from '../../hooks/use-otp-form';
 
 export const OtpForm = ({ callBack }) => {
-  const navigate = useNavigate();
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (callBack) callBack();
-    navigate('/register/profile');
-  }
+  const { otp, handleOTPChange, handleSubmitOtp } = useOTPForm();
 
   return (
     <Form
       action='submit'
       className='bg-white rounded p-3 shadow-sm mx-auto'
       style={{ maxWidth: '450px' }}
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmitOtp}
     >
       <FormGroup
         name='otp'
@@ -26,6 +21,8 @@ export const OtpForm = ({ callBack }) => {
         label='OTP'
         type='number'
         className='mb-3'
+        value={otp}
+        onChange={handleOTPChange}
       />
       <Container fluid className='p-0 d-flex justify-content-between'>
         <Link to='/register'>
