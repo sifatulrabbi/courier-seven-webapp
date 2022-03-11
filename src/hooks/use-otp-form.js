@@ -1,8 +1,14 @@
 import React from 'react';
-import { UseApi } from './use-api';
+import { useApi } from './use-api';
+import { useLoading } from '../contexts';
+import { useNavigate } from 'react-router-dom';
+
+const USER_DATA_KEY = 'user-registration-data';
 
 export function useOTPForm() {
   const [otp, setOtp] = React.useState('');
+  const { setLoading } = useLoading();
+  const navigate = useNavigate();
 
   function handleOTPChange(e) {
     setOtp(e.currentTarget.value);
@@ -10,16 +16,16 @@ export function useOTPForm() {
 
   function handleSubmitOtp(e) {
     e.preventDefault();
-    const useApi = new UseApi();
-    const savedData = localStorage.getItem('user-registration-data');
+    const savedData = localStorage.getItem(USER_DATA_KEY);
     const data = JSON.parse(savedData);
-    data.verification_key =
-      '$2b$10$CBPg.O333Xl/68qgDgjkYOagipwwRDdhW/xn5v753ksFfxrvJJ80C';
-    data.token = '438975';
+    data.token = otp;
+    setLoading(true);
     useApi.makeRequest('/auth/register/final', 'POST', data, (err, result) => {
+      setLoading(false);
       if (err) return console.error(err);
       if (!result) return console.error('unable to creat user');
-      console.log(result);
+      localStorage.removeItem(USER_DATA_KEY);
+      navigate('/login');
     });
   }
 

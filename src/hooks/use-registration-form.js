@@ -1,6 +1,10 @@
 import React from 'react';
 import { useLocations } from './use-locations';
-import { UseApi } from './use-api';
+import { useApi } from './use-api';
+import { useLoading } from '../contexts';
+import { useNavigate } from 'react-router-dom';
+
+const USER_DATA_KEY = 'user-registration-data';
 
 export function useRegistrationForm() {
   const [firstName, setFirstName] = React.useState('');
@@ -9,7 +13,7 @@ export function useRegistrationForm() {
   const [mobile, setMobile] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
-  const [division, setDivision] = React.useState('Dhaka');
+  const [division, setDivision] = React.useState('');
   const [district, setDistrict] = React.useState('');
   const [upazila, setUpazila] = React.useState('');
   const [area, setArea] = React.useState('');
@@ -17,17 +21,12 @@ export function useRegistrationForm() {
   const [house, setHouse] = React.useState('');
   const [accountType, setAccountType] = React.useState('');
   const { getDivisions, getDistricts, getUpazilas } = useLocations();
-  const divisions = getDivisions();
+  const divisions = [{ label: 'Select one' }, ...getDivisions()];
   const [districts, setDistricts] = React.useState(['']);
   const [upazilas, setUpazilas] = React.useState(['']);
   const functions = {};
-  const useApi = new UseApi();
-
-  React.useEffect(() => {
-    setDistricts(getDistricts(division));
-    setUpazilas(getUpazilas('Dhaka'));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { setLoading } = useLoading();
+  const navigate = useNavigate();
 
   functions.handleFirstName = function (e) {
     setFirstName(e.currentTarget.value);
@@ -81,41 +80,50 @@ export function useRegistrationForm() {
     setAccountType(e.currentTarget.value);
   };
 
+  function resetInputs() {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setMobile('');
+    setPassword('');
+    setConfirmPassword('');
+    setStreet('');
+    setHouse('');
+    setAccountType('');
+    setDistrict('');
+    setDivision('');
+    setArea('');
+  }
+
   functions.handleSubmit = function (e) {
     e.preventDefault();
-
     if (password !== confirmPassword) {
       console.log('Registration failed password mismatch');
       return;
     }
-
     const data = {
-      first_name: firstName,
-      last_name: lastName,
+      name: {
+        first: firstName,
+        last: lastName,
+      },
       account_type: accountType,
       confirm_password: confirmPassword,
       password,
       email,
       mobile,
-      district,
-      division,
-      upazila,
-      area,
-      street,
-      house,
+      address: { district, division, upazila, area, street, house },
     };
-    localStorage.setItem('user-registration-data', JSON.stringify(data));
+    setLoading(true);
     useApi.makeRequest('/auth/register', 'POST', data, (err, result) => {
-      if (err) return console.log(err.message);
+      resetInputs();
+      setLoading(false);
+      if (err) return console.log(err);
       if (!result) return console.log('Unable to register user');
       console.log(result);
+      data.verification_key = result.data[0].verification_key;
+      localStorage.setItem(USER_DATA_KEY, JSON.stringify(data));
+      navigate('/register/otp');
     });
-
-    setFirstName('');
-    setLastName('');
-    setEmail('');
-    setPassword('');
-    setConfirmPassword('');
   };
 
   return {

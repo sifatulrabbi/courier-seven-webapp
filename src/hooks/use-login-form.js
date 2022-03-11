@@ -1,15 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth, useLoading } from '../contexts';
-import { UseApi } from './use-api';
+import { useAuth } from '../contexts';
+import { useApi } from './use-api';
 
 export function useLoginForm() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
-  const { login, logout } = useAuth();
-  const { makeRequest } = new UseApi();
-  const { setLoading } = useLoading();
+  const { login } = useAuth();
 
   function handleEmailChange(e) {
     setEmail(e.target.value);
@@ -21,18 +19,19 @@ export function useLoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setLoading(true);
-    makeRequest('/auth/login', 'POST', { email, password }, (err, result) => {
-      logout();
-      if (err) return console.error(err.message);
-      if (!result) return console.error('No user found');
-      login(result.data[0]);
-      console.log(result);
-      setLoading(false);
-    });
-    setEmail('');
-    setPassword('');
-    navigate('/users');
+    useApi.makeRequest(
+      '/auth/login',
+      'POST',
+      { email, password },
+      (err, result) => {
+        if (err) return console.error(err);
+        if (!result) return console.error('No user found');
+        login(result.data[0]);
+        setEmail('');
+        setPassword('');
+        navigate('/users');
+      }
+    );
   }
 
   return {

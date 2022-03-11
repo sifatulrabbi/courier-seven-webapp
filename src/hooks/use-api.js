@@ -1,4 +1,4 @@
-export class UseApi {
+class UseApi {
   /**
    * @private
    */
@@ -6,18 +6,16 @@ export class UseApi {
   /**
    * @private
    */
-  url = 'http://localhost:5007/api/v1';
+  url;
 
   constructor() {
     this.headers = new Headers();
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Accept', 'application/json');
-    // this.url = process.env.REACT_APP_PROXY_URL;
-    this.url = 'http://localhost:5007/api/v1';
+    this.url = process.env.REACT_APP_PROXY_URL;
   }
 
   /** Set headers
-   *
    * @param {['name', 'value'][]} headersList
    * @returns {void}
    */
@@ -28,15 +26,15 @@ export class UseApi {
   }
 
   /** request function
-   *
    * @param {string} path
    * @param { 'GET' | 'POST' | 'PUT' | 'DELETE'} method
    * @param {object | null} body
-   * @param {function(any?, object?): void} done
-   * @returns {void}
+   * @param {function(any?, object?): any} done
+   * @returns {Promise<any>}
    */
   async makeRequest(path, method, body, done) {
     try {
+      if (!this.url) return console.error('URL not defined');
       const result = await fetch(this.url + path, {
         headers: this.headers,
         method,
@@ -46,9 +44,23 @@ export class UseApi {
         body: body ? JSON.stringify(body) : undefined,
       });
       const data = await result.json();
-      done(null, data);
+      return done(null, data);
     } catch (err) {
-      done(err, null);
+      return done(err, null);
     }
   }
+
+  /** get login in user profile
+   * @param {string} userId
+   * @returns {Promise<any>}
+   */
+  getUserById(userId) {
+    return this.makeRequest('/users/' + userId, 'GET', null, (err, result) => {
+      if (err) return null;
+      if (!result) return null;
+      return result.data[0];
+    });
+  }
 }
+
+export const useApi = new UseApi();
