@@ -23,4 +23,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build app
-        run: npm run build
+        run: NODE_ENV=production REACT_APP_PROXY_URL=${{ secrets.PROXY_URL }} npm run build
