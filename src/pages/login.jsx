@@ -6,22 +6,36 @@ import {
   FormControl,
   FloatingLabel,
 } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { useLoginForm } from '../hooks';
-import { useNavLinks } from '../contexts';
+import { Link, useNavigate } from 'react-router-dom';
+import { useLoginForm, useApi } from '../hooks';
+import { useNavLinks, useConstants, useAuth } from '../contexts';
 
 const Login = () => {
   const loginForm = useLoginForm();
   const { homeLinks } = useNavLinks();
   const [animation, setAnimation] = React.useState('');
+  const { LOGIN_USER_KEY } = useConstants();
+  const navigate = useNavigate();
+  const { login, isAuthenticated } = useAuth();
+
+  async function checkForLoginUser() {
+    if (isAuthenticated) {
+      navigate('/users');
+      return;
+    }
+    const userId = localStorage.getItem(LOGIN_USER_KEY);
+    if (!userId) return;
+    const user = await useApi.getUserById(userId);
+    if (!user) return;
+    login(user);
+    navigate('/users');
+  }
 
   React.useEffect(() => {
+    checkForLoginUser();
     homeLinks();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  React.useEffect(() => {
     setAnimation('on-mount 0.4s ease-out forwards');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

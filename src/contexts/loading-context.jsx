@@ -15,7 +15,8 @@ export const LoadingProvider = ({ children }) => {
 
   return (
     <LoadingContext.Provider value={{ loading, setLoading }}>
-      {loading ? <LoadingScreen /> : children}
+      {loading && <LoadingScreen />}
+      {children}
     </LoadingContext.Provider>
   );
 };

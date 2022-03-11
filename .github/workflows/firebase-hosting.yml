@@ -24,11 +24,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build app
-        run: npm run build
+        run: NODE_ENV=production REACT_APP_PROXY_URL=${{ secrets.PROXY_URL }} npm run build
       - name: Deploy to firebase Hosting
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_COURIER_007 }}"
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_COURIER_007 }}'
           channelId: live
           projectId: courier-007
