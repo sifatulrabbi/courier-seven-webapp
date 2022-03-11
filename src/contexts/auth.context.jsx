@@ -32,35 +32,10 @@ export function AuthProvider({ children }) {
   const [user, setUser] = React.useState(null);
   const { setLoading } = useLoading();
 
-  async function login(email, password) {
-    const url = process.env.REACT_APP_PROXY_URL + '/auth/login';
-    setLoading(true);
-    let success;
-
-    try {
-      const data = await makeFetch(url, 'POST', { email, password });
-      if (data) {
-        setUser(data.data[0]);
-        setIsAuthenticated(true);
-        saveUser(data.data[0]._id);
-        success = true;
-      }
-      if (!data) {
-        setUser(null);
-        setIsAuthenticated(false);
-        removeSavedUser();
-        success = false;
-      }
-    } catch (err) {
-      console.log(err);
-      setUser(null);
-      setIsAuthenticated(false);
-      removeSavedUser();
-      success = false;
-    }
-
-    setLoading(false);
-    return success;
+  function login(user) {
+    setUser(user);
+    saveUser(user._id);
+    setIsAuthenticated(true);
   }
 
   function logout() {

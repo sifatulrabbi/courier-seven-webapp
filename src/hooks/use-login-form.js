@@ -1,12 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts';
+import { useAuth, useLoading } from '../contexts';
+import { UseApi } from './use-api';
 
 export function useLoginForm() {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login, logout } = useAuth();
+  const { makeRequest } = new UseApi();
+  const { setLoading } = useLoading();
 
   function handleEmailChange(e) {
     setEmail(e.target.value);
@@ -18,10 +21,15 @@ export function useLoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
-    await login(email, password);
-    // if (!success) return;
-    console.log(email, password);
+    setLoading(true);
+    makeRequest('/auth/login', 'POST', { email, password }, (err, result) => {
+      logout();
+      if (err) return console.error(err.message);
+      if (!result) return console.error('No user found');
+      login(result.data[0]);
+      console.log(result);
+      setLoading(false);
+    });
     setEmail('');
     setPassword('');
     navigate('/users');

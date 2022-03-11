@@ -1,28 +1,24 @@
 import React from 'react';
 import { Button, Form, Container, Row, Col } from 'react-bootstrap';
 import FormGroup from '../form-group';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { accountTypes } from '../../assets';
-import { useLocations } from '../../hooks';
+import { useRegistrationForm } from '../../hooks';
 
 export const PrimaryRegForm = ({ callBack }) => {
-  const navigate = useNavigate();
-  const { divisions } = useLocations();
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (callBack) callBack();
-    navigate('/register/otp');
-  }
+  const form = useRegistrationForm();
 
   return (
     <Form
       action='submit'
       className='bg-white rounded p-3 shadow-sm mx-auto'
       style={{ maxWidth: '750px' }}
-      onSubmit={handleSubmit}
+      onSubmit={form.handleSubmit}
     >
       <Row>
+        <Col sm='12' lg='12' className='text-center'>
+          <p>Personal information</p>
+        </Col>
         <Col sm='12' lg='12'>
           <FormGroup
             name='email'
@@ -30,6 +26,8 @@ export const PrimaryRegForm = ({ callBack }) => {
             type='email'
             required
             className='mb-3'
+            value={form.email}
+            onChange={form.handleEmail}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -39,6 +37,8 @@ export const PrimaryRegForm = ({ callBack }) => {
             type='number'
             required
             className='mb-3'
+            value={form.mobile}
+            onChange={form.handleMobile}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -49,6 +49,8 @@ export const PrimaryRegForm = ({ callBack }) => {
             select
             options={accountTypes}
             className='mb-3'
+            value={form.accountType}
+            onChange={form.handleAccountType}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -58,6 +60,8 @@ export const PrimaryRegForm = ({ callBack }) => {
             type='password'
             required
             className='mb-3'
+            value={form.password}
+            onChange={form.handlePassword}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -67,6 +71,8 @@ export const PrimaryRegForm = ({ callBack }) => {
             type='password'
             required
             className='mb-3'
+            value={form.confirmPassword}
+            onChange={form.handleConfirmPassword}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -76,6 +82,8 @@ export const PrimaryRegForm = ({ callBack }) => {
             type='text'
             required
             className='mb-3'
+            value={form.firstName}
+            onChange={form.handleFirstName}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -85,7 +93,12 @@ export const PrimaryRegForm = ({ callBack }) => {
             type='text'
             required
             className='mb-3'
+            value={form.lastName}
+            onChange={form.handleLastName}
           />
+        </Col>
+        <Col sm='12' lg='12' className='text-center mt-3'>
+          <p>Address</p>
         </Col>
         <Col sm='12' lg='6'>
           <FormGroup
@@ -93,8 +106,10 @@ export const PrimaryRegForm = ({ callBack }) => {
             label='Division'
             required
             select
-            options={divisions()}
+            options={form.divisions}
             className='mb-3'
+            value={form.division}
+            onChange={form.handleDivision}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -103,8 +118,10 @@ export const PrimaryRegForm = ({ callBack }) => {
             label='District'
             required
             select
-            options={divisions()}
+            options={form.districts}
             className='mb-3'
+            value={form.district}
+            onChange={form.handleDistrict}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -113,8 +130,10 @@ export const PrimaryRegForm = ({ callBack }) => {
             label='Upazila'
             required
             select
-            options={divisions()}
+            options={form.upazilas}
             className='mb-3'
+            value={form.upazila}
+            onChange={form.handleUpazila}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -124,6 +143,8 @@ export const PrimaryRegForm = ({ callBack }) => {
             type='text'
             required
             className='mb-3'
+            value={form.area}
+            onChange={form.handleArea}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -133,6 +154,8 @@ export const PrimaryRegForm = ({ callBack }) => {
             type='text'
             required
             className='mb-3'
+            value={form.street}
+            onChange={form.handleStreet}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -142,6 +165,8 @@ export const PrimaryRegForm = ({ callBack }) => {
             type='text'
             required
             className='mb-3'
+            value={form.house}
+            onChange={form.handleHouse}
           />
         </Col>
       </Row>
