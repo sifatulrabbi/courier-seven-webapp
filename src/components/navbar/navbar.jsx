@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-// import { brand } from '../../assets';
+// import { brand` } from '../../assets';
 import { Navbar as BNavbar, Container, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavLinks } from '../../contexts';
