@@ -74,13 +74,13 @@ const Login = () => {
             onChange={loginForm.handlePasswordChange}
           />
         </FloatingLabel>
-        <Container fluid className='p-0 d-flex justify-content-between'>
-          <Link to='/register'>
-            <Button variant='secondary'>Register</Button>
-          </Link>
-          <Button type='submit'>Login</Button>
-        </Container>
+        <Button type='submit' className='w-100'>
+          Login
+        </Button>
       </Form>
+      <div className='w-100 text-center mt-4'>
+        Don't have an account? <Link to='/register'>Register now</Link>
+      </div>
     </Container>
   );
 };
