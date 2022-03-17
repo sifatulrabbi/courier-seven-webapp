@@ -4,12 +4,12 @@ import { Routes, Route } from 'react-router-dom';
 import ProtectedRoute from '../components/protected-route';
 import UsersDashboard from '../components/users-dashboard';
 import { CreateParcel, Parcels } from '../components';
-import { useNavLinks } from '../contexts';
+import { useNavLinks, useSocket } from '../contexts';
 import { TrackingPage } from './tracking';
 
 const Users = () => {
   const { userLinks } = useNavLinks();
-
+  const { socket, connectAs } = useSocket();
   React.useEffect(() => {
     userLinks();
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -5,7 +5,7 @@ const AuthContext = React.createContext({
   isAuthenticated: false,
   login: function (user) {},
   logout: function () {},
-  user: {},
+  user: { _id: '' },
 });
 
 function saveUser(key, userId) {
@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
 
   function logout() {
     setIsAuthenticated(false);
-    setUser(null);
+    setUser({ _id: '' });
     removeSavedUser(LOGIN_USER_KEY);
   }
 

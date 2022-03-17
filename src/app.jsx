@@ -8,6 +8,7 @@ import Footer from './components/footer';
 import Login from './pages/login';
 import Register from './pages/register';
 import Users from './pages/users';
+import { SocketProvider } from './contexts';
 
 export default function App() {
   return (
@@ -17,7 +18,14 @@ export default function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register/*' element={<Register />} />
-        <Route path='/users/*' element={<Users />} />
+        <Route
+          path='/users/*'
+          element={
+            <SocketProvider>
+              <Users />
+            </SocketProvider>
+          }
+        />
       </Routes>
       <Footer />
     </Providers>
