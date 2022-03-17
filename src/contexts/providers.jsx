@@ -4,16 +4,19 @@ import {
   AuthProvider,
   LoadingProvider,
   NavLinksProvider,
+  AlertProvider,
 } from './index';
 
 export function Providers({ children }) {
   return (
     <ConstantsProvider>
-      <LoadingProvider>
-        <AuthProvider>
-          <NavLinksProvider>{children}</NavLinksProvider>
-        </AuthProvider>
-      </LoadingProvider>
+      <AlertProvider>
+        <LoadingProvider>
+          <AuthProvider>
+            <NavLinksProvider>{children}</NavLinksProvider>
+          </AuthProvider>
+        </LoadingProvider>
+      </AlertProvider>
     </ConstantsProvider>
   );
 }

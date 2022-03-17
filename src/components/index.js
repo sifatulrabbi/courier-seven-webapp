@@ -7,3 +7,4 @@ export * from './parcels';
 export * from './registration-forms';
 export * from './loading-screen';
 export { default as FormGroup } from './form-group';
+export { default as Alert } from './alert';
