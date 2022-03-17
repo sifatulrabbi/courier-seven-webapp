@@ -98,7 +98,10 @@ export const PrimaryRegForm = ({ callBack }) => {
           />
         </Col>
         <Col sm='12' lg='12' className='text-center mt-3'>
-          <p>Address</p>
+          <p>Shop information</p>
+        </Col>
+        <Col sm='12' lg='6'>
+          <FormGroup name='shop_name' label='Shop name' required type='text' />
         </Col>
         <Col sm='12' lg='6'>
           <FormGroup
@@ -170,11 +173,11 @@ export const PrimaryRegForm = ({ callBack }) => {
           />
         </Col>
       </Row>
-      <Container fluid className='p-0 d-flex justify-content-between'>
-        <Link to='/login'>
-          <Button variant='secondary'>Login</Button>
-        </Link>
-        <Button type='submit'>Next</Button>
+      <Button type='submit' className='w-100'>
+        Next
+      </Button>
+      <Container fluid className='mt-3 text-center'>
+        Already have an account? <Link to='/login'>Login</Link>
       </Container>
     </Form>
   );
