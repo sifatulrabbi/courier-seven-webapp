@@ -29,10 +29,9 @@ class UseApi {
    * @param {string} path
    * @param { 'GET' | 'POST' | 'PUT' | 'DELETE'} method
    * @param {object | null} body
-   * @param {function(any?, object?): any} done
-   * @returns {Promise<any>}
+   * @returns {Promise<any | null>}
    */
-  async makeRequest(path, method, body, done) {
+  async makeRequest(path, method, body) {
     try {
       if (!this.url) return console.error('URL not defined');
       const result = await fetch(this.url + path, {
@@ -44,9 +43,9 @@ class UseApi {
         body: body ? JSON.stringify(body) : undefined,
       });
       const data = await result.json();
-      return done(null, data);
+      return data;
     } catch (err) {
-      return done(err, null);
+      return null;
     }
   }
 
@@ -54,12 +53,9 @@ class UseApi {
    * @param {string} userId
    * @returns {Promise<any>}
    */
-  getUserById(userId) {
-    return this.makeRequest('/users/' + userId, 'GET', null, (err, result) => {
-      if (err) return null;
-      if (!result) return null;
-      return result.data[0];
-    });
+  async getUserById(userId) {
+    const user = await this.makeRequest('/users/' + userId, 'GET', null);
+    return user;
   }
 }
 
