@@ -1,6 +1,7 @@
 import { Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { v4 } from 'uuid';
+import { brand } from '../../assets';
 
 const NavMenu = ({ links, showMenu, setShowMenu }) => {
   return (
@@ -20,6 +21,7 @@ const NavMenu = ({ links, showMenu, setShowMenu }) => {
             {item.name}
           </Link>
         ))}
+        <img src={brand} alt='Courier Seven BD' height='50px' width='50px' />
       </Nav>
     </div>
   );

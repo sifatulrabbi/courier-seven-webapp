@@ -19,6 +19,28 @@ export const PrimaryRegForm = () => {
         <Col sm='12' lg='12' className='text-center'>
           <p>Personal information</p>
         </Col>
+        <Col sm='12' lg='6'>
+          <FormGroup
+            name='first_name'
+            label='First Name'
+            type='text'
+            required
+            className='mb-3'
+            value={form.firstName}
+            onChange={form.handleFirstName}
+          />
+        </Col>
+        <Col sm='12' lg='6'>
+          <FormGroup
+            name='last_name'
+            label='Last Name'
+            type='text'
+            required
+            className='mb-3'
+            value={form.lastName}
+            onChange={form.handleLastName}
+          />
+        </Col>
         <Col sm='12' lg='12'>
           <FormGroup
             name='email'
@@ -75,28 +97,6 @@ export const PrimaryRegForm = () => {
             onChange={form.handleConfirmPassword}
           />
         </Col>
-        <Col sm='12' lg='6'>
-          <FormGroup
-            name='first_name'
-            label='First Name'
-            type='text'
-            required
-            className='mb-3'
-            value={form.firstName}
-            onChange={form.handleFirstName}
-          />
-        </Col>
-        <Col sm='12' lg='6'>
-          <FormGroup
-            name='last_name'
-            label='Last Name'
-            type='text'
-            required
-            className='mb-3'
-            value={form.lastName}
-            onChange={form.handleLastName}
-          />
-        </Col>
         <Col sm='12' lg='12' className='text-center mt-3'>
           <p>Shop information</p>
         </Col>
@@ -107,18 +107,6 @@ export const PrimaryRegForm = () => {
             className='mb-3'
             required
             type='text'
-          />
-        </Col>
-        <Col sm='12' lg='6'>
-          <FormGroup
-            name='division'
-            label='Division'
-            required
-            select
-            options={form.divisions}
-            className='mb-3'
-            value={form.division}
-            onChange={form.handleDivision}
           />
         </Col>
         <Col sm='12' lg='6'>
@@ -143,6 +131,17 @@ export const PrimaryRegForm = () => {
             className='mb-3'
             value={form.upazila}
             onChange={form.handleUpazila}
+          />
+        </Col>
+        <Col sm='12' lg='6'>
+          <FormGroup
+            name='thana'
+            label='Thana'
+            type='text'
+            required
+            className='mb-3'
+            value={form.thana}
+            onChange={form.handleThana}
           />
         </Col>
         <Col sm='12' lg='6'>

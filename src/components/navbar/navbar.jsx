@@ -1,10 +1,9 @@
 import React from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
-// import { brand` } from '../../assets';
 import { Navbar as BNavbar, Container, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { useNavLinks } from '../../contexts';
 import NavMenu from './nav-menu';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = React.useState(false);
@@ -34,13 +33,8 @@ const Navbar = () => {
       <Container>
         <BNavbar.Brand className='p-0'>
           <Link to='/#' className='h5 m-0 text-bolder p-0 text-primary'>
-            Courier <span className='text-secondary'>Seven</span>
-            {/* <img
-              src={brand}
-              alt='Courier Seven BD'
-              height='50px'
-              width='50px'
-            /> */}
+            <span className='text-secondary'>Courier</span>
+            <span className='text-primary'> Seven</span>
           </Link>
         </BNavbar.Brand>
         <Button

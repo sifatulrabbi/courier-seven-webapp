@@ -13,6 +13,7 @@ body {
 }
 
 .loading-screen {
+  z-index: 2500;
   position: fixed;
   top: 0;
   right: 0;
@@ -25,6 +26,14 @@ body {
 
   .logo {
     animation: fade-in-out 2s ease-in-out infinite;
+  }
+}
+
+.footer-logo {
+  margin-top: -15px;
+
+  @media screen and (min-width: 900px) {
+    margin-left: -10px;
   }
 }
 

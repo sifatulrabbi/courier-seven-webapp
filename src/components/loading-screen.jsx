@@ -5,7 +5,7 @@ import { brand } from '../assets';
 export const LoadingScreen = () => {
   return (
     <Container fluid className='loading-screen'>
-      <img src={brand} alt='Courier 007' height='80' className='logo' />
+      <img src={brand} alt='Courier Seven' height='80' className='logo' />
     </Container>
   );
 };

@@ -17,12 +17,12 @@ export function useRegistrationForm() {
   const [division, setDivision] = React.useState('');
   const [district, setDistrict] = React.useState('');
   const [upazila, setUpazila] = React.useState('');
+  const [thana, setThana] = React.useState('');
   const [area, setArea] = React.useState('');
   const [street, setStreet] = React.useState('');
   const [house, setHouse] = React.useState('');
   const [accountType, setAccountType] = React.useState('');
-  const { getDivisions, getDistricts, getUpazilas } = useLocations();
-  const divisions = [{ label: 'Select one' }, ...getDivisions()];
+  const { getDistricts, getUpazilas } = useLocations();
   const [districts, setDistricts] = React.useState(['']);
   const [upazilas, setUpazilas] = React.useState(['']);
   const functions = {};
@@ -79,9 +79,13 @@ export function useRegistrationForm() {
     setAccountType(e.currentTarget.value);
   };
 
+  functions.handleThana = function (e) {
+    setThana(e.currentTarget.value);
+  };
+
   React.useEffect(() => {
-    setDistricts([{ label: 'Select one' }, ...getDistricts(division)]);
-  }, [division]);
+    setDistricts([{ label: 'Select one' }, ...getDistricts()]);
+  }, []);
 
   React.useEffect(() => {
     setUpazilas([{ label: 'Select one' }, ...getUpazilas(district)]);
@@ -98,7 +102,6 @@ export function useRegistrationForm() {
     setHouse('');
     setAccountType('');
     setDistrict('');
-    setDivision('');
     setArea('');
   }
 
@@ -141,16 +144,15 @@ export function useRegistrationForm() {
     password,
     confirmPassword,
     accountType,
-    division,
     district,
     upazila,
     street,
     area,
     house,
-    divisions,
     districts,
     upazilas,
     mobile,
+    thana,
     ...functions,
   };
 }

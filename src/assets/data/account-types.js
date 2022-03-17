@@ -1,6 +1,6 @@
 export const accountTypes = [
   {
-    label: 'Bronze (up to 2000 parcels/month)',
+    label: 'Bronze (less than 2000 parcels/month)',
     value: 'a',
   },
   {
