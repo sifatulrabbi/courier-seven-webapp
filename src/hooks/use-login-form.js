@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts';
+import { useAuth, useAlert } from '../contexts';
 import { useApi } from './use-api';
 
 export function useLoginForm() {
@@ -8,6 +8,7 @@ export function useLoginForm() {
   const [password, setPassword] = React.useState('');
   const navigate = useNavigate();
   const { login } = useAuth();
+  const { showAlert } = useAlert();
 
   function handleEmailChange(e) {
     setEmail(e.target.value);
@@ -19,19 +20,16 @@ export function useLoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    useApi.makeRequest(
-      '/auth/login',
-      'POST',
-      { email, password },
-      (err, result) => {
-        if (err) return console.error(err);
-        if (!result) return console.error('No user found');
-        login(result.data[0]);
-        setEmail('');
-        setPassword('');
-        navigate('/users');
-      }
-    );
+    const user = await useApi.loginUser(email, password);
+    if (!user) {
+      showAlert('User name or password incorrect', 'error');
+      return;
+    }
+    login(user.data[0]);
+    showAlert('User logged in', 'normal');
+    setEmail('');
+    setPassword('');
+    navigate('/users');
   }
 
   return {

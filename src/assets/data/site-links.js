@@ -11,5 +11,6 @@ export const siteLinks = {
     { name: 'Create-parcel', path: '/users/create-parcel' },
     { name: 'Parcels', path: '/users/parcels' },
     { name: 'Payments', path: '/users/payments' },
+    { name: 'Logout', path: '/logout' },
   ],
 };

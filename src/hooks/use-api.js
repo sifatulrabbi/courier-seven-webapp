@@ -39,7 +39,6 @@ class UseApi {
         method,
         mode: 'cors',
         redirect: 'follow',
-        credentials: 'include',
         body: body ? JSON.stringify(body) : undefined,
       });
       const data = await result.json();
@@ -56,6 +55,24 @@ class UseApi {
   async getUserById(userId) {
     const user = await this.makeRequest('/users/' + userId, 'GET', null);
     return user;
+  }
+
+  async loginUser(email, password) {
+    try {
+      const res = await fetch(this.url + '/auth/login', {
+        headers: this.headers,
+        method: 'POST',
+        credentials: 'include',
+        redirect: 'follow',
+        mode: 'cors',
+        body: JSON.stringify({ email, password }),
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      return data;
+    } catch (err) {
+      return null;
+    }
   }
 }
 

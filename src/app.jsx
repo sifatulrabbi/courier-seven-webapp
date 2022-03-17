@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles/main.scss';
 import { Route, Routes } from 'react-router-dom';
-import { Home } from './pages';
+import { Home, Logout } from './pages';
 import { Providers } from './contexts';
 import { Navbar, Alert } from './components';
 import Footer from './components/footer';
@@ -18,6 +18,7 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/logout' element={<Logout />} />
         <Route path='/register/*' element={<Register />} />
         <Route
           path='/users/*'
