@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import { useLocations } from './use-locations';
 import { useApi } from './use-api';
@@ -53,12 +54,10 @@ export function useRegistrationForm() {
 
   functions.handleDivision = function (e) {
     setDivision(e.currentTarget.value);
-    setDistricts(getDistricts(e.currentTarget.value));
   };
 
   functions.handleDistrict = function (e) {
     setDistrict(e.currentTarget.value);
-    setUpazilas(getUpazilas(e.currentTarget.value));
   };
   functions.handleUpazila = function (e) {
     setUpazila(e.currentTarget.value);
@@ -79,6 +78,14 @@ export function useRegistrationForm() {
   functions.handleAccountType = function (e) {
     setAccountType(e.currentTarget.value);
   };
+
+  React.useEffect(() => {
+    setDistricts([{ label: 'Select one' }, ...getDistricts(division)]);
+  }, [division]);
+
+  React.useEffect(() => {
+    setUpazilas([{ label: 'Select one' }, ...getUpazilas(district)]);
+  }, [district]);
 
   function resetInputs() {
     setFirstName('');
@@ -117,9 +124,10 @@ export function useRegistrationForm() {
     useApi.makeRequest('/auth/register', 'POST', data, (err, result) => {
       resetInputs();
       setLoading(false);
+
       if (err) return console.log(err);
       if (!result) return console.log('Unable to register user');
-      console.log(result);
+
       data.verification_key = result.data[0].verification_key;
       localStorage.setItem(USER_DATA_KEY, JSON.stringify(data));
       navigate('/register/otp');

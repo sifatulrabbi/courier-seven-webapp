@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { accountTypes } from '../../assets';
 import { useRegistrationForm } from '../../hooks';
 
-export const PrimaryRegForm = ({ callBack }) => {
+export const PrimaryRegForm = () => {
   const form = useRegistrationForm();
 
   return (
