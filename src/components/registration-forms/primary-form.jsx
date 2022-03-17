@@ -101,7 +101,13 @@ export const PrimaryRegForm = () => {
           <p>Shop information</p>
         </Col>
         <Col sm='12' lg='6'>
-          <FormGroup name='shop_name' label='Shop name' required type='text' />
+          <FormGroup
+            name='shop_name'
+            label='Shop name'
+            className='mb-3'
+            required
+            type='text'
+          />
         </Col>
         <Col sm='12' lg='6'>
           <FormGroup
