@@ -4,8 +4,8 @@ import FormGroup from '../form-group';
 import { Link } from 'react-router-dom';
 import { useOTPForm } from '../../hooks/use-otp-form';
 
-export const OtpForm = ({ callBack }) => {
-  const { otp, handleOTPChange, handleSubmitOtp } = useOTPForm();
+export const OtpForm = () => {
+  const { otp, handleOTPChange, handleSubmitOtp, resendOtp } = useOTPForm();
 
   return (
     <Form
@@ -25,9 +25,9 @@ export const OtpForm = ({ callBack }) => {
         onChange={handleOTPChange}
       />
       <Container fluid className='p-0 d-flex justify-content-between'>
-        <Link to='/register'>
-          <Button variant='secondary'>Previous</Button>
-        </Link>
+        <Button variant='secondary' onClick={resendOtp}>
+          Resend
+        </Button>
         <Button type='submit'>Verify</Button>
       </Container>
     </Form>

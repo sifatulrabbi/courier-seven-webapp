@@ -6,12 +6,12 @@ export function useApi() {
   };
   const functions = {};
 
-  functions.registerUser = async function (data) {
+  functions.registerUser = async function ({ email }) {
     try {
       const response = await fetch(url + '/auth/register', {
         method: 'POST',
         headers,
-        body: JSON.stringify(data),
+        body: JSON.stringify({ email }),
       });
       const result = await response.json();
       return result;
@@ -62,6 +62,23 @@ export function useApi() {
         method: 'POST',
         credentials: 'include',
         body: '',
+      });
+      const result = await response.json();
+      return result;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  };
+
+  functions.registerUserFinal = async function (data) {
+    try {
+      const path = url + '/auth/register/final';
+      const response = await fetch(path, {
+        headers,
+        method: 'POST',
+        credentials: 'include',
+        data: JSON.stringify(data),
       });
       const result = await response.json();
       return result;

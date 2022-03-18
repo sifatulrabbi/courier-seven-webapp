@@ -129,6 +129,10 @@ export function useRegistrationForm() {
     };
     const user = await registerUser(data);
     setLoading(false);
+    if (!user) {
+      showAlert('Ops! Something went wrong', 'error');
+      return;
+    }
     if (user.statusCode !== 200) {
       showAlert(user.message, 'error');
       return;
