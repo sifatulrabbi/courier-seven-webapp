@@ -9,20 +9,21 @@ function Logout() {
   const { setLoading } = useLoading();
   const { logout } = useAuth();
   const { showAlert } = useAlert();
+  const { logoutUser } = useApi();
 
-  async function doLogout() {
+  async function handleLogout() {
     setLoading(true);
-    await useApi.makeRequest('/auth/logout', 'POST');
+    const result = await logoutUser();
+    logout();
+    showAlert(result.message, 'normal');
     setTimeout(() => {
       setLoading(false);
+      navigate('/');
     }, 1000);
-    logout();
-    showAlert('Logout successful', 'normal');
-    navigate('/');
   }
 
   React.useEffect(() => {
-    doLogout();
+    handleLogout();
   }, []);
 
   return <div></div>;
