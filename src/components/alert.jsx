@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAlert } from '../contexts';
-import { FaTimes, FaCheck } from 'react-icons/fa';
+import { FaTimes, FaCheck, FaExclamationTriangle } from 'react-icons/fa';
 
 function Alert() {
   const [show, setShow] = React.useState(false);
@@ -26,7 +26,11 @@ function Alert() {
       {alert && (
         <div className='alert-body'>
           <span className='icon'>
-            <FaCheck />
+            {alert.severity === 'error' ? (
+              <FaExclamationTriangle />
+            ) : (
+              <FaCheck />
+            )}
           </span>
           <span style={{ flexGrow: 1 }}>{alert.msg}</span>
           <button className='alert-btn' onClick={hide}>

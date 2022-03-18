@@ -34,6 +34,7 @@ export function AuthProvider({ children }) {
   const { LOGIN_USER_KEY } = useConstants();
   const { setLoading } = useLoading();
   const navigate = useNavigate();
+  const { getUserById } = useApi();
 
   function login(user) {
     setUser(user);
@@ -49,7 +50,6 @@ export function AuthProvider({ children }) {
 
   async function checkForUser() {
     setLoading(true);
-    console.log('checking for user...');
     try {
       if (isAuthenticated) {
         setLoading(false);
@@ -59,7 +59,7 @@ export function AuthProvider({ children }) {
       const userId = getSavedUser(LOGIN_USER_KEY);
       if (!userId) return setLoading(false);
       console.log(userId);
-      const user = await useApi.getUserById(userId);
+      const user = await getUserById(userId);
       if (user) {
         login(user.data[0]);
         setLoading(false);

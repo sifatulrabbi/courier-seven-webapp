@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Form, Container, Row, Col } from 'react-bootstrap';
+import { Button, Form, Row, Col } from 'react-bootstrap';
 import FormGroup from '../form-group';
-import { Link } from 'react-router-dom';
 import { accountTypes } from '../../assets';
 import { useRegistrationForm } from '../../hooks';
 
@@ -181,9 +180,6 @@ export const PrimaryRegForm = () => {
       <Button type='submit' className='w-100'>
         Next
       </Button>
-      <Container fluid className='mt-3 text-center'>
-        Already have an account? <Link to='/login'>Login</Link>
-      </Container>
     </Form>
   );
 };

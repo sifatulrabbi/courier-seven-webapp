@@ -1,79 +1,75 @@
-class UseApi {
-  /**
-   * @private
-   */
-  headers;
-  /**
-   * @private
-   */
-  url;
+export function useApi() {
+  const url = process.env.REACT_APP_PROXY_URL;
+  const headers = {
+    'Content-Type': 'application/json',
+    Accept: 'applications/json',
+  };
+  const functions = {};
 
-  constructor() {
-    this.headers = new Headers();
-    this.headers.append('Content-Type', 'application/json');
-    this.headers.append('Accept', 'application/json');
-    this.url = process.env.REACT_APP_PROXY_URL;
-  }
-
-  /** Set headers
-   * @param {['name', 'value'][]} headersList
-   * @returns {void}
-   */
-  setHeaders(headersList) {
-    for (const item of headersList) {
-      this.headers.append(item[0], item[1]);
-    }
-  }
-
-  /** request function
-   * @param {string} path
-   * @param { 'GET' | 'POST' | 'PUT' | 'DELETE'} method
-   * @param {object | null} body
-   * @returns {Promise<any | null>}
-   */
-  async makeRequest(path, method, body) {
+  functions.registerUser = async function (data) {
     try {
-      if (!this.url) return console.error('URL not defined');
-      const result = await fetch(this.url + path, {
-        headers: this.headers,
-        method,
-        mode: 'cors',
-        redirect: 'follow',
-        body: body ? JSON.stringify(body) : undefined,
+      const response = await fetch(url + '/auth/register', {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(data),
       });
-      const data = await result.json();
-      return data;
+      const result = await response.json();
+      return result;
     } catch (err) {
+      console.log(err);
       return null;
     }
-  }
+  };
 
-  /** get login in user profile
-   * @param {string} userId
-   * @returns {Promise<any>}
-   */
-  async getUserById(userId) {
-    const user = await this.makeRequest('/users/' + userId, 'GET', null);
-    return user;
-  }
-
-  async loginUser(email, password) {
+  functions.loginUser = async function (email, password) {
     try {
-      const res = await fetch(this.url + '/auth/login', {
-        headers: this.headers,
+      const res = await fetch(url + '/auth/login', {
+        headers,
         method: 'POST',
         credentials: 'include',
-        redirect: 'follow',
-        mode: 'cors',
         body: JSON.stringify({ email, password }),
       });
-      if (!res.ok) return null;
-      const data = await res.json();
-      return data;
+      const result = await res.json();
+      return result;
     } catch (err) {
+      console.log(err);
       return null;
     }
-  }
-}
+  };
 
-export const useApi = new UseApi();
+  functions.getUserById = async function (userId) {
+    try {
+      const path = url + '/users/' + userId;
+      const response = await fetch(path, {
+        headers,
+        method: 'GET',
+        credentials: 'include',
+      });
+      if (!response.ok) return null;
+      const result = await response.json();
+      return result;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  };
+
+  functions.logoutUser = async function () {
+    try {
+      const path = url + '/auth/logout';
+      const response = await fetch(path, {
+        headers,
+        method: 'POST',
+        credentials: 'include',
+        body: '',
+      });
+      const result = await response.json();
+      return result;
+    } catch (err) {
+      console.log(err);
+      return null;
+    }
+  };
+
+  return functions;
+}
