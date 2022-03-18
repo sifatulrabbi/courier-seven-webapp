@@ -4,6 +4,7 @@ import { useLocations } from './use-locations';
 import { useApi } from './use-api';
 import { useLoading } from '../contexts';
 import { useNavigate } from 'react-router-dom';
+import { useAlert } from '../contexts';
 
 const USER_DATA_KEY = 'user-registration-data';
 
@@ -28,6 +29,8 @@ export function useRegistrationForm() {
   const functions = {};
   const { setLoading } = useLoading();
   const navigate = useNavigate();
+  const { showAlert } = useAlert();
+  const { registerUser } = useApi();
 
   functions.handleFirstName = function (e) {
     setFirstName(e.currentTarget.value);
@@ -105,12 +108,13 @@ export function useRegistrationForm() {
     setArea('');
   }
 
-  functions.handleSubmit = function (e) {
+  functions.handleSubmit = async function (e) {
     e.preventDefault();
     if (password !== confirmPassword) {
-      console.log('Registration failed password mismatch');
+      showAlert('Your passwords are incorrect', 'error');
       return;
     }
+    setLoading(true);
     const data = {
       name: {
         first: firstName,
@@ -123,18 +127,16 @@ export function useRegistrationForm() {
       mobile,
       address: { district, division, upazila, area, street, house },
     };
-    setLoading(true);
-    useApi.makeRequest('/auth/register', 'POST', data, (err, result) => {
-      resetInputs();
-      setLoading(false);
-
-      if (err) return console.log(err);
-      if (!result) return console.log('Unable to register user');
-
-      data.verification_key = result.data[0].verification_key;
-      localStorage.setItem(USER_DATA_KEY, JSON.stringify(data));
-      navigate('/register/otp');
-    });
+    const user = await registerUser(data);
+    setLoading(false);
+    if (user.statusCode !== 200) {
+      showAlert(user.message, 'error');
+      return;
+    }
+    data.verification_key = user.data[0].verification_key;
+    localStorage.setItem(USER_DATA_KEY, JSON.stringify(data));
+    resetInputs();
+    navigate('/register/otp');
   };
 
   return {

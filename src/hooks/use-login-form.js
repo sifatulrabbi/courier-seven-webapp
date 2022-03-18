@@ -9,6 +9,7 @@ export function useLoginForm() {
   const navigate = useNavigate();
   const { login } = useAuth();
   const { showAlert } = useAlert();
+  const { loginUser } = useApi();
 
   function handleEmailChange(e) {
     setEmail(e.target.value);
@@ -20,16 +21,16 @@ export function useLoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const user = await useApi.loginUser(email, password);
-    if (!user) {
-      showAlert('User name or password incorrect', 'error');
+    const user = await loginUser(email, password);
+    if (user.statusCode === 200) {
+      login(user.data[0]);
+      showAlert('User logged in', 'normal');
+      setEmail('');
+      setPassword('');
+      navigate('/users');
       return;
     }
-    login(user.data[0]);
-    showAlert('User logged in', 'normal');
-    setEmail('');
-    setPassword('');
-    navigate('/users');
+    showAlert(user.message, 'error');
   }
 
   return {

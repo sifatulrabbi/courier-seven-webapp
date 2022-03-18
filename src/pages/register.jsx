@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import { useNavLinks } from '../contexts';
 import { PrimaryRegForm, ProfileRegForm, OtpForm } from '../components';
 
@@ -27,6 +27,9 @@ const Register = () => {
         <Route path='/otp' element={<OtpForm />} />
         <Route path='/profile' element={<ProfileRegForm />} />
       </Routes>
+      <Container fluid className='mt-3 text-center'>
+        Already have an account? <Link to='/login'>Login</Link>
+      </Container>
     </Container>
   );
 };

@@ -1,6 +1,4 @@
 .alert {
-  $color: $green-600;
-
   z-index: 2500;
   position: fixed;
   top: 2rem;
@@ -26,8 +24,9 @@
       height: 1.5rem;
       width: 1.5rem;
       color: $white;
+      font-size: 1rem;
       border-radius: 50%;
-      background-color: $color;
+      background-color: $green-600;
     }
   }
 
@@ -52,11 +51,19 @@
   }
 
   &.error {
-    $color: red;
+    .alert-body {
+      .icon {
+        background-color: red;
+      }
+    }
   }
 
   &.warn {
-    $color: orange;
+    .alert-body {
+      .icon {
+        background-color: orange;
+      }
+    }
   }
 }
 
