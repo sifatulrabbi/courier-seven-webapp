@@ -21,16 +21,16 @@ export function useLoginForm() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const user = await loginUser(email, password);
-    if (user.statusCode === 200) {
-      login(user.data[0]);
-      showAlert('User logged in', 'normal');
-      setEmail('');
-      setPassword('');
-      navigate('/users');
+    const res = await loginUser(email, password);
+    if (res.statusCode !== 200) {
+      showAlert(res.message, 'error');
       return;
     }
-    showAlert(user.message, 'error');
+    // login(res.data[0]);
+    // showAlert('User logged in', 'normal');
+    // setEmail('');
+    // setPassword('');
+    // navigate('/users');
   }
 
   return {

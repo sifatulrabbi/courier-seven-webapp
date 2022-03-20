@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 export function useApi() {
   const url = process.env.REACT_APP_PROXY_URL;
   const headers = {
@@ -23,16 +25,15 @@ export function useApi() {
 
   functions.loginUser = async function (email, password) {
     try {
-      const res = await fetch(url + '/auth/login', {
-        headers,
+      const response = await fetch(url + '/auth/login', {
         method: 'POST',
-        credentials: 'include',
+        headers,
         body: JSON.stringify({ email, password }),
       });
-      const result = await res.json();
+      const result = await response.json();
       return result;
     } catch (err) {
-      console.log(err);
+      console.log('error', err);
       return null;
     }
   };
@@ -73,14 +74,7 @@ export function useApi() {
 
   functions.registerUserFinal = async function (data) {
     try {
-      const path = url + '/auth/register/final';
-      const response = await fetch(path, {
-        headers,
-        method: 'POST',
-        credentials: 'include',
-        data: JSON.stringify(data),
-      });
-      const result = await response.json();
+      const result = await axios.post(url + '/auth/register/final', data);
       return result;
     } catch (err) {
       console.log(err);

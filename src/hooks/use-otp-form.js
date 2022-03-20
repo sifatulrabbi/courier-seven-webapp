@@ -35,7 +35,6 @@ export function useOTPForm() {
         localStorage.setItem(USER_DATA_KEY, JSON.stringify(data));
       }
     } catch (err) {
-      console.log(err);
       showAlert('Ops! Something went wrong');
     }
     setLoading(false);
@@ -44,12 +43,16 @@ export function useOTPForm() {
   async function handleSubmitOtp(e) {
     e.preventDefault();
     const savedData = localStorage.getItem(USER_DATA_KEY);
-    const data = JSON.parse(savedData);
-    data.token = otp;
-
+    const data = await JSON.parse(savedData);
+    data.token = otp.toString();
+    if (!data.verification_key) {
+      setLoading(false);
+      showAlert('Invalid Verification key');
+      return;
+    }
     setLoading(true);
     const res = await registerUserFinal(data);
-    if (res.statusCode !== 200) {
+    if (res.status !== 200) {
       setLoading(false);
       showAlert(res.message, 'error');
       return;
