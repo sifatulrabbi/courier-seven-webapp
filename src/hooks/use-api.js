@@ -38,13 +38,19 @@ export function useApi() {
     }
   };
 
-  functions.getUserById = async function (userId) {
+  /**
+   * @param {string} token
+   * @returns {Promise<{} | null>}
+   */
+  functions.getUserProfile = async function (token) {
     try {
-      const path = url + '/users/' + userId;
+      const path = url + '/users/profile';
       const response = await fetch(path, {
-        headers,
+        headers: {
+          ...headers,
+          authorization: 'bearer ' + token,
+        },
         method: 'GET',
-        credentials: 'include',
       });
       if (!response.ok) return null;
       const result = await response.json();

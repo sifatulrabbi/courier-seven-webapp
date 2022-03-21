@@ -30,21 +30,23 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
-  const [user, setUser] = React.useState(null);
   const { LOGIN_USER_KEY } = useConstants();
+  const [token, setToken] = React.useState(null);
+  const [user, setUser] = React.useState(null);
   const { setLoading } = useLoading();
   const navigate = useNavigate();
-  const { getUserById } = useApi();
+  const { getUserProfile } = useApi();
 
-  function login(user) {
+  function login(token, user) {
+    setToken(token);
+    saveUser(LOGIN_USER_KEY, token);
     setUser(user);
-    saveUser(LOGIN_USER_KEY, user._id);
     setIsAuthenticated(true);
   }
 
   function logout() {
     setIsAuthenticated(false);
-    setUser({ _id: '' });
+    setToken(null);
     removeSavedUser(LOGIN_USER_KEY);
   }
 
@@ -56,25 +58,26 @@ export function AuthProvider({ children }) {
         navigate('/users');
         return;
       }
-      const userId = getSavedUser(LOGIN_USER_KEY);
-      if (!userId) return setLoading(false);
-      console.log(userId);
-      const user = await getUserById(userId);
-      if (user) {
-        login(user.data[0]);
+      const savedToken = getSavedUser(LOGIN_USER_KEY);
+      if (!savedToken) return setLoading(false);
+      const data = await getUserProfile(savedToken);
+      if (!data) {
+        removeSavedUser(LOGIN_USER_KEY);
         setLoading(false);
-        navigate('/users');
         return;
       }
+      login(savedToken, data.data[0]);
       setLoading(false);
+      navigate('/users');
     } catch (err) {
+      removeSavedUser(LOGIN_USER_KEY);
       setLoading(false);
-      console.log(err);
     }
   }
 
   const context = {
     user,
+    token,
     isAuthenticated,
     login,
     logout,

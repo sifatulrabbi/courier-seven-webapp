@@ -60,13 +60,14 @@ export function useOTPForm() {
     showAlert(res.message, 'normal');
 
     const user = await loginUser(data.email, data.password);
-    if (user.statusCode !== 200) {
-      showAlert(user.message, 'error');
+    if (user.statusCode !== 201) {
+      showAlert('Ops! Something went wrong', 'error');
       setLoading(false);
       return;
     }
-    showAlert(user.message, 'normal');
+    showAlert('Registration complete', 'normal');
     setLoading(false);
+    localStorage.removeItem(USER_DATA_KEY);
     navigate('/login');
   }
 
