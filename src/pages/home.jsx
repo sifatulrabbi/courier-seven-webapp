@@ -9,6 +9,7 @@ export default function Home() {
 
   React.useEffect(() => {
     homeLinks();
+    console.log('ran');
     checkForUser();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

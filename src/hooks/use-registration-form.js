@@ -15,7 +15,6 @@ export function useRegistrationForm() {
   const [mobile, setMobile] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
-  const [division, setDivision] = React.useState('');
   const [district, setDistrict] = React.useState('');
   const [upazila, setUpazila] = React.useState('');
   const [thana, setThana] = React.useState('');
@@ -53,10 +52,6 @@ export function useRegistrationForm() {
 
   functions.handleConfirmPassword = function (e) {
     setConfirmPassword(e.currentTarget.value);
-  };
-
-  functions.handleDivision = function (e) {
-    setDivision(e.currentTarget.value);
   };
 
   functions.handleDistrict = function (e) {
@@ -124,11 +119,16 @@ export function useRegistrationForm() {
       confirm_password: confirmPassword,
       password,
       email,
-      mobile,
-      address: { district, division, upazila, area, street, house },
+      mobile: String(mobile),
+      address: { district, upazila, area, street, house },
     };
+    console.log(data);
     const user = await registerUser(data);
     setLoading(false);
+    if (!user) {
+      showAlert('Ops! Something went wrong', 'error');
+      return;
+    }
     if (user.statusCode !== 200) {
       showAlert(user.message, 'error');
       return;

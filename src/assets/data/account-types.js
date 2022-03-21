@@ -1,5 +1,8 @@
 export const accountTypes = [
   {
+    label: 'Select one',
+  },
+  {
     label: 'Bronze (less than 2000 parcels/month)',
     value: 'a',
   },
