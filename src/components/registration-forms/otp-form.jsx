@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Form, Container } from 'react-bootstrap';
 import FormGroup from '../form-group';
-import { Link } from 'react-router-dom';
 import { useOTPForm } from '../../hooks/use-otp-form';
 
 export const OtpForm = () => {
